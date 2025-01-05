@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | GrabMart</title>
+    <link rel="stylesheet" href="css/login.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <script src="https://apis.google.com/js/platform.js" async defer></script> <!-- Google API -->
+</head>
+<body>
+    <div class="login-container">
+        <div class="login-form" id="login-form">
+            <h2>Welcome to GrabMart</h2>
+            <div class="form-container">
+                <form id="login-form-content">
+                    <h3>Login</h3>
+                    <label for="email">Email:</label>
+                    <input type="email" id="login-email" name="email" placeholder="Enter your email" required>
+                    <label for="password">Password:</label>
+                    <input type="password" id="login-password" name="password" placeholder="Enter your password" required>
+                    <button type="submit">Login</button>
+                </form>
+                <p>Don't have an account? <a href="#" id="show-signup">Sign up</a></p>
+            </div>
+        </div>
+
+        <!-- Signup Form -->
+        <div class="signup-form" id="signup-form" style="display:none;">
+            <h2>Welcome to GrabMart</h2>
+            <div class="form-container">
+                <form id="signup-form-content">
+                    <h3>Sign Up</h3>
+                    <label for="email">Email:</label>
+                    <input type="email" id="signup-email" name="email" placeholder="Enter your email" required>
+                    <label for="password">Password:</label>
+                    <input type="password" id="signup-password" name="password" placeholder="Enter your password" required>
+                    <button type="submit">Sign Up</button>
+                </form>
+                <p>Already have an account? <a href="#" id="show-login">Login</a></p>
+            </div>
+        </div>
+
+        <!-- Success Message -->
+        <div class="signup-success" id="signup-success-message">
+            <p>Signup Successful!</p>
+        </div>
+        <div class="login-success" id="login-success-message">
+            <p>Login Successful!</p>
+        </div>
+    </div>
+
+    <script src="js/login.js"></script> <!-- Login JavaScript -->
+</body>
+</html>

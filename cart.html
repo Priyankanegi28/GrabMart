@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Cart</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+</head>
+<body>
+    <!-- Cart Section -->
+    <section id="cart">
+        <h2>Your Cart :</h2>
+        <div id="cart-items">
+            <!-- Cart items will be displayed here -->
+        </div>
+    </section>
+
+    <script>
+        // Function to display the Cart items
+        function displayCart() {
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            const cartContainer = document.getElementById('cart-items');
+            cartContainer.innerHTML = '';
+
+            if (cart.length === 0) {
+                cartContainer.innerHTML = "<p>Your cart is empty.</p>";
+            } else {
+                cart.forEach((item, index) => {
+                    const itemElement = document.createElement('div');
+                    itemElement.classList.add('cart-item');
+                    itemElement.innerHTML = `
+                        <img src="${item.image}" alt="${item.name}" />
+                        <h3>${item.name}</h3>
+                        <p>${item.price}</p>
+                        <div class="actions">
+                            <button class="remove-btn" onclick="removeFromCart(${index})"><i class="fas fa-trash"></i> Remove</button>
+                            <button class="checkout-btn" onclick="addToCheckout(${index})"><i class="fas fa-check"></i> Add to Checkout</button>
+                        </div>
+                    `;
+                    cartContainer.appendChild(itemElement);
+                });
+            }
+        }
+
+        // Function to remove an item from Cart
+        function removeFromCart(index) {
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            cart.splice(index, 1);
+            localStorage.setItem('cart', JSON.stringify(cart));
+            displayCart(); // Re-render the cart after removal
+        }
+
+        // Function to move an item to Checkout (mock)
+        function addToCheckout(index) {
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            let checkout = JSON.parse(localStorage.getItem('checkout')) || [];
+
+            // Move the item to checkout
+            const item = cart[index];
+            checkout.push(item);
+
+            // Remove the item from cart
+            cart.splice(index, 1);
+
+            // Save updated lists to localStorage
+            localStorage.setItem('cart', JSON.stringify(cart));
+            localStorage.setItem('checkout', JSON.stringify(checkout));
+
+            displayCart(); // Re-render the cart after moving to checkout
+            alert("Item moved to checkout!");
+        }
+
+        // Call displayCart on page load
+        window.onload = displayCart;
+    </script>
+</body>
+</html>

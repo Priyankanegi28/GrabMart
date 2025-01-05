@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Wishlist</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+</head>
+<body>
+    <!-- Wishlist Section -->
+    <section id="wishlist">
+        <h2>Your Wishlist :</h2>
+        <div id="wishlist-items">
+            <!-- Wishlist items will be displayed here -->
+        </div>
+    </section>
+
+    <script>
+        // Function to display the Wishlist items
+        function displayWishlist() {
+            let wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
+            const wishlistContainer = document.getElementById('wishlist-items');
+            wishlistContainer.innerHTML = '';
+
+            if (wishlist.length === 0) {
+                wishlistContainer.innerHTML = "<p>Your wishlist is empty.</p>";
+            } else {
+                wishlist.forEach((item, index) => {
+                    const itemElement = document.createElement('div');
+                    itemElement.classList.add('wishlist-item');
+                    itemElement.innerHTML = `
+                        <img src="${item.image}" alt="${item.name}" />
+                        <h3>${item.name}</h3>
+                        <p>${item.price}</p>
+                        <div class="actions">
+                            <button class="remove-btn" onclick="removeFromWishlist(${index})"><i class="fas fa-trash"></i> Remove</button>
+                            <button class="add-to-cart-btn" onclick="addToCartFromWishlist(${index})"><i class="fas fa-shopping-bag"></i> Add to Bag</button>
+                        </div>
+                    `;
+                    wishlistContainer.appendChild(itemElement);
+                });
+            }
+        }
+
+        // Function to remove an item from Wishlist
+        function removeFromWishlist(index) {
+            let wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
+            wishlist.splice(index, 1);
+            localStorage.setItem('wishlist', JSON.stringify(wishlist));
+            displayWishlist(); // Re-render the wishlist after removal
+        }
+
+        // Function to move an item from Wishlist to Cart
+        function addToCartFromWishlist(index) {
+            let wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+            // Add the item to the cart
+            const item = wishlist[index];
+            cart.push(item);
+
+            // Remove the item from wishlist
+            wishlist.splice(index, 1);
+
+            // Save updated lists to localStorage
+            localStorage.setItem('cart', JSON.stringify(cart));
+            localStorage.setItem('wishlist', JSON.stringify(wishlist));
+
+            displayWishlist(); // Re-render the wishlist after moving to cart
+        }
+
+        // Call displayWishlist on page load
+        window.onload = displayWishlist;
+    </script>
+</body>
+</html>

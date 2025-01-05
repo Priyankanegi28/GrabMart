@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GrabMart</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="navbar-brand">
+                <h1>GrabMart</h1>
+            </div>
+            <div class="navbar-search">
+                <input type="text" placeholder="Search what you want..." id="search-bar">
+            </div>
+            <div class="navbar-icons">
+                <div class="wishlist">
+                    <a href="wishlist.html">
+                        <span>Wishlist</span>
+                        <i class="fas fa-heart"></i>
+                    </a>
+                </div>
+                <div class="divider">|</div>
+                <div class="cart">
+                    <a href="cart.html">
+                        <span>Cart</span>
+                        <i class="fas fa-shopping-cart"></i>
+                    </a>
+                </div>
+                <div class="divider">|</div>
+                <div class="login">
+                    <span>Login</span>
+                    <i class="fas fa-user"></i>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Sidebar -->
+    <div id="sidebar" class="sidebar">
+        <div class="sidebar-content">
+            <h2>Account Details</h2>
+            <p id="sidebar-name"></p>
+            <p id="sidebar-email"></p>
+            <button id="logout-btn">Logout</button>
+        </div>
+    </div>
+
+    <main>
+        <!-- Promo Banner Image (above the slider) -->
+        <div class="promo-image">
+            <img src="https://www.shutterstock.com/image-vector/3d-lettering-black-friday-mega-260nw-705625765.jpg" alt="Promo Sale" class="promo-img">
+        </div>
+
+        <!-- Image Slider -->
+        <div class="promo-banner-container">
+            <button class="nav-btn prev-btn"><</button>
+            <div class="promo-banner">
+                <img src="https://www.reliancedigital.in/medias/LA-Banner-Hybris-D.jpg?context=bWFzdGVyfGltYWdlc3wxMzQ1NTd8aW1hZ2UvanBlZ3xpbWFnZXMvaGJiL2hhYy8xMDIzODI3NDg5NTkwMi5qcGd8OWMxZjJiNDIxNjUxZGQ2NzZhZGExZmVhYjFhMTZjNGU3ZjZmZmE3YmUwMGE3ZDhjYmZkMTc3OTYyYWZlZDMwYg" alt="Shopping Image" class="screen-resolution-image">
+                <img src="https://www.reliancedigital.in/medias/v1-Apple-AirPods-Banner-1365x260.jpg?context=bWFzdGVyfGltYWdlc3wxMDA2MTJ8aW1hZ2UvanBlZ3xpbWFnZXMvaDIzL2gzZi8xMDIyODMxODQzNzQwNi5qcGd8ZjRiYzgxYzc5MDQzN2VjMzRlZWY4OTdiNWZlYmMzYjgxZWIyOGZjNWMyNzM3MDA4NmY4MjYxYjFhZDM1MDJlYg" alt="Apple AirPods Banner" class="screen-resolution-image">
+                <img src="https://www.reliancedigital.in/medias/Apple-Watch-Series10-1365x260-D.jpg?context=bWFzdGVyfGltYWdlc3wxMTQ2MzB8aW1hZ2UvanBlZ3xpbWFnZXMvaGY0L2gxMi8xMDIxOTg3Nzc2MTA1NC5qcGd8MWY4MTc4NmExNTRiYWQzZDMwNWRiNGRmZDQ0ZDRiMjU1NDJhMzJhODA5ZTAyNzFmMzc5ZThmODgyMjU3NjBiZQ" alt="Tech Banner" class="screen-resolution-image">
+                <img src="https://www.reliancedigital.in/medias/K12X-Banner-Banner-Hybris-D-1-.jpg?context=bWFzdGVyfGltYWdlc3wxNDM4MjB8aW1hZ2UvanBlZ3xpbWFnZXMvaDY4L2hlNi8xMDI0MDExMjUyNTM0Mi5qcGd8OGMyOTg1MTFlOTgxOTE3NjQxYjhiNDA2Mjc5NjEzNDRiYTVmMWMyODJiNGY3ZDhjYzA5ZjVmMjYzYTM3NDQ2ZQ" alt="Tech Banner" class="screen-resolution-image">
+            </div>
+            <button class="nav-btn next-btn">></button>
+        </div>
+
+        <!-- Shop by Category Section -->
+<section class="shop-by-category">
+    <h2>Shop by Category</h2>
+    <div class="grid">
+        <div class="category-card">
+            <a href="clothing.html">
+                <img src="https://media.istockphoto.com/id/1307512096/photo/asian-chinese-female-boutique-shop-clothing-store-owner-checking-stock-with-digital-tablet.jpg?s=612x612&w=0&k=20&c=DR_6wwtfiwL14f4hfQL9Q4vTR0plXu9j38gvq6gAIY8=" alt="Ethnic Wear">
+                <h3>Clothing</h3>
+            </a>
+        </div>
+        <div class="category-card">
+            <a href="electronics.html">
+                <img src="https://media.istockphoto.com/id/506998184/photo/woman-chooses-the-laptop.jpg?s=612x612&w=0&k=20&c=EHk7baK4Io5b3-d32Y9URxTemUYrzk8CsiW-K-L4Was=" alt="Casual Wear">
+                <h3>Electronic's</h3>
+            </a>
+        </div>
+        <div class="category-card">
+            <a href="clothing.html">
+                <img src="https://www.nobiliaindia.com/images/line-n/laser.jpg?v=Ievv7JrCO1bcmqHKnvg8Upfc2xCcuaji4xRbr8WWuss" alt="Men's Wear">
+                <h3>Home & Kitchen</h3>
+            </a>
+        </div>
+        <div class="category-card">
+            <a href="books.html">
+                <img src="https://media.istockphoto.com/id/498844342/photo/books-and-a-shopping-cart.jpg?s=612x612&w=0&k=20&c=45EBpVg_KIEvno2VyXY4lLzJpHTbgKtv0-XEeEdWZqM=" alt="Women's Wear">
+                <h3>Book's</h3>
+            </a>
+        </div>
+        <div class="category-card">
+            <a href="electronics.html">
+                <img src="https://img.freepik.com/free-photo/female-with-happy-expression-standing-near-rack-with-clothes-keeping-hands-credit-card-modern-mobile-phone-being-glad-buy-garment-online-people-online-shopping_273609-811.jpg" alt="Kids' Wear">
+                <h3>Mobiles</h3>
+            </a>
+        </div>
+    </div>
+</section>
+
+    
+    <!-- New Arrivals Section -->
+    <section class="product-grid">
+        <h2>New Arrivals</h2>
+        <div class="grid">
+            <!-- Product 1 -->
+            <div class="product-card">
+                <img src="https://assets.ajio.com/medias/sys_master/root/20240322/iteW/65fcf4c305ac7d77bbd132cf/-1117Wx1400H-462895038-maroon-MODEL.jpg" alt="Leather Wallet">
+                <h3>Leather Wallet</h3>
+                <p>₹1,999</p>
+                <div class="actions">
+                    <button class="wishlist-btn" onclick="addToWishlist('Leather Wallet', '₹1,999', 'https://assets.ajio.com/medias/sys_master/root/20240322/iteW/65fcf4c305ac7d77bbd132cf/-1117Wx1400H-462895038-maroon-MODEL.jpg')"><i class="fas fa-heart"></i> Wishlist</button>
+                    <button class="cart-btn" onclick="addToCart('Leather Wallet', '₹1,999', 'https://assets.ajio.com/medias/sys_master/root/20240322/iteW/65fcf4c305ac7d77bbd132cf/-1117Wx1400H-462895038-maroon-MODEL.jpg')"><i class="fas fa-shopping-bag"></i> Add to Bag</button>
+                </div>
+            </div>
+
+            <!-- Product 2 -->
+            <div class="product-card">
+                <img src="https://assets.ajio.com/medias/sys_master/root/20210216/EWwz/602accd4aeb2696981661cba/-473Wx593H-460545300-red-MODEL.jpg" alt="Formal Shirt">
+                <h3>Formal Shirt</h3>
+                <p>₹2,799</p>
+                <div class="actions">
+                    <button class="wishlist-btn" onclick="addToWishlist('Formal Shirt', '₹2,799', 'https://assets.ajio.com/medias/sys_master/root/20210216/EWwz/602accd4aeb2696981661cba/-473Wx593H-460545300-red-MODEL.jpg')"><i class="fas fa-heart"></i> Wishlist</button>
+                    <button class="cart-btn" onclick="addToCart('Formal Shirt', '₹2,799', 'https://assets.ajio.com/medias/sys_master/root/20210216/EWwz/602accd4aeb2696981661cba/-473Wx593H-460545300-red-MODEL.jpg')"><i class="fas fa-shopping-bag"></i> Add to Bag</button>
+                </div>
+            </div>
+
+            <!-- Product 3 -->
+            <div class="product-card">
+                <img src="https://assets.ajio.com/medias/sys_master/root/20240713/RYgu/66922da46f60443f3106a1c1/-473Wx593H-464805313-brown-MODEL.jpg" alt="Sunglasses">
+                <h3>Sunglasses</h3>
+                <p>₹1,199</p>
+                <div class="actions">
+                    <button class="wishlist-btn" onclick="addToWishlist('Sunglasses', '₹1,199', 'https://assets.ajio.com/medias/sys_master/root/20240713/RYgu/66922da46f60443f3106a1c1/-473Wx593H-464805313-brown-MODEL.jpg')"><i class="fas fa-heart"></i> Wishlist</button>
+                    <button class="cart-btn" onclick="addToCart('Sunglasses', '₹1,199', 'https://assets.ajio.com/medias/sys_master/root/20240713/RYgu/66922da46f60443f3106a1c1/-473Wx593H-464805313-brown-MODEL.jpg')"><i class="fas fa-shopping-bag"></i> Add to Bag</button>
+                </div>
+            </div>
+
+            <!-- Product 4 -->
+            <div class="product-card">
+                <img src="https://assets.ajio.com/medias/sys_master/root/20240109/iorz/659d61ed54c30e6276a01dda/-1117Wx1400H-469584839-green-MODEL.jpg" alt="Running Shoes">
+                <h3>Running Shoes</h3>
+                <p>₹4,799</p>
+                <div class="actions">
+                    <button class="wishlist-btn" onclick="addToWishlist('Running Shoes', '₹4,799', 'https://assets.ajio.com/medias/sys_master/root/20240109/iorz/659d61ed54c30e6276a01dda/-1117Wx1400H-469584839-green-MODEL.jpg')"><i class="fas fa-heart"></i> Wishlist</button>
+                    <button class="cart-btn" onclick="addToCart('Running Shoes', '₹4,799', 'https://assets.ajio.com/medias/sys_master/root/20240109/iorz/659d61ed54c30e6276a01dda/-1117Wx1400H-469584839-green-MODEL.jpg')"><i class="fas fa-shopping-bag"></i> Add to Bag</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Great Deals Section -->
+<section class="deals-section">
+    <h2>Great Deals on Electronics</h2>
+    <div class="card-containerr">
+        <a href="electronics.html" class="cardd">
+            <img src="https://www.reliancedigital.in/medias/bau-tile-1-audio-241103.jpg?context=bWFzdGVyfGltYWdlc3wxOTg4NXxpbWFnZS9qcGVnfGltYWdlcy9oNzYvaGI2LzEwMjE3OTY1Mjg5NTAyLmpwZ3wxYzMxZWI4ZmM3YTRiNzY5YzFhMWYxYjI1OTFmYzFiYzgxYmVhNzMxZjYwZDA0MWM4NzcwMGZmNzhjZGUxMDJi" alt="Product 1">
+        </a>
+        <a href="electronics.html" class="cardd">
+            <img src="https://www.reliancedigital.in/medias/bau-tile-2-bose-241103.jpg?context=bWFzdGVyfGltYWdlc3wxODgzOXxpbWFnZS9qcGVnfGltYWdlcy9oNWYvaDczLzEwMjE3OTY1MzU1MDM4LmpwZ3xhNDgzZTEyN2RlYTZlMWQ5YWE5ZmZhNGU1MTVlZWRmNmNmODFlNWVlMjMyYmIzNzljOGIxYWIwM2NmYmQ1YjUw" alt="Product 2">
+        </a>
+        <a href="electronics.html" class="cardd">
+            <img src="https://www.reliancedigital.in/medias/bau-tile-3-sda-241103.jpg?context=bWFzdGVyfGltYWdlc3wyMDYzNnxpbWFnZS9qcGVnfGltYWdlcy9oYzAvaGYxLzEwMjE3OTY1NDIwNTc0LmpwZ3xkNzQ5ZjU5OTI0NWFhYTdiMWU1NjY5ZjNlODc1NzliMjQ4M2RhNzEwMzM0OGI5MWRiMTZmMDQ3YWIyYWI1Y2Fk" alt="Product 3">
+        </a>
+        <a href="electronics.html" class="cardd">
+            <img src="https://www.reliancedigital.in/medias/bau-tile-4-storage-241103.jpg?context=bWFzdGVyfGltYWdlc3wxODQ1NXxpbWFnZS9qcGVnfGltYWdlcy9oNGIvaDhlLzEwMjE3OTY1NTg0NDE0LmpwZ3xiZTlhZjc1M2E3MzY1Zjc4OTk2NGIwZmI4YjM4ZjBlOTQyYzkzNTM1YWE4NzNhNjFlM2I2YTNmYmZiYzNjNTg1" alt="Product 4">
+        </a>
+    </div>
+    <div class="card-containerr">
+        <a href="electronics.html" class="cardd">
+            <img src="https://www.reliancedigital.in/medias/GDOE-Air-Purifiers-340x255.jpg?context=bWFzdGVyfGltYWdlc3wzMzEwM3xpbWFnZS9qcGVnfGltYWdlcy9oMjMvaGE5LzEwMjMwNzg3MjExMjk0LmpwZ3xhNWEzMWQ1NTExNWMzZjc2YmVmNjcyOGFiMDJkNzBmMzhjNGJiOGJlMmExZWEzZTkyNzlmZDQzYjkxNDM0ZTVi" alt="Product 1">
+        </a>
+        <a href="electronics.html" class="cardd">
+            <img src="https://www.reliancedigital.in/medias/bau-tile-6-charger-241103.jpg?context=bWFzdGVyfGltYWdlc3wxNjIyNXxpbWFnZS9qcGVnfGltYWdlcy9oMjkvaDRjLzEwMjE3OTY1NzgxMDIyLmpwZ3xjMmNhNmZkMjdhNTdhZTMyMDgxYWUxMmU4ZmU5MWFiMmYxNjkxZTdlNzViYmZkZDlhMDQyNzU0NmI2ZjQ5NDE5" alt="Product 2">
+        </a>
+        <a href="electronics.html" class="cardd">
+            <img src="https://www.reliancedigital.in/medias/bau-tile-7-ref-241103.jpg?context=bWFzdGVyfGltYWdlc3wyMDIyOHxpbWFnZS9qcGVnfGltYWdlcy9oYjYvaDQyLzEwMjE3OTY1ODQ2NTU4LmpwZ3xkMzUyNTk2OWNiMjg0ZWUyNDI4OGFhOWVkY2ZkMTNhOTUyZjVmZWJlNmJhNmM2ZDI0ZGJjODRkYjJmNWVkYWY4" alt="Product 3">
+        </a>
+        <a href="electronics.html" class="cardd">
+            <img src="https://www.reliancedigital.in/medias/Samsung-GDOE-BAU-Banner-340x255.jpg?context=bWFzdGVyfGltYWdlc3w0NTA0M3xpbWFnZS9qcGVnfGltYWdlcy9oNmYvaDhmLzEwMjQyNzcyNzYyNjU0LmpwZ3w1MDZjMGViMTQzNzA0NjQxMDEwM2M2OWFjNTkzNDkzNWM3NjI4OTJkNDk0ZmJkMzBhZTZiNjJhZjkwZDZiMzRk" alt="Product 4">
+        </a>
+    </div>
+</section>
+
+<section class="product-section">
+    <h2>Trending Tablets | No Cost EMI Available*</h2>
+    <div class="card-container">
+        <!-- Card 1 -->
+        <div class="card">
+            <img src="https://www.reliancedigital.in/medias/Apple-iPad-Air-494404974-i-1-1200Wx1200H-300Wx300H?context=bWFzdGVyfGltYWdlc3w3MTMwMHxpbWFnZS9qcGVnfGltYWdlcy9oNTQvaGRkLzEwMTQyNzY3MjUxNDg2LmpwZ3w3MTAxN2NkYWU4ZTkxY2NlMTcyZWRhMTdkNTZmNWFhYmRkMTg2OGMxYWU3OGYyMGQxM2IxZjhmNGQ2NGY0MWVh" alt="Product 1">
+            <div class="product-details">
+                <h3>Apple iPad Air 1st Gen 2024 32.78 cm (13 inch) Wi-Fi Tablet, 128 GB, Blue</h3>
+                <p>₹79,900</p>
+            </div>
+            <div class="product-actions">
+                <button class="wishlist-btn" onclick="addToWishlist('Apple iPad Air 1st Gen', '₹79,900', 'https://www.reliancedigital.in/medias/Apple-iPad-Air-494404974-i-1-1200Wx1200H-300Wx300H?context=bWFzdGVyfGltYWdlc3w3MTMwMHxpbWFnZS9qcGVnfGltYWdlcy9oNTQvaGRkLzEwMTQyNzY3MjUxNDg2LmpwZ3w3MTAxN2NkYWU4ZTkxY2NlMTcyZWRhMTdkNTZmNWFhYmRkMTg2OGMxYWU3OGYyMGQxM2IxZjhmNGQ2NGY0MWVh')"><i class="fas fa-heart"></i> Wishlist</button>
+                <button class="cart-btn" onclick="addToCart('Apple iPad Air 1st Gen', '₹79,900', 'https://www.reliancedigital.in/medias/Apple-iPad-Air-494404974-i-1-1200Wx1200H-300Wx300H?context=bWFzdGVyfGltYWdlc3w3MTMwMHxpbWFnZS9qcGVnfGltYWdlcy9oNTQvaGRkLzEwMTQyNzY3MjUxNDg2LmpwZ3w3MTAxN2NkYWU4ZTkxY2NlMTcyZWRhMTdkNTZmNWFhYmRkMTg2OGMxYWU3OGYyMGQxM2IxZjhmNGQ2NGY0MWVh')"><i class="fas fa-shopping-bag"></i> Add to Bag</button>
+            </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="card">
+            <img src="https://www.reliancedigital.in/medias/iPad-Air-5thGen-WiFi-Starlight-PDP-Image-492849483-i-1-1200Wx1200H-300Wx300H?context=bWFzdGVyfGltYWdlc3w0MjQ1MHxpbWFnZS9qcGVnfGltYWdlcy9oMzMvaDA5LzEwMDE1MTM2MjUxOTM0LmpwZ3w3YWQ0ODFhYWZjZTI0ZDYyZmVjZjcyZDk2ZDI3MWI4NDNiN2MyYjc5YWIwNjE5ZjM5ZDU0MmZkYWJiNjIwZGRl" alt="Product 2">
+            <div class="product-details">
+                <h3>Apple iPad Air 5th Gen 2022 27.69 cm (10.9 inch) Wi-Fi Tablet, 64 GB, MM9F3HN/A, Starlight</h3>
+                <p>₹59,900</p>
+            </div>
+            <div class="product-actions">
+                <button class="wishlist-btn" onclick="addToWishlist('Apple iPad Air 5th Gen', '₹59,900', 'https://www.reliancedigital.in/medias/iPad-Air-5thGen-WiFi-Starlight-PDP-Image-492849483-i-1-1200Wx1200H-300Wx300H?context=bWFzdGVyfGltYWdlc3w0MjQ1MHxpbWFnZS9qcGVnfGltYWdlcy9oMzMvaDA5LzEwMDE1MTM2MjUxOTM0LmpwZ3w3YWQ0ODFhYWZjZTI0ZDYyZmVjZjcyZDk2ZDI3MWI4NDNiN2MyYjc5YWIwNjE5ZjM5ZDU0MmZkYWJiNjIwZGRl')"><i class="fas fa-heart"></i> Wishlist</button>
+                <button class="cart-btn" onclick="addToCart('Apple iPad Air 5th Gen', '₹59,900', 'https://www.reliancedigital.in/medias/iPad-Air-5thGen-WiFi-Starlight-PDP-Image-492849483-i-1-1200Wx1200H-300Wx300H?context=bWFzdGVyfGltYWdlc3w0MjQ1MHxpbWFnZS9qcGVnfGltYWdlcy9oMzMvaDA5LzEwMDE1MTM2MjUxOTM0LmpwZ3w3YWQ0ODFhYWZjZTI0ZDYyZmVjZjcyZDk2ZDI3MWI4NDNiN2MyYjc5YWIwNjE5ZjM5ZDU0MmZkYWJiNjIwZGRl')"><i class="fas fa-shopping-bag"></i> Add to Bag</button>
+            </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="card">
+            <img src="https://www.reliancedigital.in/medias/iPad-10thGen-Wi-Fi-Silver-493178823-i-1-1200Wx1200H-300Wx300H?context=bWFzdGVyfGltYWdlc3wzMzExM3xpbWFnZS9qcGVnfGltYWdlcy9oNzUvaDVjLzEwMDE1NTE3Mjc4MjM4LmpwZ3wwZTRlZGUyOTBmYzUxMDIzM2E3MDY1MjZhNWQ4NGM0ODc3NjZiZWY5Mjk3MDA4YTExOThhZDdjZGU3OWM2N2Jk" alt="Product 3">
+            <div class="product-details">
+                <h3>Apple iPad 10th Gen (2022) 27.69 cm (10.9 inch) Wi-Fi Tablet, 64 GB, Silver, MPQ03HN/A</h3>
+                <p>₹33,490</p>
+            </div>
+            <div class="product-actions">
+                <button class="wishlist-btn" onclick="addToWishlist('Apple iPad 10th Gen', '₹33,490', 'https://www.reliancedigital.in/medias/iPad-10thGen-Wi-Fi-Silver-493178823-i-1-1200Wx1200H-300Wx300H?context=bWFzdGVyfGltYWdlc3wzMzExM3xpbWFnZS9qcGVnfGltYWdlcy9oNzUvaDVjLzEwMDE1NTE3Mjc4MjM4LmpwZ3wwZTRlZGUyOTBmYzUxMDIzM2E3MDY1MjZhNWQ4NGM0ODc3NjZiZWY5Mjk3MDA4YTExOThhZDdjZGU3OWM2N2Jk')"><i class="fas fa-heart"></i> Wishlist</button>
+                <button class="cart-btn" onclick="addToCart('Apple iPad 10th Gen', '₹33,490', 'https://www.reliancedigital.in/medias/iPad-10thGen-Wi-Fi-Silver-493178823-i-1-1200Wx1200H-300Wx300H?context=bWFzdGVyfGltYWdlc3wzMzExM3xpbWFnZS9qcGVnfGltYWdlcy9oNzUvaDVjLzEwMDE1NTE3Mjc4MjM4LmpwZ3wwZTRlZGUyOTBmYzUxMDIzM2E3MDY1MjZhNWQ4NGM0ODc3NjZiZWY5Mjk3MDA4YTExOThhZDdjZGU3OWM2N2Jk')"><i class="fas fa-shopping-bag"></i> Add to Bag</button>
+            </div>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="card">
+            <img src="https://www.reliancedigital.in/medias/Samsung-Tab-A9-Plus-494268075-i-1-1200Wx1200H-300Wx300H?context=bWFzdGVyfGltYWdlc3wzMjE5OHxpbWFnZS9qcGVnfGltYWdlcy9oNmQvaDMwLzEwMDU5NjY5NjY3ODcwLmpwZ3xiNmY2NjQ5YTAxYWI1OTQxMTAyNGE0ZThlY2VlN2NlMGQ1Yzg5ZTQzYjVhNDhlNWFkMTc0MmQzNGRjNTE2Yzc3" alt="Product 4">
+            <div class="product-details">
+                <h3>Samsung Galaxy 27.94 cm (11.0 inch) Wi-Fi + Cellular Tablet 128 GB 8 GB Silver Tab </h3>
+                <p>₹24,999</p>
+            </div>
+            <div class="product-actions">
+                <button class="wishlist-btn" onclick="addToWishlist('Samsung Galaxy Tablet', '₹24,999', 'https://www.reliancedigital.in/medias/Samsung-Tab-A9-Plus-494268075-i-1-1200Wx1200H-300Wx300H?context=bWFzdGVyfGltYWdlc3wzMjE5OHxpbWFnZS9qcGVnfGltYWdlcy9oNmQvaDMwLzEwMDU5NjY5NjY3ODcwLmpwZ3xiNmY2NjQ5YTAxYWI1OTQxMTAyNGE0ZThlY2VlN2NlMGQ1Yzg5ZTQzYjVhNDhlNWFkMTc0MmQzNGRjNTE2Yzc3')"><i class="fas fa-heart"></i> Wishlist</button>
+                <button class="cart-btn" onclick="addToCart('Samsung Galaxy Tablet', '₹24,999', 'https://www.reliancedigital.in/medias/Samsung-Tab-A9-Plus-494268075-i-1-1200Wx1200H-300Wx300H?context=bWFzdGVyfGltYWdlc3wzMjE5OHxpbWFnZS9qcGVnfGltYWdlcy9oNmQvaDMwLzEwMDU5NjY5NjY3ODcwLmpwZ3xiNmY2NjQ5YTAxYWI1OTQxMTAyNGE0ZThlY2VlN2NlMGQ1Yzg5ZTQzYjVhNDhlNWFkMTc0MmQzNGRjNTE2Yzc3')"><i class="fas fa-shopping-bag"></i> Add to Bag</button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="product-section">
+    <h2>Avail No-cost EMI on Premium Smartwatches</h2>
+    <div class="card-container">
+        <!-- Card 1 -->
+        <div class="card">
+            <img src="https://www.reliancedigital.in/medias/Samsung-Watch7-Smartwatch-494421975-i-1-1200Wx1200H-300Wx300H?context=bWFzdGVyfGltYWdlc3w0NjAwNXxpbWFnZS9qcGVnfGltYWdlcy9oN2EvaDdlLzEwMTcyODIwODQ4NjcwLmpwZ3xmM2ZiYzcwNDRiMGExMmJlNGZiYTUyOGUyMDQxN2VlZjI0MTk0MDM3ZDc5MzExMjBiZjIxODFmNGEzMWVmOWRh" alt="Samsung Galaxy Watch 7">
+            <div class="product-details">
+                <h3>Samsung Galaxy Watch 7 40 mm Bluetooth + LTE Smart Watch, 3nm Processor, Dual GPS</h3>
+                <p>₹29,999</p>
+            </div>
+            <div class="product-actions">
+                <button class="wishlist-btn" onclick="addToWishlist('Samsung Galaxy Watch 7', '₹29,999', 'https://www.reliancedigital.in/medias/Samsung-Watch7-Smartwatch-494421975-i-1-1200Wx1200H-300Wx300H?context=bWFzdGVyfGltYWdlc3w0NjAwNXxpbWFnZS9qcGVnfGltYWdlcy9oN2EvaDdlLzEwMTcyODIwODQ4NjcwLmpwZ3xmM2ZiYzcwNDRiMGExMmJlNGZiYTUyOGUyMDQxN2VlZjI0MTk0MDM3ZDc5MzExMjBiZjIxODFmNGEzMWVmOWRh')"><i class="fas fa-heart"></i> Wishlist</button>
+                <button class="cart-btn" onclick="addToCart('Samsung Galaxy Watch 7', '₹29,999', 'https://www.reliancedigital.in/medias/Samsung-Watch7-Smartwatch-494421975-i-1-1200Wx1200H-300Wx300H?context=bWFzdGVyfGltYWdlc3w0NjAwNXxpbWFnZS9qcGVnfGltYWdlcy9oN2EvaDdlLzEwMTcyODIwODQ4NjcwLmpwZ3xmM2ZiYzcwNDRiMGExMmJlNGZiYTUyOGUyMDQxN2VlZjI0MTk0MDM3ZDc5MzExMjBiZjIxODFmNGEzMWVmOWRh')"><i class="fas fa-shopping-bag"></i> Add to Bag</button>
+            </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="card">
+            <img src="https://www.reliancedigital.in/medias/Apple-Watch-Series-10-494423153-i-1-1200Wx1200H-300Wx300H?context=bWFzdGVyfGltYWdlc3wyODI3MXxpbWFnZS9qcGVnfGltYWdlcy9oMzgvaGE4LzEwMTk1MTQ2MDE0NzUwLmpwZ3wzMmQxYzM2YTQ0NWUxOWVkY2ZiM2E2ZGViNzNmN2Y4ZDQ0MTk5Y2Y2OTk2M2M2ZTQ0ZmVkMDUzNWYwMGVmZjBh" alt="Apple Watch Series 10">
+            <div class="product-details">
+                <h3>Apple Watch Series 10 GPS 46 mm Jet Black Aluminium Case with Black Sport Band</h3>
+                <p>₹49,900</p>
+            </div>
+            <div class="product-actions">
+                <button class="wishlist-btn" onclick="addToWishlist('Apple Watch Series 10', '₹49,900', 'https://www.reliancedigital.in/medias/Apple-Watch-Series-10-494423153-i-1-1200Wx1200H-300Wx300H?context=bWFzdGVyfGltYWdlc3wyODI3MXxpbWFnZS9qcGVnfGltYWdlcy9oMzgvaGE4LzEwMTk1MTQ2MDE0NzUwLmpwZ3wzMmQxYzM2YTQ0NWUxOWVkY2ZiM2E2ZGViNzNmN2Y4ZDQ0MTk5Y2Y2OTk2M2M2ZTQ0ZmVkMDUzNWYwMGVmZjBh')"><i class="fas fa-heart"></i> Wishlist</button>
+                <button class="cart-btn" onclick="addToCart('Apple Watch Series 10', '₹49,900', 'https://www.reliancedigital.in/medias/Apple-Watch-Series-10-494423153-i-1-1200Wx1200H-300Wx300H?context=bWFzdGVyfGltYWdlc3wyODI3MXxpbWFnZS9qcGVnfGltYWdlcy9oMzgvaGE4LzEwMTk1MTQ2MDE0NzUwLmpwZ3wzMmQxYzM2YTQ0NWUxOWVkY2ZiM2E2ZGViNzNmN2Y4ZDQ0MTk5Y2Y2OTk2M2M2ZTQ0ZmVkMDUzNWYwMGVmZjBh')"><i class="fas fa-shopping-bag"></i> Add to Bag</button>
+            </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="card">
+            <img src="https://www.reliancedigital.in/medias/Samsung-Ultra-Watch7-Smartwatch-494421976-i-1-1200Wx1200H-300Wx300H?context=bWFzdGVyfGltYWdlc3w3OTIwNHxpbWFnZS9qcGVnfGltYWdlcy9oNzUvaDM4LzEwMTcyNzk3NzQ3MjMwLmpwZ3xmNmFiYTAyOWMxZGI1MWZkNzcxYWE3NmFkOTVmODkwODJlOTQ4MzQzNmU3YzZmNGE3MDRhMDYyMTUwMmM2OWJh" alt="Samsung Galaxy Watch Ultra">
+            <div class="product-details">
+                <h3>Samsung Galaxy Watch Ultra Smart Watch, Upto 100 H battery, 3nm Processor, Dual GPS</h3>
+                <p>₹51,999</p>
+            </div>
+            <div class="product-actions">
+                <button class="wishlist-btn" onclick="addToWishlist('Samsung Galaxy Watch Ultra', '₹51,999', 'https://www.reliancedigital.in/medias/Samsung-Ultra-Watch7-Smartwatch-494421976-i-1-1200Wx1200H-300Wx300H?context=bWFzdGVyfGltYWdlc3w3OTIwNHxpbWFnZS9qcGVnfGltYWdlcy9oNzUvaDM4LzEwMTcyNzk3NzQ3MjMwLmpwZ3xmNmFiYTAyOWMxZGI1MWZkNzcxYWE3NmFkOTVmODkwODJlOTQ4MzQzNmU3YzZmNGE3MDRhMDYyMTUwMmM2OWJh')"><i class="fas fa-heart"></i> Wishlist</button>
+                <button class="cart-btn" onclick="addToCart('Samsung Galaxy Watch Ultra', '₹51,999', 'https://www.reliancedigital.in/medias/Samsung-Ultra-Watch7-Smartwatch-494421976-i-1-1200Wx1200H-300Wx300H?context=bWFzdGVyfGltYWdlc3w3OTIwNHxpbWFnZS9qcGVnfGltYWdlcy9oNzUvaDM4LzEwMTcyNzk3NzQ3MjMwLmpwZ3xmNmFiYTAyOWMxZGI1MWZkNzcxYWE3NmFkOTVmODkwODJlOTQ4MzQzNmU3YzZmNGE3MDRhMDYyMTUwMmM2OWJh')"><i class="fas fa-shopping-bag"></i> Add to Bag</button>
+            </div>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="card">
+            <img src="https://www.reliancedigital.in/medias/Google-Pixel-Watch-3-Smartwatch-494422710-i-1-1200Wx1200H?context=bWFzdGVyfGltYWdlc3wxMjg1NzR8aW1hZ2UvanBlZ3xpbWFnZXMvaGVhL2gzNS8xMDIxMDc1MTE4NDkyNi5qcGd8MTdiNzAxMmE1ZjhkOTNkN2Y2YzRhNzZlM2I4ZDBmZmRiNmVhNGMyNTg2NTk4ZTY5YzVlZmJiNmNmYmEwNTNkZg" alt="Google Pixel Watch 3">
+            <div class="product-details">
+                <h3>Google Pixel Watch 3 45 mm Smartwatch, Black Aluminum Case, Obsidian Active Band</h3>
+                <p>₹41,999</p>
+            </div>
+            <div class="product-actions">
+                <button class="wishlist-btn" onclick="addToWishlist('Google Pixel Watch 3', '₹41,999', 'https://www.reliancedigital.in/medias/Google-Pixel-Watch-3-Smartwatch-494422710-i-1-1200Wx1200H?context=bWFzdGVyfGltYWdlc3wxMjg1NzR8aW1hZ2UvanBlZ3xpbWFnZXMvaGVhL2gzNS8xMDIxMDc1MTE4NDkyNi5qcGd8MTdiNzAxMmE1ZjhkOTNkN2Y2YzRhNzZlM2I4ZDBmZmRiNmVhNGMyNTg2NTk4ZTY5YzVlZmJiNmNmYmEwNTNkZg')"><i class="fas fa-heart"></i> Wishlist</button>
+                <button class="cart-btn" onclick="addToCart('Google Pixel Watch 3', '₹41,999', 'https://www.reliancedigital.in/medias/Google-Pixel-Watch-3-Smartwatch-494422710-i-1-1200Wx1200H?context=bWFzdGVyfGltYWdlc3wxMjg1NzR8aW1hZ2UvanBlZ3xpbWFnZXMvaGVhL2gzNS8xMDIxMDc1MTE4NDkyNi5qcGd8MTdiNzAxMmE1ZjhkOTNkN2Y2YzRhNzZlM2I4ZDBmZmRiNmVhNGMyNTg2NTk4ZTY5YzVlZmJiNmNmYmEwNTNkZg')"><i class="fas fa-shopping-bag"></i> Add to Bag</button>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+    </main>
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-column">
+                <h3>Product Categories</h3>
+                <ul>
+                    <li><a href="clothing.html">Clothing</a></li>
+                    <li><a href="electronics.html">Smartphones</a></li>
+                    <li><a href="electronics.html">Laptops</a></li>
+                    <li><a href="electronics.html">Cameras</a></li>
+                    <li><a href="electronics.html">Televisions</a></li>
+                    <li><a href="electronics.html">Air Conditioners</a></li>
+                    <li><a href="electronics.html">Refrigerators</a></li>
+                    <li><a href="#">Kitchen Appliances</a></li>
+                    <li><a href="#">Accessories</a></li>
+                    <li><a href="#">Personal Care</a></li>
+                    <li><a href="electronics.html">Smartwatches</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Site Info</h3>
+                <ul>
+                    <li><a href="#">About GrabMart</a></li>
+                    <li><a href="#">Customer Service</a></li>
+                    <li><a href="#">Gift Cards</a></li>
+                    <li><a href="#">Corporate Enquiries</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Policies</h3>
+                <ul>
+                    <li><a href="#">Terms of Use</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Return Policy</a></li>
+                    <li><a href="#">Shipping Policy</a></li>
+                    <li><a href="#">E-waste Policy</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Resource Centre</h3>
+                <ul>
+                    <li><a href="#">Product Reviews</a></li>
+                    <li><a href="#">Buying Guides</a></li>
+                    <li><a href="#">How Tos</a></li>
+                    <li><a href="#">Featured Stories</a></li>
+                    <li><a href="#">Events & Happenings</a></li>
+                    <li><a href="#">Nearest Store</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Follow Us</h3>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 GrabMart. All Rights Reserved.</p>
+            <p>Product prices, offers, and availability are subject to change without notice.</p>
+        </div>
+    </footer>
+    
+    
+
+    <script src="js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home & Kitchen - GrabMart</title>
+    <link rel="stylesheet" type="text/css" href="css/wear.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <nav class="navbar">
+            <div class="navbar-brand">
+                <h1>GrabMart</h1>
+            </div>
+            <div class="navbar-search">
+                <input type="text" placeholder="Search for home & kitchen items..." id="search-bar">
+            </div>
+            <div class="navbar-icons">
+                <div class="wishlist">
+                    <a href="wishlist.html">
+                        <span>Wishlist</span>
+                        <i class="fas fa-heart"></i>
+                    </a>
+                </div>
+                <div class="divider">|</div>
+                <div class="cart">
+                    <a href="cart.html">
+                        <span>Cart</span>
+                        <i class="fas fa-shopping-cart"></i>
+                    </a>
+                </div>
+                <div class="divider">|</div>
+                <div class="login">
+                    <a href="login.html">
+                        <span>Login</span>
+                        <i class="fas fa-user"></i>
+                    </a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Home & Kitchen Section -->
+    <section class="product-grid">
+        <h2>Home & Kitchen</h2>
+        <div class="grid">
+            <!-- Product Cards (similar to electronics but for home/kitchen) -->
+            <div class="product-card">
+                <img src="https://judge.ttkprestige.com/media/catalog/product/1/9/1925-50111-IMG1.jpg" alt="Mixer Grinder">
+                <h3>Mixer Grinder</h3>
+                <p>₹3,499</p>
+                <div class="actions">
+                    <button class="wishlist-btn" onclick="addToWishlist('Mixer Grinder', '₹3,499', 'https://judge.ttkprestige.com/media/catalog/product/1/9/1925-50111-IMG1.jpg')">
+                        <i class="fas fa-heart"></i> Wishlist
+                    </button>
+                    <button class="cart-btn" onclick="addToCart('Mixer Grinder', '₹3,499', 'https://judge.ttkprestige.com/media/catalog/product/1/9/1925-50111-IMG1.jpg')">
+                        <i class="fas fa-shopping-bag"></i> Add to Cart
+                    </button>
+                </div>
+            </div>
+            <div class="product-card">
+                <img src="https://images.meesho.com/images/products/273758574/ppbip_512.webp" alt="Steel Blade Chopper">
+                <h3>Steel Blade Chopper</h3>
+                <p>₹139</p>
+                <div class="actions">
+                    <button class="wishlist-btn" onclick="addToWishlist('Steel Blade Chopper', '₹139', 'https://images.meesho.com/images/products/273758574/ppbip_512.webp')">
+                        <i class="fas fa-heart"></i> Wishlist
+                    </button>
+                    <button class="cart-btn" onclick="addToCart('Steel Blade Chopper', '₹139', 'https://images.meesho.com/images/products/273758574/ppbip_512.webp')">
+                        <i class="fas fa-shopping-bag"></i> Add to Cart
+                    </button>
+                </div>
+            </div>
+            
+            <div class="product-card">
+                <img src="https://images.meesho.com/images/products/191818069/8fzg8_512.webp" alt="Steel Oil Dispenser">
+                <h3>Steel Oil Dispenser</h3>
+                <p>₹350</p>
+                <div class="actions">
+                    <button class="wishlist-btn" onclick="addToWishlist('Steel Oil Dispenser', '₹350', 'https://images.meesho.com/images/products/191818069/8fzg8_512.webp')">
+                        <i class="fas fa-heart"></i> Wishlist
+                    </button>
+                    <button class="cart-btn" onclick="addToCart('Steel Oil Dispenser', '₹350', 'https://images.meesho.com/images/products/191818069/8fzg8_512.webp')">
+                        <i class="fas fa-shopping-bag"></i> Add to Cart
+                    </button>
+                </div>
+            </div>
+            
+            <div class="product-card">
+                <img src="https://images.meesho.com/images/products/123371986/d1xct_512.webp" alt="Silicon Spatula Set">
+                <h3>Silicon Spatula Set</h3>
+                <p>₹323</p>
+                <div class="actions">
+                    <button class="wishlist-btn" onclick="addToWishlist('Silicon Spatula Set', '₹323', 'https://images.meesho.com/images/products/123371986/d1xct_512.webp')">
+                        <i class="fas fa-heart"></i> Wishlist
+                    </button>
+                    <button class="cart-btn" onclick="addToCart('Silicon Spatula Set', '₹323', 'https://images.meesho.com/images/products/123371986/d1xct_512.webp')">
+                        <i class="fas fa-shopping-bag"></i> Add to Cart
+                    </button>
+                </div>
+            </div>
+            
+            <div class="product-card">
+                <img src="https://judge.ttkprestige.com/media/catalog/product/3/7/37279-IMG1.jpg" alt="Non-Stick Fry Pan">
+                <h3>Non-Stick Fry Pan</h3>
+                <p>₹470</p>
+                <div class="actions">
+                    <button class="wishlist-btn" onclick="addToWishlist('Non-Stick Fry Pan', '₹470', 'https://judge.ttkprestige.com/media/catalog/product/3/7/37279-IMG1.jpg')">
+                        <i class="fas fa-heart"></i> Wishlist
+                    </button>
+                    <button class="cart-btn" onclick="addToCart('Non-Stick Fry Pan', '₹470', 'https://judge.ttkprestige.com/media/catalog/product/3/7/37279-IMG1.jpg')">
+                        <i class="fas fa-shopping-bag"></i> Add to Cart
+                    </button>
+                </div>
+            </div>
+            
+            <div class="product-card">
+                <img src="https://images.meesho.com/images/products/380663232/ufigu_512.webp" alt="Glass Jar for Kitchen">
+                <h3>Glass Jar for Kitchen</h3>
+                <p>₹713</p>
+                <div class="actions">
+                    <button class="wishlist-btn" onclick="addToWishlist('Glass Jar for Kitchen', '₹713', 'https://images.meesho.com/images/products/380663232/ufigu_512.webp')">
+                        <i class="fas fa-heart"></i> Wishlist
+                    </button>
+                    <button class="cart-btn" onclick="addToCart('Glass Jar for Kitchen', '₹713', 'https://images.meesho.com/images/products/380663232/ufigu_512.webp')">
+                        <i class="fas fa-shopping-bag"></i> Add to Cart
+                    </button>
+                </div>
+            </div>
+            
+            <div class="product-card">
+                <img src="https://www.jiomart.com/images/product/original/rvmeaby3so/naayaab-craft-trendy-luxury-craft-pakka-sheesham-wood-bamboo-cutting-board-with-handle-chopping-board-for-kitchen-cutting-board-for-kitchen-vegetable-wooden-chopping-board-for-kitchen-size-32-x-22-x-2cm-product-images-orvmeaby3so-p602474237-0-202306191508.jpg?im=Resize=(420,420)" alt="Bamboo Cutting Board">
+                <h3>Bamboo Cutting Board</h3>
+                <p>₹799</p>
+                <div class="actions">
+                    <button class="wishlist-btn" onclick="addToWishlist('Bamboo Cutting Board', '₹799', 'https://www.jiomart.com/images/product/original/rvmeaby3so/naayaab-craft-trendy-luxury-craft-pakka-sheesham-wood-bamboo-cutting-board-with-handle-chopping-board-for-kitchen-cutting-board-for-kitchen-vegetable-wooden-chopping-board-for-kitchen-size-32-x-22-x-2cm-product-images-orvmeaby3so-p602474237-0-202306191508.jpg?im=Resize=(420,420)')">
+                        <i class="fas fa-heart"></i> Wishlist
+                    </button>
+                    <button class="cart-btn" onclick="addToCart('Bamboo Cutting Board', '₹799', 'https://www.jiomart.com/images/product/original/rvmeaby3so/naayaab-craft-trendy-luxury-craft-pakka-sheesham-wood-bamboo-cutting-board-with-handle-chopping-board-for-kitchen-cutting-board-for-kitchen-vegetable-wooden-chopping-board-for-kitchen-size-32-x-22-x-2cm-product-images-orvmeaby3so-p602474237-0-202306191508.jpg?im=Resize=(420,420)')">
+                        <i class="fas fa-shopping-bag"></i> Add to Cart
+                    </button>
+                </div>
+            </div>
+            
+            <div class="product-card">
+                <img src="https://5.imimg.com/data5/ECOM/Default/2024/11/462976124/PS/RS/CO/184740997/61e-419o25l-500x500.jpg" alt="Wine Rack Table Top Goblet Holder">
+                <h3>Wine Rack Table Top Goblet Holder</h3>
+                <p>₹799</p>
+                <div class="actions">
+                    <button class="wishlist-btn" onclick="addToWishlist('Wine Rack Table Top Goblet Holder', '₹799', 'https://5.imimg.com/data5/ECOM/Default/2024/11/462976124/PS/RS/CO/184740997/61e-419o25l-500x500.jpg')">
+                        <i class="fas fa-heart"></i> Wishlist
+                    </button>
+                    <button class="cart-btn" onclick="addToCart('Wine Rack Table Top Goblet Holder', '₹799', 'https://5.imimg.com/data5/ECOM/Default/2024/11/462976124/PS/RS/CO/184740997/61e-419o25l-500x500.jpg')">
+                        <i class="fas fa-shopping-bag"></i> Add to Cart
+                    </button>
+                </div>
+            </div>
+            
+            <div class="product-card">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSGcF3MYj4p31E2HljkdbU5CTo-13b_ungONQ&s" alt="White Plain Tea Cups Set">
+                <h3>White Plain Tea Cups Set</h3>
+                <p>₹199</p>
+                <div class="actions">
+                    <button class="wishlist-btn" onclick="addToWishlist('White Plain Tea Cups Set', '₹199', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSGcF3MYj4p31E2HljkdbU5CTo-13b_ungONQ&s')">
+                        <i class="fas fa-heart"></i> Wishlist
+                    </button>
+                    <button class="cart-btn" onclick="addToCart('White Plain Tea Cups Set', '₹199', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSGcF3MYj4p31E2HljkdbU5CTo-13b_ungONQ&s')">
+                        <i class="fas fa-shopping-bag"></i> Add to Cart
+                    </button>
+                </div>
+            </div>
+            
+            <div class="product-card">
+                <img src="https://images.meesho.com/images/products/111582472/friuf_512.jpg" alt="Wooden Pizza Pan">
+                <h3>Wooden Pizza Pan</h3>
+                <p>₹499</p>
+                <div class="actions">
+                    <button class="wishlist-btn" onclick="addToWishlist('Wooden Pizza Pan', '₹499', 'https://images.meesho.com/images/products/111582472/friuf_512.jpg')">
+                        <i class="fas fa-heart"></i> Wishlist
+                    </button>
+                    <button class="cart-btn" onclick="addToCart('Wooden Pizza Pan', '₹499', 'https://images.meesho.com/images/products/111582472/friuf_512.jpg')">
+                        <i class="fas fa-shopping-bag"></i> Add to Cart
+                    </button>
+                </div>
+            </div>
+            
+            <div class="product-card">
+                <img src="https://rukminim2.flixcart.com/image/850/1000/xif0q/plate-tray-dish/b/f/d/wooden-crisscross-rectangle-serving-tray-set-for-home-kitchen-original-imagrzzhzn6ypxpj.jpeg?q=20&crop=false" alt="Serving Tray">
+                <h3>Serving Tray</h3>
+                <p>₹340</p>
+                <div class="actions">
+                    <button class="wishlist-btn" onclick="addToWishlist('Serving Tray', '₹340', 'https://rukminim2.flixcart.com/image/850/1000/xif0q/plate-tray-dish/b/f/d/wooden-crisscross-rectangle-serving-tray-set-for-home-kitchen-original-imagrzzhzn6ypxpj.jpeg?q=20&crop=false')">
+                        <i class="fas fa-heart"></i> Wishlist
+                    </button>
+                    <button class="cart-btn" onclick="addToCart('Serving Tray', '₹340', 'https://rukminim2.flixcart.com/image/850/1000/xif0q/plate-tray-dish/b/f/d/wooden-crisscross-rectangle-serving-tray-set-for-home-kitchen-original-imagrzzhzn6ypxpj.jpeg?q=20&crop=false')">
+                        <i class="fas fa-shopping-bag"></i> Add to Cart
+                    </button>
+                </div>
+            </div>
+            
+            <div class="product-card">
+                <img src="https://m.media-amazon.com/images/I/81FEved0L8L._AC_UF894,1000_QL80_.jpg" alt="Lushomes Table Mat, dining table mat, kitchen mat">
+                <h3>Lushomes Table Mat, dining table mat, kitchen mat</h3>
+                <p>₹635</p>
+                <div class="actions">
+                    <button class="wishlist-btn" onclick="addToWishlist('Lushomes Table Mat', '₹635', 'https://m.media-amazon.com/images/I/81FEved0L8L._AC_UF894,1000_QL80_.jpg')">
+                        <i class="fas fa-heart"></i> Wishlist
+                    </button>
+                    <button class="cart-btn" onclick="addToCart('Lushomes Table Mat', '₹635', 'https://m.media-amazon.com/images/I/81FEved0L8L._AC_UF894,1000_QL80_.jpg')">
+                        <i class="fas fa-shopping-bag"></i> Add to Cart
+                    </button>
+                </div>
+            </div>
+            
+            <div class="product-card">
+                <img src="https://www.sphinx.co.in/wp-content/uploads/2024/04/Sphinx-iridescent-glass-vase-1.jpg" alt="Glass Vase">
+                <h3>Glass Vase</h3>
+                <p>₹560</p>
+                <div class="actions">
+                    <button class="wishlist-btn" onclick="addToWishlist('Glass Vase', '₹560', 'https://www.sphinx.co.in/wp-content/uploads/2024/04/Sphinx-iridescent-glass-vase-1.jpg')">
+                        <i class="fas fa-heart"></i> Wishlist
+                    </button>
+                    <button class="cart-btn" onclick="addToCart('Glass Vase', '₹560', 'https://www.sphinx.co.in/wp-content/uploads/2024/04/Sphinx-iridescent-glass-vase-1.jpg')">
+                        <i class="fas fa-shopping-bag"></i> Add to Cart
+                    </button>
+                </div>
+            </div>
+            
+            <div class="product-card">
+                <img src="https://m.media-amazon.com/images/I/71brAT3N3sL._AC_UF894,1000_QL80_.jpg" alt="Dream Catcher">
+                <h3>Dream Catcher</h3>
+                <p>₹230</p>
+                <div class="actions">
+                    <button class="wishlist-btn" onclick="addToWishlist('Dream Catcher', '₹230', 'https://m.media-amazon.com/images/I/71brAT3N3sL._AC_UF894,1000_QL80_.jpg')">
+                        <i class="fas fa-heart"></i> Wishlist
+                    </button>
+                    <button class="cart-btn" onclick="addToCart('Dream Catcher', '₹230', 'https://m.media-amazon.com/images/I/71brAT3N3sL._AC_UF894,1000_QL80_.jpg')">
+                        <i class="fas fa-shopping-bag"></i> Add to Cart
+                    </button>
+                </div>
+            </div>
+            
+            <div class="product-card">
+                <img src="https://ii1.pepperfry.com/media/catalog/product/m/e/1100x1210/metallic-musician--set-of-3--wall-hanging-in-multicolour-by-craft-tree-metallic-musician--set-of-3---pphfrh.jpg" alt="Wall Hanging">
+                <h3>Wall Hanging</h3>
+                <p>₹799</p>
+                <div class="actions">
+                    <button class="wishlist-btn" onclick="addToWishlist('Wall Hanging', '₹799', 'https://ii1.pepperfry.com/media/catalog/product/m/e/1100x1210/metallic-musician--set-of-3--wall-hanging-in-multicolour-by-craft-tree-metallic-musician--set-of-3---pphfrh.jpg')">
+                        <i class="fas fa-heart"></i> Wishlist
+                    </button>
+                    <button class="cart-btn" onclick="addToCart('Wall Hanging', '₹799', 'https://ii1.pepperfry.com/media/catalog/product/m/e/1100x1210/metallic-musician--set-of-3--wall-hanging-in-multicolour-by-craft-tree-metallic-musician--set-of-3---pphfrh.jpg')">
+                        <i class="fas fa-shopping-bag"></i> Add to Cart
+                    </button>
+                </div>
+            </div>
+            
+            <div class="product-card">
+                <img src="https://media-us.landmarkshops.in/cdn-cgi/image/h=750,w=750,q=85,fit=cover/homecentre/1000013707248-1000013707247_01-2100.jpg" alt="Rose Scented Pillar Candle">
+                <h3>Rose Scented Pillar Candle</h3>
+                <p>₹149</p>
+                <div class="actions">
+                    <button class="wishlist-btn" onclick="addToWishlist('Rose Scented Pillar Candle', '₹149', 'https://media-us.landmarkshops.in/cdn-cgi/image/h=750,w=750,q=85,fit=cover/homecentre/1000013707248-1000013707247_01-2100.jpg')">
+                        <i class="fas fa-heart"></i> Wishlist
+                    </button>
+                    <button class="cart-btn" onclick="addToCart('Rose Scented Pillar Candle', '₹149', 'https://media-us.landmarkshops.in/cdn-cgi/image/h=750,w=750,q=85,fit=cover/homecentre/1000013707248-1000013707247_01-2100.jpg')">
+                        <i class="fas fa-shopping-bag"></i> Add to Cart
+                    </button>
+                </div>
+            </div>
+            
+            <div class="product-card">
+                <img src="https://www.ikea.com/in/en/images/products/kuttersmycke-wall-clock-black__1061215_pe850324_s5.jpg?f=s" alt="Designer Wall Clock">
+                <h3>Designer Wall Clock</h3>
+                <p>₹299</p>
+                <div class="actions">
+                    <button class="wishlist-btn" onclick="addToWishlist('Designer Wall Clock', '₹299', 'https://www.ikea.com/in/en/images/products/kuttersmycke-wall-clock-black__1061215_pe850324_s5.jpg?f=s')">
+                        <i class="fas fa-heart"></i> Wishlist
+                    </button>
+                    <button class="cart-btn" onclick="addToCart('Designer Wall Clock', '₹299', 'https://www.ikea.com/in/en/images/products/kuttersmycke-wall-clock-black__1061215_pe850324_s5.jpg?f=s')">
+                        <i class="fas fa-shopping-bag"></i> Add to Cart
+                    </button>
+                </div>
+            </div>
+            
+            <div class="product-card">
+                <img src="https://nurserylive.com/cdn/shop/products/nurserylive-combo-packs-plants-low-maintenance-indoor-plants-for-home-decoration-16969011855500_600x.jpg?v=1634223451" alt="Plants">
+                <h3>Plants</h3>
+                <p>₹179</p>
+                <div class="actions">
+                    <button class="wishlist-btn" onclick="addToWishlist('Plants', '₹179', 'https://nurserylive.com/cdn/shop/products/nurserylive-combo-packs-plants-low-maintenance-indoor-plants-for-home-decoration-16969011855500_600x.jpg?v=1634223451')">
+                        <i class="fas fa-heart"></i> Wishlist
+                    </button>
+                    <button class="cart-btn" onclick="addToCart('Plants', '₹179', 'https://nurserylive.com/cdn/shop/products/nurserylive-combo-packs-plants-low-maintenance-indoor-plants-for-home-decoration-16969011855500_600x.jpg?v=1634223451')">
+                        <i class="fas fa-shopping-bag"></i> Add to Cart
+                    </button>
+                </div>
+            </div>
+            
+            <div class="product-card">
+                <img src="https://rukminim2.flixcart.com/image/850/1000/l3es13k0/showpiece-figurine/k/z/a/5-16-black-green-shading-buddha-with-two-plant-32-flipkart-original-imagejgghpawyxzx.jpeg?q=20&crop=false" alt="Buddha Statue">
+                <h3>Buddha Statue</h3>
+                <p>₹250</p>
+                <div class="actions">
+                    <button class="wishlist-btn" onclick="addToWishlist('Buddha Statue', '₹250', 'https://rukminim2.flixcart.com/image/850/1000/l3es13k0/showpiece-figurine/k/z/a/5-16-black-green-shading-buddha-with-two-plant-32-flipkart-original-imagejgghpawyxzx.jpeg?q=20&crop=false')">
+                        <i class="fas fa-heart"></i> Wishlist
+                    </button>
+                    <button class="cart-btn" onclick="addToCart('Buddha Statue', '₹250', 'https://rukminim2.flixcart.com/image/850/1000/l3es13k0/showpiece-figurine/k/z/a/5-16-black-green-shading-buddha-with-two-plant-32-flipkart-original-imagejgghpawyxzx.jpeg?q=20&crop=false')">
+                        <i class="fas fa-shopping-bag"></i> Add to Cart
+                    </button>
+                </div>
+            </div>
+            
+            <div class="product-card">
+                <img src="https://m.media-amazon.com/images/I/61z-SK9rT5L._AC_UF894,1000_QL80_.jpg" alt="Monk Set of 4 Statue">
+                <h3>Monk Set of 4 Statue</h3>
+                <p>₹499</p>
+                <div class="actions">
+                    <button class="wishlist-btn" onclick="addToWishlist('Monk Set of 4 Statue', '₹499', 'https://m.media-amazon.com/images/I/61z-SK9rT5L._AC_UF894,1000_QL80_.jpg')">
+                        <i class="fas fa-heart"></i> Wishlist
+                    </button>
+                    <button class="cart-btn" onclick="addToCart('Monk Set of 4 Statue', '₹499', 'https://m.media-amazon.com/images/I/61z-SK9rT5L._AC_UF894,1000_QL80_.jpg')">
+                        <i class="fas fa-shopping-bag"></i> Add to Cart
+                    </button>
+                </div>
+            </div>
+            
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 GrabMart. All rights reserved.</p>
+    </footer>
+    <script src="js/script.js"></script>
+
+</body>
+</html>

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Books - GrabMart</title>
-    <link rel="stylesheet" type="text/css" href="css/electronic.css">
+    <link rel="stylesheet" type="text/css" href="css/wear.css">
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
@@ -46,25 +46,43 @@
 
     <!-- Books Section -->
     <section class="product-grid">
-        <h2>Books</h2>
+        <h2>Book's</h2>
         <div class="grid">
             <!-- Product Cards (25 total) -->
             <div class="product-card">
-                <img src="https://m.media-amazon.com/images/I/51-2W-52nrL._AC_UF1000,1000_QL80_.jpg" alt="Book 1">
-                <h3>The Great Adventure</h3>
-                <p>₹399</p>
+                <img src="https://5.imimg.com/data5/SELLER/Default/2024/1/380325140/FU/HN/QS/189776554/a-good-girls-guide-to-murder-novel-book-250x250.jpg" alt="Book 4">
+                <h3>A Good Girl Guide's to Murder</h3>
+                <p>₹499</p>
                 <div class="actions">
-                    <button class="wishlist-btn"><i class="fas fa-heart"></i> Wishlist</button>
-                    <button class="cart-btn"><i class="fas fa-shopping-bag"></i> Add to Cart</button>
+                    <button class="wishlist-btn" onclick="addToWishlist('A Good Girl Guide\'s to Murder', '₹499', 'https://5.imimg.com/data5/SELLER/Default/2024/1/380325140/FU/HN/QS/189776554/a-good-girls-guide-to-murder-novel-book-250x250.jpg')">
+                        <i class="fas fa-heart"></i> Wishlist
+                    </button>
+                    <button class="cart-btn" onclick="addToCart('A Good Girl Guide\'s to Murder', '₹499', 'https://5.imimg.com/data5/SELLER/Default/2024/1/380325140/FU/HN/QS/189776554/a-good-girls-guide-to-murder-novel-book-250x250.jpg')">
+                        <i class="fas fa-shopping-bag"></i> Add to Cart
+                    </button>
                 </div>
             </div>
+            <div class="product-card">
+                <img src="https://www.madrasshoppe.com/212167-home_default/twisted-hate-the-tiktok-sensation-fall-into-a-world-of-addictive-romance-a-huang.jpg" alt="Book 6">
+                <h3>Twisted Hate</h3>
+                <p>₹249</p>
+                <div class="actions">
+                    <button class="wishlist-btn" onclick="addToWishlist('Twisted Hate', '₹249', 'https://www.madrasshoppe.com/212167-home_default/twisted-hate-the-tiktok-sensation-fall-into-a-world-of-addictive-romance-a-huang.jpg')">
+                        <i class="fas fa-heart"></i> Wishlist
+                    </button>
+                    <button class="cart-btn" onclick="addToCart('Twisted Hate', '₹249', 'https://www.madrasshoppe.com/212167-home_default/twisted-hate-the-tiktok-sensation-fall-into-a-world-of-addictive-romance-a-huang.jpg')">
+                        <i class="fas fa-shopping-bag"></i> Add to Cart
+                    </button>
+                </div>
+            </div>
+            
             <div class="product-card">
                 <img src="https://bookbins.in/wp-content/uploads/2024/12/The-Fine-Print-Lauren-Asher-Book-Informative-Buy-Online-Bookbins-01.jpg" alt="Book 2">
                 <h3>The Fine Print</h3>
                 <p>₹299</p>
                 <div class="actions">
-                    <button class="wishlist-btn"><i class="fas fa-heart"></i> Wishlist</button>
-                    <button class="cart-btn"><i class="fas fa-shopping-bag"></i> Add to Cart</button>
+                    <button class="wishlist-btn" onclick="addToWishlist('The Fine Print', '₹299', 'https://bookbins.in/wp-content/uploads/2024/12/The-Fine-Print-Lauren-Asher-Book-Informative-Buy-Online-Bookbins-01.jpg')"><i class="fas fa-heart"></i> Wishlist</button>
+                    <button class="cart-btn" onclick="addToCart('The Fine Print', '₹299', 'https://bookbins.in/wp-content/uploads/2024/12/The-Fine-Print-Lauren-Asher-Book-Informative-Buy-Online-Bookbins-01.jpg')"><i class="fas fa-shopping-bag"></i> Add to Cart</button>
                 </div>
             </div>
             <div class="product-card">
@@ -72,73 +90,270 @@
                 <h3>Verity</h3>
                 <p>₹599</p>
                 <div class="actions">
-                    <button class="wishlist-btn"><i class="fas fa-heart"></i> Wishlist</button>
-                    <button class="cart-btn"><i class="fas fa-shopping-bag"></i> Add to Cart</button>
+                    <button class="wishlist-btn" onclick="addToWishlist('Verity', '₹599', 'https://rukminim2.flixcart.com/image/850/1000/xif0q/regionalbooks/1/k/q/verity-original-imaghwx2mfdbfzfw.jpeg?q=90&crop=false')"><i class="fas fa-heart"></i> Wishlist</button>
+                    <button class="cart-btn" onclick="addToCart('Verity', '₹599', 'https://rukminim2.flixcart.com/image/850/1000/xif0q/regionalbooks/1/k/q/verity-original-imaghwx2mfdbfzfw.jpeg?q=90&crop=false')"><i class="fas fa-shopping-bag"></i> Add to Cart</button>
                 </div>
             </div>
-            <div class="product-card">
-                <img src="https://rukminim1.flixcart.com/image/300/300/xif0q/book/q/a/y/warmth-original-imah7392zcjf9htg.jpeg" alt="Book 4">
-                <h3>Warmth</h3>
-                <p>₹499</p>
-                <div class="actions">
-                    <button class="wishlist-btn"><i class="fas fa-heart"></i> Wishlist</button>
-                    <button class="cart-btn"><i class="fas fa-shopping-bag"></i> Add to Cart</button>
-                </div>
-            </div>
+            
             <div class="product-card">
                 <img src="https://m.media-amazon.com/images/I/51HqsTI7mcL._SR290,290_.jpg" alt="Book 5">
                 <h3>Living the Artist Way</h3>
                 <p>₹399</p>
                 <div class="actions">
-                    <button class="wishlist-btn"><i class="fas fa-heart"></i> Wishlist</button>
-                    <button class="cart-btn"><i class="fas fa-shopping-bag"></i> Add to Cart</button>
+                    <button class="wishlist-btn" onclick="addToWishlist('Living the Artist Way', '₹399', 'https://m.media-amazon.com/images/I/51HqsTI7mcL._SR290,290_.jpg')"><i class="fas fa-heart"></i> Wishlist</button>
+                    <button class="cart-btn" onclick="addToCart('Living the Artist Way', '₹399', 'https://m.media-amazon.com/images/I/51HqsTI7mcL._SR290,290_.jpg')"><i class="fas fa-shopping-bag"></i> Add to Cart</button>
                 </div>
             </div>
+            <div class="product-card">
+                <img src="https://m.media-amazon.com/images/I/71U3cVLJSfL._UX250_.jpg" alt="Book 1">
+                <h3>The Great Adventure</h3>
+                <p>₹399</p>
+                <div class="actions">
+                    <button class="wishlist-btn" onclick="addToWishlist('The Great Adventure', '₹399', 'https://m.media-amazon.com/images/I/71U3cVLJSfL._UX250_.jpg')"><i class="fas fa-heart"></i> Wishlist</button>
+                    <button class="cart-btn" onclick="addToCart('The Great Adventure', '₹399', 'https://m.media-amazon.com/images/I/71U3cVLJSfL._UX250_.jpg')"><i class="fas fa-shopping-bag"></i> Add to Cart</button>
+                </div>
+            </div>
+            <div class="product-card">
+                <img src="https://m.media-amazon.com/images/I/61eWVzkcXFL._UX250_.jpg" alt="King of Wrath">
+                <h3>King of Wrath</h3>
+                <p>₹599</p>
+                <div class="actions">
+                    <button class="wishlist-btn" onclick="addToWishlist('King of Wrath', '₹599', 'https://m.media-amazon.com/images/I/61eWVzkcXFL._UX250_.jpg')">
+                        <i class="fas fa-heart"></i> Wishlist
+                    </button>
+                    <button class="cart-btn" onclick="addToCart('King of Wrath', '₹599', 'https://m.media-amazon.com/images/I/61eWVzkcXFL._UX250_.jpg')">
+                        <i class="fas fa-shopping-bag"></i> Add to Cart
+                    </button>
+                </div>
+            </div>
+            <div class="product-card">
+                <img src="https://www.vandegriftvoice.com/wp-content/uploads/2021/12/thehating-675x900.jpg" alt="The Hating Game">
+                <h3>The Hating Game</h3>
+                <p>₹299</p>
+                <div class="actions">
+                    <button class="wishlist-btn" onclick="addToWishlist('The Hating Game', '₹299', 'https://www.vandegriftvoice.com/wp-content/uploads/2021/12/thehating-675x900.jpg')">
+                        <i class="fas fa-heart"></i> Wishlist
+                    </button>
+                    <button class="cart-btn" onclick="addToCart('The Hating Game', '₹299', 'https://www.vandegriftvoice.com/wp-content/uploads/2021/12/thehating-675x900.jpg')">
+                        <i class="fas fa-shopping-bag"></i> Add to Cart
+                    </button>
+                </div>
+            </div>
+            <div class="product-card">
+                <img src="https://m.media-amazon.com/images/I/71NQA2hdyvL._AC_UF350,350_QL80_.jpg" alt="The Love Hypothesis">
+                <h3>The Love Hypothesis</h3>
+                <p>₹299</p>
+                <div class="actions">
+                    <button class="wishlist-btn" onclick="addToWishlist('The Love Hypothesis', '₹299', 'https://m.media-amazon.com/images/I/71NQA2hdyvL._AC_UF350,350_QL80_.jpg')">
+                        <i class="fas fa-heart"></i> Wishlist
+                    </button>
+                    <button class="cart-btn" onclick="addToCart('The Love Hypothesis', '₹299', 'https://m.media-amazon.com/images/I/71NQA2hdyvL._AC_UF350,350_QL80_.jpg')">
+                        <i class="fas fa-shopping-bag"></i> Add to Cart
+                    </button>
+                </div>
+            </div>
+            <div class="product-card">
+                <img src="https://m.media-amazon.com/images/I/713vO8R8lXL._AC_UF1000,1000_QL80_.jpg" alt="Outlander">
+                <h3>Outlander</h3>
+                <p>₹399</p>
+                <div class="actions">
+                    <button class="wishlist-btn" onclick="addToWishlist('Outlander', '₹399', 'https://m.media-amazon.com/images/I/713vO8R8lXL._AC_UF1000,1000_QL80_.jpg')">
+                        <i class="fas fa-heart"></i> Wishlist
+                    </button>
+                    <button class="cart-btn" onclick="addToCart('Outlander', '₹399', 'https://m.media-amazon.com/images/I/713vO8R8lXL._AC_UF1000,1000_QL80_.jpg')">
+                        <i class="fas fa-shopping-bag"></i> Add to Cart
+                    </button>
+                </div>
+            </div>
+            <div class="product-card">
+                <img src="https://m.media-amazon.com/images/I/71IyEiuhDYL._AC_UF350,350_QL80_.jpg" alt="Pride and Prejudice">
+                <h3>Pride and Prejudice</h3>
+                <p>₹499</p>
+                <div class="actions">
+                    <button class="wishlist-btn" onclick="addToWishlist('Pride and Prejudice', '₹499', 'https://m.media-amazon.com/images/I/71IyEiuhDYL._AC_UF350,350_QL80_.jpg')">
+                        <i class="fas fa-heart"></i> Wishlist
+                    </button>
+                    <button class="cart-btn" onclick="addToCart('Pride and Prejudice', '₹499', 'https://m.media-amazon.com/images/I/71IyEiuhDYL._AC_UF350,350_QL80_.jpg')">
+                        <i class="fas fa-shopping-bag"></i> Add to Cart
+                    </button>
+                </div>
+            </div>
+            <div class="product-card">
+                <img src="https://m.media-amazon.com/images/I/710fBod-ikL._AC_UC200,200_CACC,200,200_QL85_.jpg?aicid=community-reviews" alt="The Kiss Quotient">
+                <h3>The Kiss Quotient</h3>
+                <p>₹599</p>
+                <div class="actions">
+                    <button class="wishlist-btn" onclick="addToWishlist('The Kiss Quotient', '₹599', 'https://m.media-amazon.com/images/I/710fBod-ikL._AC_UC200,200_CACC,200,200_QL85_.jpg?aicid=community-reviews')">
+                        <i class="fas fa-heart"></i> Wishlist
+                    </button>
+                    <button class="cart-btn" onclick="addToCart('The Kiss Quotient', '₹599', 'https://m.media-amazon.com/images/I/710fBod-ikL._AC_UC200,200_CACC,200,200_QL85_.jpg?aicid=community-reviews')">
+                        <i class="fas fa-shopping-bag"></i> Add to Cart
+                    </button>
+                </div>
+            </div>
+            <div class="product-card">
+                <img src="https://m.media-amazon.com/images/I/71U6ihpqo8L._AC_UC200,200_CACC,200,200_QL85_.jpg?aicid=community-reviews" alt="The Notebook">
+                <h3>The Notebook</h3>
+                <p>₹199</p>
+                <div class="actions">
+                    <button class="wishlist-btn" onclick="addToWishlist('The Notebook', '₹199', 'https://m.media-amazon.com/images/I/71U6ihpqo8L._AC_UC200,200_CACC,200,200_QL85_.jpg?aicid=community-reviews')">
+                        <i class="fas fa-heart"></i> Wishlist
+                    </button>
+                    <button class="cart-btn" onclick="addToCart('The Notebook', '₹199', 'https://m.media-amazon.com/images/I/71U6ihpqo8L._AC_UC200,200_CACC,200,200_QL85_.jpg?aicid=community-reviews')">
+                        <i class="fas fa-shopping-bag"></i> Add to Cart
+                    </button>
+                </div>
+            </div>
+            
+            
+
+            <!-- Repeat similar blocks for other book items -->
             <div class="product-card">
                 <img src="https://m.media-amazon.com/images/I/710U9WNIC1L._AC_UF350,350_QL80_.jpg" alt="Book 6">
                 <h3>The Art of War</h3>
                 <p>₹249</p>
                 <div class="actions">
-                    <button class="wishlist-btn"><i class="fas fa-heart"></i> Wishlist</button>
-                    <button class="cart-btn"><i class="fas fa-shopping-bag"></i> Add to Cart</button>
-                </div>
-            </div>
-
-            <!-- Repeat similar blocks for other book items -->
-            <div class="product-card">
-                <img src="https://m.media-amazon.com/images/I/61eWVzkcXFL._UX250_.jpg" alt="Book 3">
-                <h3>King of Wrath</h3>
-                <p>₹599</p>
-                <div class="actions">
-                    <button class="wishlist-btn"><i class="fas fa-heart"></i> Wishlist</button>
-                    <button class="cart-btn"><i class="fas fa-shopping-bag"></i> Add to Cart</button>
+                    <button class="wishlist-btn" onclick="addToWishlist('The Art of War', '₹249', 'https://m.media-amazon.com/images/I/710U9WNIC1L._AC_UF350,350_QL80_.jpg')"><i class="fas fa-heart"></i> Wishlist</button>
+                    <button class="cart-btn" onclick="addToCart('The Art of War', '₹249', 'https://m.media-amazon.com/images/I/710U9WNIC1L._AC_UF350,350_QL80_.jpg')"><i class="fas fa-shopping-bag"></i> Add to Cart</button>
                 </div>
             </div>
             <div class="product-card">
-                <img src="https://m.media-amazon.com/images/I/511K7FYorbL._AC_UF350,350_QL80_.jpg" alt="Book 4">
-                <h3>A Good Girl Guide's to Murder</h3>
+                <img src="https://m.media-amazon.com/images/I/419%2BKhJ4zpL._SY200_QL15_.jpg" alt="Book 4">
+                <h3>Warmth</h3>
                 <p>₹499</p>
                 <div class="actions">
-                    <button class="wishlist-btn"><i class="fas fa-heart"></i> Wishlist</button>
-                    <button class="cart-btn"><i class="fas fa-shopping-bag"></i> Add to Cart</button>
+                    <button class="wishlist-btn" onclick="addToWishlist('Warmth', '₹499', 'https://rukminim1.flixcart.com/image/300/300/xif0q/book/q/a/y/warmth-original-imah7392zcjf9htg.jpeg')"><i class="fas fa-heart"></i> Wishlist</button>
+                    <button class="cart-btn" onclick="addToCart('Warmth', '₹499', 'https://rukminim1.flixcart.com/image/300/300/xif0q/book/q/a/y/warmth-original-imah7392zcjf9htg.jpeg')"><i class="fas fa-shopping-bag"></i> Add to Cart</button>
                 </div>
             </div>
             <div class="product-card">
-                <img src="https://m.media-amazon.com/images/I/51HqsTI7mcL._SR290,290_.jpg" alt="Book 5">
-                <h3>Living the Artist Way</h3>
-                <p>₹399</p>
+                <img src="https://m.media-amazon.com/images/I/71dzw8F3B+L._AC_UF1000,1000_QL80_.jpg" alt="Me Before You">
+                <h3>Me Before You</h3>
+                <p>₹499</p>
                 <div class="actions">
-                    <button class="wishlist-btn"><i class="fas fa-heart"></i> Wishlist</button>
-                    <button class="cart-btn"><i class="fas fa-shopping-bag"></i> Add to Cart</button>
+                    <button class="wishlist-btn" onclick="addToWishlist('Me Before You', '₹499', 'https://m.media-amazon.com/images/I/71dzw8F3B+L._AC_UF1000,1000_QL80_.jpg')">
+                        <i class="fas fa-heart"></i> Wishlist
+                    </button>
+                    <button class="cart-btn" onclick="addToCart('Me Before You', '₹499', 'https://m.media-amazon.com/images/I/71dzw8F3B+L._AC_UF1000,1000_QL80_.jpg')">
+                        <i class="fas fa-shopping-bag"></i> Add to Cart
+                    </button>
                 </div>
             </div>
             <div class="product-card">
-                <img src="https://m.media-amazon.com/images/I/61icebbrUrL._AC_UF350,350_QL80_.jpg" alt="Book 6">
-                <h3>Twisted Hate</h3>
-                <p>₹249</p>
+                <img src="https://rukminim2.flixcart.com/image/850/1000/kltryq80/book/0/6/w/the-boyfriend-project-original-imagyvfnhxzhnay9.jpeg?q=90&crop=false" alt="The Boyfriend Project">
+                <h3>The Boyfriend Project</h3>
+                <p>₹299</p>
                 <div class="actions">
-                    <button class="wishlist-btn"><i class="fas fa-heart"></i> Wishlist</button>
-                    <button class="cart-btn"><i class="fas fa-shopping-bag"></i> Add to Cart</button>
+                    <button class="wishlist-btn" onclick="addToWishlist('The Boyfriend Project', '₹299', 'https://rukminim2.flixcart.com/image/850/1000/kltryq80/book/0/6/w/the-boyfriend-project-original-imagyvfnhxzhnay9.jpeg?q=90&crop=false')">
+                        <i class="fas fa-heart"></i> Wishlist
+                    </button>
+                    <button class="cart-btn" onclick="addToCart('The Boyfriend Project', '₹299', 'https://rukminim2.flixcart.com/image/850/1000/kltryq80/book/0/6/w/the-boyfriend-project-original-imagyvfnhxzhnay9.jpeg?q=90&crop=false')">
+                        <i class="fas fa-shopping-bag"></i> Add to Cart
+                    </button>
+                </div>
+            </div>
+            <div class="product-card">
+                <img src="https://m.media-amazon.com/images/I/81G7IEFyHIL._UF1000,1000_QL80_.jpg" alt="Call Me By Your Name">
+                <h3>Call Me By Your Name</h3>
+                <p>₹499</p>
+                <div class="actions">
+                    <button class="wishlist-btn" onclick="addToWishlist('Call Me By Your Name', '₹499', 'https://m.media-amazon.com/images/I/81G7IEFyHIL._UF1000,1000_QL80_.jpg')">
+                        <i class="fas fa-heart"></i> Wishlist
+                    </button>
+                    <button class="cart-btn" onclick="addToCart('Call Me By Your Name', '₹499', 'https://m.media-amazon.com/images/I/81G7IEFyHIL._UF1000,1000_QL80_.jpg')">
+                        <i class="fas fa-shopping-bag"></i> Add to Cart
+                    </button>
+                </div>
+            </div>
+            <div class="product-card">
+                <img src="https://m.media-amazon.com/images/I/71XcHxGdl5L._UF1000,1000_QL80_.jpg" alt="The Hating Game">
+                <h3>The Hating Game</h3>
+                <p>₹294</p>
+                <div class="actions">
+                    <button class="wishlist-btn" onclick="addToWishlist('The Hating Game', '₹294', 'https://m.media-amazon.com/images/I/71XcHxGdl5L._UF1000,1000_QL80_.jpg')">
+                        <i class="fas fa-heart"></i> Wishlist
+                    </button>
+                    <button class="cart-btn" onclick="addToCart('The Hating Game', '₹294', 'https://m.media-amazon.com/images/I/71XcHxGdl5L._UF1000,1000_QL80_.jpg')">
+                        <i class="fas fa-shopping-bag"></i> Add to Cart
+                    </button>
+                </div>
+            </div>
+            <div class="product-card">
+                <img src="https://m.media-amazon.com/images/I/61KD6zCQi7L._AC_UF1000,1000_QL80_.jpg" alt="North and South">
+                <h3>North and South</h3>
+                <p>₹356</p>
+                <div class="actions">
+                    <button class="wishlist-btn" onclick="addToWishlist('North and South', '₹356', 'https://m.media-amazon.com/images/I/61KD6zCQi7L._AC_UF1000,1000_QL80_.jpg')">
+                        <i class="fas fa-heart"></i> Wishlist
+                    </button>
+                    <button class="cart-btn" onclick="addToCart('North and South', '₹356', 'https://m.media-amazon.com/images/I/61KD6zCQi7L._AC_UF1000,1000_QL80_.jpg')">
+                        <i class="fas fa-shopping-bag"></i> Add to Cart
+                    </button>
+                </div>
+            </div>
+            <div class="product-card">
+                <img src="https://m.media-amazon.com/images/I/712n+hhjX3L._AC_UF1000,1000_QL80_.jpg" alt="The Princess Bride">
+                <h3>The Princess Bride</h3>
+                <p>₹300</p>
+                <div class="actions">
+                    <button class="wishlist-btn" onclick="addToWishlist('The Princess Bride', '₹300', 'https://m.media-amazon.com/images/I/712n+hhjX3L._AC_UF1000,1000_QL80_.jpg')">
+                        <i class="fas fa-heart"></i> Wishlist
+                    </button>
+                    <button class="cart-btn" onclick="addToCart('The Princess Bride', '₹300', 'https://m.media-amazon.com/images/I/712n+hhjX3L._AC_UF1000,1000_QL80_.jpg')">
+                        <i class="fas fa-shopping-bag"></i> Add to Cart
+                    </button>
+                </div>
+            </div>
+            <div class="product-card">
+                <img src="https://m.media-amazon.com/images/I/61LQf6GWT4L._AC_UF1000,1000_QL80_.jpg" alt="Romeo and Juliet">
+                <h3>Romeo and Juliet</h3>
+                <p>₹354</p>
+                <div class="actions">
+                    <button class="wishlist-btn" onclick="addToWishlist('Romeo and Juliet', '₹354', 'https://m.media-amazon.com/images/I/61LQf6GWT4L._AC_UF1000,1000_QL80_.jpg')">
+                        <i class="fas fa-heart"></i> Wishlist
+                    </button>
+                    <button class="cart-btn" onclick="addToCart('Romeo and Juliet', '₹354', 'https://m.media-amazon.com/images/I/61LQf6GWT4L._AC_UF1000,1000_QL80_.jpg')">
+                        <i class="fas fa-shopping-bag"></i> Add to Cart
+                    </button>
+                </div>
+            </div>
+            <div class="product-card">
+                <img src="https://m.media-amazon.com/images/I/81DRbiDrKaL._AC_UF1000,1000_QL80_.jpg" alt="Beach Read">
+                <h3>Beach Read</h3>
+                <p>₹400</p>
+                <div class="actions">
+                    <button class="wishlist-btn" onclick="addToWishlist('Beach Read', '₹400', 'https://m.media-amazon.com/images/I/81DRbiDrKaL._AC_UF1000,1000_QL80_.jpg')">
+                        <i class="fas fa-heart"></i> Wishlist
+                    </button>
+                    <button class="cart-btn" onclick="addToCart('Beach Read', '₹400', 'https://m.media-amazon.com/images/I/81DRbiDrKaL._AC_UF1000,1000_QL80_.jpg')">
+                        <i class="fas fa-shopping-bag"></i> Add to Cart
+                    </button>
+                </div>
+            </div>
+            <div class="product-card">
+                <img src="https://m.media-amazon.com/images/I/712zD1rKTUL._AC_UF1000,1000_QL80_.jpg" alt="It Ends with Us">
+                <h3>It Ends with Us</h3>
+                <p>₹299</p>
+                <div class="actions">
+                    <button class="wishlist-btn" onclick="addToWishlist('It Ends with Us', '₹299', 'https://m.media-amazon.com/images/I/712zD1rKTUL._AC_UF1000,1000_QL80_.jpg')">
+                        <i class="fas fa-heart"></i> Wishlist
+                    </button>
+                    <button class="cart-btn" onclick="addToCart('It Ends with Us', '₹299', 'https://m.media-amazon.com/images/I/712zD1rKTUL._AC_UF1000,1000_QL80_.jpg')">
+                        <i class="fas fa-shopping-bag"></i> Add to Cart
+                    </button>
+                </div>
+            </div>
+            <div class="product-card">
+                <img src="https://m.media-amazon.com/images/I/71htIG3jZ+L._AC_UF1000,1000_QL80_.jpg" alt="The Proposal">
+                <h3>The Proposal</h3>
+                <p>₹499</p>
+                <div class="actions">
+                    <button class="wishlist-btn" onclick="addToWishlist('The Proposal', '₹499', 'https://m.media-amazon.com/images/I/71htIG3jZ+L._AC_UF1000,1000_QL80_.jpg')">
+                        <i class="fas fa-heart"></i> Wishlist
+                    </button>
+                    <button class="cart-btn" onclick="addToCart('The Proposal', '₹499', 'https://m.media-amazon.com/images/I/71htIG3jZ+L._AC_UF1000,1000_QL80_.jpg')">
+                        <i class="fas fa-shopping-bag"></i> Add to Cart
+                    </button>
                 </div>
             </div>
         </div>
@@ -148,5 +363,7 @@
     <footer>
         <p>&copy; 2025 GrabMart. All rights reserved.</p>
     </footer>
+    <script src="js/script.js"></script>
+
 </body>
 </html>

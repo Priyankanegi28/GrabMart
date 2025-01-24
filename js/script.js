@@ -118,3 +118,5 @@ function addToCart(name, price, image) {
     localStorage.setItem('cart', JSON.stringify(cart));
     alert(`${name} added to your cart!`);
 }
+
+

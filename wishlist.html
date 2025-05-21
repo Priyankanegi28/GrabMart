@@ -3,76 +3,51 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Wishlist</title>
+    <title>Your Wishlist | GrabMart</title>
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Wishlist Section -->
-    <section id="wishlist">
-        <h2>Your Wishlist :</h2>
-        <div id="wishlist-items">
-            <!-- Wishlist items will be displayed here -->
+    <!-- Header -->
+    <header class="page-header">
+        <div class="container">
+            <h1><a href="index.html">GrabMart</a></h1>
+            <nav>
+                <a href="index.html"><i class="fas fa-home"></i> Home</a>
+                <a href="cart.html"><i class="fas fa-shopping-cart"></i> Cart</a>
+            </nav>
         </div>
-    </section>
+    </header>
 
-    <script>
-        // Function to display the Wishlist items
-        function displayWishlist() {
-            let wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
-            const wishlistContainer = document.getElementById('wishlist-items');
-            wishlistContainer.innerHTML = '';
+    <!-- Main Content -->
+    <main class="container">
+        <section class="wishlist-section">
+            <div class="section-header">
+                <h2><i class="fas fa-heart"></i> Your Wishlist</h2>
+                <div class="item-count" id="wishlist-count">0 items</div>
+            </div>
+            
+            <div id="wishlist-items" class="items-grid">
+                <!-- Wishlist items will be displayed here -->
+            </div>
+            
+            <div class="empty-state" id="wishlist-empty">
+                <i class="fas fa-heart-broken"></i>
+                <h3>Your wishlist is empty</h3>
+                <p>Save your favorite items here for later</p>
+                <a href="index.html" class="btn btn-primary">Continue Shopping</a>
+            </div>
+        </section>
+    </main>
 
-            if (wishlist.length === 0) {
-                wishlistContainer.innerHTML = "<p>Your wishlist is empty.</p>";
-            } else {
-                wishlist.forEach((item, index) => {
-                    const itemElement = document.createElement('div');
-                    itemElement.classList.add('wishlist-item');
-                    itemElement.innerHTML = `
-                        <img src="${item.image}" alt="${item.name}" />
-                        <h3>${item.name}</h3>
-                        <p>${item.price}</p>
-                        <div class="actions">
-                            <button class="remove-btn" onclick="removeFromWishlist(${index})"><i class="fas fa-trash"></i> Remove</button>
-                            <button class="add-to-cart-btn" onclick="addToCartFromWishlist(${index})"><i class="fas fa-shopping-bag"></i> Add to Bag</button>
-                        </div>
-                    `;
-                    wishlistContainer.appendChild(itemElement);
-                });
-            }
-        }
+    <!-- Footer -->
+    <footer class="page-footer">
+        <div class="container">
+            <p>&copy; 2023 GrabMart. All rights reserved.</p>
+        </div>
+    </footer>
 
-        // Function to remove an item from Wishlist
-        function removeFromWishlist(index) {
-            let wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
-            wishlist.splice(index, 1);
-            localStorage.setItem('wishlist', JSON.stringify(wishlist));
-            displayWishlist(); // Re-render the wishlist after removal
-        }
-
-        // Function to move an item from Wishlist to Cart
-        function addToCartFromWishlist(index) {
-            let wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
-            let cart = JSON.parse(localStorage.getItem('cart')) || [];
-
-            // Add the item to the cart
-            const item = wishlist[index];
-            cart.push(item);
-
-            // Remove the item from wishlist
-            wishlist.splice(index, 1);
-
-            // Save updated lists to localStorage
-            localStorage.setItem('cart', JSON.stringify(cart));
-            localStorage.setItem('wishlist', JSON.stringify(wishlist));
-
-            displayWishlist(); // Re-render the wishlist after moving to cart
-        }
-
-        // Call displayWishlist on page load
-        window.onload = displayWishlist;
-    </script>
+    <script src="js/wishlist.js"></script>
 </body>
 </html>

@@ -4,26 +4,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mobile Phones - GrabMart</title>
-    <link rel="stylesheet" type="text/css" href="css/wear.css">
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/mobile.css">
 </head>
 <body>
     <!-- Header Section -->
-    <header>
+    <header class="header">
         <nav class="navbar">
             <div class="navbar-brand">
-                <h1>GrabMart</h1>
+                <a href="index.html" class="logo">GrabMart</a>
             </div>
+            
             <div class="navbar-search">
-                <input type="text" placeholder="Search for mobile phones..." id="search-bar">
+                <div class="search-container">
+                    <input type="text" placeholder="Search for mobile phones..." id="search-bar">
+                    <button class="search-btn"><i class="fas fa-search"></i></button>
+                </div>
             </div>
+            
             <div class="navbar-icons">
                 <div class="wishlist">
                     <a href="wishlist.html">
                         <span>Wishlist</span>
                         <i class="fas fa-heart"></i>
+                        <span class="badge" id="wishlist-count">0</span>
                     </a>
                 </div>
                 <div class="divider">|</div>
@@ -31,311 +36,195 @@
                     <a href="cart.html">
                         <span>Cart</span>
                         <i class="fas fa-shopping-cart"></i>
+                        <span class="badge" id="cart-count">0</span>
                     </a>
                 </div>
                 <div class="divider">|</div>
                 <div class="login">
-                    <a href="login.html">
-                        <span>Login</span>
+                    <a href="login.html" id="login-link">
+                        <span id="login-text">Login</span>
                         <i class="fas fa-user"></i>
                     </a>
                 </div>
             </div>
+            
+            <div class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </div>
         </nav>
+        
+        <!-- Mobile Menu -->
+        <div class="mobile-menu">
+            <div class="mobile-search">
+                <input type="text" placeholder="Search...">
+                <button><i class="fas fa-search"></i></button>
+            </div>
+            <a href="index.html"><i class="fas fa-home"></i> Home</a>
+            <a href="mobile.html"><i class="fas fa-mobile-alt"></i> Mobiles</a>
+            <a href="electronics.html"><i class="fas fa-laptop"></i> Electronics</a>
+            <a href="wishlist.html"><i class="fas fa-heart"></i> Wishlist</a>
+            <a href="cart.html"><i class="fas fa-shopping-cart"></i> Cart</a>
+            <a href="login.html" id="mobile-login"><i class="fas fa-user"></i> <span>Login</span></a>
+        </div>
     </header>
 
     <!-- Mobile Phones Section -->
-    <section class="product-grid">
-        <h2>Mobile Phones</h2>
-        <div class="grid">
-            <!-- Product Cards -->
-            <div class="product-card">
-                <img src="https://rukminim2.flixcart.com/image/720/864/xif0q/mobile/t/0/g/-original-imah4zp7fvqp8wev.jpeg?q=60&crop=false" alt="Samsung Galaxy S23">
-                <h3>Samsung Galaxy S23</h3>
-                <p>₹78,999</p>
-                <div class="actions">
-                    <button class="wishlist-btn" onclick="addToWishlist('Samsung Galaxy S23', '₹78,999', 'https://rukminim2.flixcart.com/image/720/864/xif0q/mobile/t/0/g/-original-imah4zp7fvqp8wev.jpeg?q=60&crop=false')">
-                        <i class="fas fa-heart"></i> Wishlist
-                    </button>
-                    <button class="cart-btn" onclick="addToCart('Samsung Galaxy S23', '₹78,999', 'https://rukminim2.flixcart.com/image/720/864/xif0q/mobile/t/0/g/-original-imah4zp7fvqp8wev.jpeg?q=60&crop=false')">
-                        <i class="fas fa-shopping-bag"></i> Add to Cart
-                    </button>
-                </div>
-            </div>
-            <div class="product-card">
-                <img src="https://media.croma.com/image/upload/v1705640168/Croma%20Assets/Communication/Mobiles/Images/303819_evgjjv.png" alt="SAMSUNG Galaxy S24 Ultra 5G">
-                <h3>SAMSUNG Galaxy S24 Ultra 5G</h3>
-                <p>₹1,00,500</p>
-                <div class="actions">
-                    <button class="wishlist-btn" onclick="addToWishlist('SAMSUNG Galaxy S24 Ultra 5G', '₹1,00,500', 'https://media.croma.com/image/upload/v1705640168/Croma%20Assets/Communication/Mobiles/Images/303819_evgjjv.png')">
-                        <i class="fas fa-heart"></i> Wishlist
-                    </button>
-                    <button class="cart-btn" onclick="addToCart('SAMSUNG Galaxy S24 Ultra 5G', '₹1,00,500', 'https://media.croma.com/image/upload/v1705640168/Croma%20Assets/Communication/Mobiles/Images/303819_evgjjv.png')">
-                        <i class="fas fa-shopping-bag"></i> Add to Cart
-                    </button>
+    <main class="main-content">
+        <section class="product-section">
+            <div class="section-header">
+                <h2>Premium Mobile Phones</h2>
+                <div class="filter-options">
+                    <select id="brand-filter">
+                        <option value="all">All Brands</option>
+                        <option value="samsung">Samsung</option>
+                        <option value="apple">Apple</option>
+                        <option value="redmi">Redmi</option>
+                        <option value="realme">Realme</option>
+                        <option value="oneplus">OnePlus</option>
+                        <option value="vivo">Vivo</option>
+                        <option value="oppo">Oppo</option>
+                    </select>
+                    <select id="price-filter">
+                        <option value="all">All Prices</option>
+                        <option value="0-10000">Under ₹10,000</option>
+                        <option value="10000-30000">₹10,000 - ₹30,000</option>
+                        <option value="30000-60000">₹30,000 - ₹60,000</option>
+                        <option value="60000+">Above ₹60,000</option>
+                    </select>
                 </div>
             </div>
             
-            <div class="product-card">
-                <img src="https://media.croma.com/image/upload/v1717069529/Croma%20Assets/Communication/Mobiles/Images/305369_0_ehvjig.png" alt="Samsung Galaxy F15 5G">
-                <h3>Samsung Galaxy F15 5G</h3>
-                <p>₹94,999</p>
-                <div class="actions">
-                    <button class="wishlist-btn" onclick="addToWishlist('Samsung Galaxy F15 5G', '₹94,999', 'https://media.croma.com/image/upload/v1717069529/Croma%20Assets/Communication/Mobiles/Images/305369_0_ehvjig.png')">
-                        <i class="fas fa-heart"></i> Wishlist
-                    </button>
-                    <button class="cart-btn" onclick="addToCart('Samsung Galaxy F15 5G', '₹94,999', 'https://media.croma.com/image/upload/v1717069529/Croma%20Assets/Communication/Mobiles/Images/305369_0_ehvjig.png')">
-                        <i class="fas fa-shopping-bag"></i> Add to Cart
-                    </button>
-                </div>
+            <div class="product-grid">
+                <!-- Product Cards will be dynamically loaded here -->
             </div>
             
-            <div class="product-card">
-                <img src="https://www.jiomart.com/images/product/original/493665842/samsung-galaxy-a34-5g-256-gb-8-gb-ram-awesome-violet-mobile-phone-digital-o493665842-p599805256-6-202303241924.jpeg?im=Resize=(420,420)" alt="Samsung Galaxy A34 5G">
-                <h3>Samsung Galaxy A34 5G</h3>
-                <p>₹67,000</p>
-                <div class="actions">
-                    <button class="wishlist-btn" onclick="addToWishlist('Samsung Galaxy A34 5G', '₹67,000', 'https://www.jiomart.com/images/product/original/493665842/samsung-galaxy-a34-5g-256-gb-8-gb-ram-awesome-violet-mobile-phone-digital-o493665842-p599805256-6-202303241924.jpeg?im=Resize=(420,420)')">
-                        <i class="fas fa-heart"></i> Wishlist
-                    </button>
-                    <button class="cart-btn" onclick="addToCart('Samsung Galaxy A34 5G', '₹67,000', 'https://www.jiomart.com/images/product/original/493665842/samsung-galaxy-a34-5g-256-gb-8-gb-ram-awesome-violet-mobile-phone-digital-o493665842-p599805256-6-202303241924.jpeg?im=Resize=(420,420)')">
-                        <i class="fas fa-shopping-bag"></i> Add to Cart
-                    </button>
+            <div class="pagination">
+                <button class="prev-btn" disabled><i class="fas fa-chevron-left"></i> Previous</button>
+                <div class="page-numbers">
+                    <span class="active">1</span>
+                    <span>2</span>
+                    <span>3</span>
+                </div>
+                <button class="next-btn">Next <i class="fas fa-chevron-right"></i></button>
+            </div>
+        </section>
+    </main>
+
+    <!-- Quick View Modal -->
+    <div class="modal" id="quickViewModal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div class="modal-product-view">
+                <div class="modal-product-images">
+                    <div class="main-image">
+                        <img src="" alt="" id="modalMainImage">
+                    </div>
+                    <div class="thumbnail-images">
+                        <!-- Thumbnails will be added dynamically -->
+                    </div>
+                </div>
+                <div class="modal-product-info">
+                    <h2 id="modalProductName"></h2>
+                    <div class="modal-product-rating">
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                        <span class="review-count">(124 reviews)</span>
+                    </div>
+                    <div class="modal-product-price">
+                        <span class="current-price" id="modalCurrentPrice"></span>
+                        <span class="original-price" id="modalOriginalPrice"></span>
+                        <span class="discount" id="modalDiscount"></span>
+                    </div>
+                    <div class="modal-product-specs">
+                        <h3>Specifications</h3>
+                        <ul id="modalProductSpecs"></ul>
+                    </div>
+                    <div class="modal-product-actions">
+                        <button class="wishlist-btn" id="modalWishlistBtn">
+                            <i class="far fa-heart"></i> Add to Wishlist
+                        </button>
+                        <button class="cart-btn" id="modalCartBtn">
+                            <i class="fas fa-shopping-cart"></i> Add to Cart
+                        </button>
+                    </div>
                 </div>
             </div>
-            
-            <div class="product-card">
-                <img src="https://static.digit.in/default/samsung-galaxy-s23-e71191c458.jpeg" alt="Samsung Galaxy S23">
-                <h3>Samsung Galaxy S23</h3>
-                <p>₹59,999</p>
-                <div class="actions">
-                    <button class="wishlist-btn" onclick="addToWishlist('Samsung Galaxy S23', '₹59,999', 'https://static.digit.in/default/samsung-galaxy-s23-e71191c458.jpeg')">
-                        <i class="fas fa-heart"></i> Wishlist
-                    </button>
-                    <button class="cart-btn" onclick="addToCart('Samsung Galaxy S23', '₹59,999', 'https://static.digit.in/default/samsung-galaxy-s23-e71191c458.jpeg')">
-                        <i class="fas fa-shopping-bag"></i> Add to Cart
-                    </button>
-                </div>
-            </div>
-            
-            <div class="product-card">
-                <img src="https://i.gadgets360cdn.com/products/large/redmi-12-db-709x800-1686893414.jpg" alt="Redmi 12">
-                <h3>Redmi 12</h3>
-                <p>₹10,000</p>
-                <div class="actions">
-                    <button class="wishlist-btn" onclick="addToWishlist('Redmi 12', '₹10,000', 'https://i.gadgets360cdn.com/products/large/redmi-12-db-709x800-1686893414.jpg')">
-                        <i class="fas fa-heart"></i> Wishlist
-                    </button>
-                    <button class="cart-btn" onclick="addToCart('Redmi 12', '₹10,000', 'https://i.gadgets360cdn.com/products/large/redmi-12-db-709x800-1686893414.jpg')">
-                        <i class="fas fa-shopping-bag"></i> Add to Cart
-                    </button>
-                </div>
-            </div>
-            
-            <div class="product-card">
-                <img src="https://infiswap.com/wp-content/uploads/2024/06/infi267-1-1.jpg" alt="REDMI Note 13 Pro 5G">
-                <h3>REDMI Note 13 Pro 5G</h3>
-                <p>₹15,500</p>
-                <div class="actions">
-                    <button class="wishlist-btn" onclick="addToWishlist('REDMI Note 13 Pro 5G', '₹15,500', 'https://infiswap.com/wp-content/uploads/2024/06/infi267-1-1.jpg')">
-                        <i class="fas fa-heart"></i> Wishlist
-                    </button>
-                    <button class="cart-btn" onclick="addToCart('REDMI Note 13 Pro 5G', '₹15,500', 'https://infiswap.com/wp-content/uploads/2024/06/infi267-1-1.jpg')">
-                        <i class="fas fa-shopping-bag"></i> Add to Cart
-                    </button>
-                </div>
-            </div>
-            
-            <div class="product-card">
-                <img src="https://www.gloo.com.my/image/cache/catalog/Images/Smartphone/PHOXIAM1382BLK_T1-1000x1000.jpg" alt="REDMI 12">
-                <h3>REDMI 12</h3>
-                <p>₹12,999</p>
-                <div class="actions">
-                    <button class="wishlist-btn" onclick="addToWishlist('REDMI 12', '₹12,999', 'https://www.gloo.com.my/image/cache/catalog/Images/Smartphone/PHOXIAM1382BLK_T1-1000x1000.jpg')">
-                        <i class="fas fa-heart"></i> Wishlist
-                    </button>
-                    <button class="cart-btn" onclick="addToCart('REDMI 12', '₹12,999', 'https://www.gloo.com.my/image/cache/catalog/Images/Smartphone/PHOXIAM1382BLK_T1-1000x1000.jpg')">
-                        <i class="fas fa-shopping-bag"></i> Add to Cart
-                    </button>
-                </div>
-            </div>
-            
-            <div class="product-card">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRWgp9ZSuhI-fSxwYREak3Xe2054x4i1opUYg&s" alt="Redmi 10X">
-                <h3>Redmi 10X</h3>
-                <p>₹11,599</p>
-                <div class="actions">
-                    <button class="wishlist-btn" onclick="addToWishlist('Redmi 10X', '₹11,599', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRWgp9ZSuhI-fSxwYREak3Xe2054x4i1opUYg&s')">
-                        <i class="fas fa-heart"></i> Wishlist
-                    </button>
-                    <button class="cart-btn" onclick="addToCart('Redmi 10X', '₹11,599', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRWgp9ZSuhI-fSxwYREak3Xe2054x4i1opUYg&s')">
-                        <i class="fas fa-shopping-bag"></i> Add to Cart
-                    </button>
-                </div>
-            </div>
-            
-            <div class="product-card">
-                <img src="https://i02.appmifile.com/998_operator_in/12/08/2021/3c3be7deaa0112fa9c5c4c0c3e1da35d.png" alt="Redmi Note 10">
-                <h3>Redmi Note 10</h3>
-                <p>₹10,000</p>
-                <div class="actions">
-                    <button class="wishlist-btn" onclick="addToWishlist('Redmi Note 10', '₹10,000', 'https://i02.appmifile.com/998_operator_in/12/08/2021/3c3be7deaa0112fa9c5c4c0c3e1da35d.png')">
-                        <i class="fas fa-heart"></i> Wishlist
-                    </button>
-                    <button class="cart-btn" onclick="addToCart('Redmi Note 10', '₹10,000', 'https://i02.appmifile.com/998_operator_in/12/08/2021/3c3be7deaa0112fa9c5c4c0c3e1da35d.png')">
-                        <i class="fas fa-shopping-bag"></i> Add to Cart
-                    </button>
-                </div>
-            </div>
-            
-            <div class="product-card">
-                <img src="https://inventstore.in/wp-content/uploads/2024/07/63.webp" alt="Apple iPhone 16">
-                <h3>Apple iPhone 16</h3>
-                <p>₹85,000</p>
-                <div class="actions">
-                    <button class="wishlist-btn" onclick="addToWishlist('Apple iPhone 16', '₹85,000', 'https://inventstore.in/wp-content/uploads/2024/07/63.webp')">
-                        <i class="fas fa-heart"></i> Wishlist
-                    </button>
-                    <button class="cart-btn" onclick="addToCart('Apple iPhone 16', '₹85,000', 'https://inventstore.in/wp-content/uploads/2024/07/63.webp')">
-                        <i class="fas fa-shopping-bag"></i> Add to Cart
-                    </button>
-                </div>
-            </div>
-            
-            <div class="product-card">
-                <img src="https://inventstore.in/wp-content/uploads/2023/09/1-2.webp" alt="Apple iPhone 15">
-                <h3>Apple iPhone 15</h3>
-                <p>₹74,900</p>
-                <div class="actions">
-                    <button class="wishlist-btn" onclick="addToWishlist('Apple iPhone 15', '₹74,900', 'https://inventstore.in/wp-content/uploads/2023/09/1-2.webp')">
-                        <i class="fas fa-heart"></i> Wishlist
-                    </button>
-                    <button class="cart-btn" onclick="addToCart('Apple iPhone 15', '₹74,900', 'https://inventstore.in/wp-content/uploads/2023/09/1-2.webp')">
-                        <i class="fas fa-shopping-bag"></i> Add to Cart
-                    </button>
-                </div>
-            </div>
-            
-            <div class="product-card">
-                <img src="https://static.digit.in/default/apple-iphone-15-pro-max-1a178aef71.jpeg" alt="Apple iPhone 15 Pro Max">
-                <h3>Apple iPhone 15 Pro Max</h3>
-                <p>₹95,000</p>
-                <div class="actions">
-                    <button class="wishlist-btn" onclick="addToWishlist('Apple iPhone 15 Pro Max', '₹95,000', 'https://static.digit.in/default/apple-iphone-15-pro-max-1a178aef71.jpeg')">
-                        <i class="fas fa-heart"></i> Wishlist
-                    </button>
-                    <button class="cart-btn" onclick="addToCart('Apple iPhone 15 Pro Max', '₹95,000', 'https://static.digit.in/default/apple-iphone-15-pro-max-1a178aef71.jpeg')">
-                        <i class="fas fa-shopping-bag"></i> Add to Cart
-                    </button>
-                </div>
-            </div>
-            
-            <div class="product-card">
-                <img src="https://m.media-amazon.com/images/I/61iTWldZ9qL._AC_UF1000,1000_QL80_.jpg" alt="Apple iPhone 13">
-                <h3>Apple iPhone 13</h3>
-                <p>₹73,999</p>
-                <div class="actions">
-                    <button class="wishlist-btn" onclick="addToWishlist('Apple iPhone 13', '₹73,999', 'https://m.media-amazon.com/images/I/61iTWldZ9qL._AC_UF1000,1000_QL80_.jpg')">
-                        <i class="fas fa-heart"></i> Wishlist
-                    </button>
-                    <button class="cart-btn" onclick="addToCart('Apple iPhone 13', '₹73,999', 'https://m.media-amazon.com/images/I/61iTWldZ9qL._AC_UF1000,1000_QL80_.jpg')">
-                        <i class="fas fa-shopping-bag"></i> Add to Cart
-                    </button>
-                </div>
-            </div>
-            
-            <div class="product-card">
-                <img src="https://media-ik.croma.com/prod/https://media.croma.com/image/upload/v1725959828/Croma%20Assets/Communication/Mobiles/Images/309739_0_gfc7sv.png" alt="Apple iPhone 16 Pro">
-                <h3>Apple iPhone 16 Pro</h3>
-                <p>₹162,900</p>
-                <div class="actions">
-                    <button class="wishlist-btn" onclick="addToWishlist('Apple iPhone 16 Pro', '₹162,900', 'https://media-ik.croma.com/prod/https://media.croma.com/image/upload/v1725959828/Croma%20Assets/Communication/Mobiles/Images/309739_0_gfc7sv.png')">
-                        <i class="fas fa-heart"></i> Wishlist
-                    </button>
-                    <button class="cart-btn" onclick="addToCart('Apple iPhone 16 Pro', '₹162,900', 'https://media-ik.croma.com/prod/https://media.croma.com/image/upload/v1725959828/Croma%20Assets/Communication/Mobiles/Images/309739_0_gfc7sv.png')">
-                        <i class="fas fa-shopping-bag"></i> Add to Cart
-                    </button>
-                </div>
-            </div>
-            
-            <div class="product-card">
-                <img src="https://m.media-amazon.com/images/I/51Jx33Kl0FL._AC_UF1000,1000_QL80_.jpg" alt="Realme C35">
-                <h3>Realme C35</h3>
-                <p>₹16,000</p>
-                <div class="actions">
-                    <button class="wishlist-btn" onclick="addToWishlist('Realme C35', '₹16,000', 'https://m.media-amazon.com/images/I/51Jx33Kl0FL._AC_UF1000,1000_QL80_.jpg')">
-                        <i class="fas fa-heart"></i> Wishlist
-                    </button>
-                    <button class="cart-btn" onclick="addToCart('Realme C35', '₹16,000', 'https://m.media-amazon.com/images/I/51Jx33Kl0FL._AC_UF1000,1000_QL80_.jpg')">
-                        <i class="fas fa-shopping-bag"></i> Add to Cart
-                    </button>
-                </div>
-            </div>
-            
-            <div class="product-card">
-                <img src="https://m.media-amazon.com/images/I/61B2t2Ul9zL._AC_UF1000,1000_QL80_.jpg" alt="Realme C67 5G">
-                <h3>Realme C67 5G</h3>
-                <p>₹10,649</p>
-                <div class="actions">
-                    <button class="wishlist-btn" onclick="addToWishlist('Realme C67 5G', '₹10,649', 'https://m.media-amazon.com/images/I/61B2t2Ul9zL._AC_UF1000,1000_QL80_.jpg')">
-                        <i class="fas fa-heart"></i> Wishlist
-                    </button>
-                    <button class="cart-btn" onclick="addToCart('Realme C67 5G', '₹10,649', 'https://m.media-amazon.com/images/I/61B2t2Ul9zL._AC_UF1000,1000_QL80_.jpg')">
-                        <i class="fas fa-shopping-bag"></i> Add to Cart
-                    </button>
-                </div>
-            </div>
-            
-            <div class="product-card">
-                <img src="https://sathya.in/media/90371/catalog/sunrise_beige.jpg" alt="Realme 11 Pro 5G">
-                <h3>Realme 11 Pro 5G</h3>
-                <p>₹24,999</p>
-                <div class="actions">
-                    <button class="wishlist-btn" onclick="addToWishlist('Realme 11 Pro 5G', '₹24,999', 'https://sathya.in/media/90371/catalog/sunrise_beige.jpg')">
-                        <i class="fas fa-heart"></i> Wishlist
-                    </button>
-                    <button class="cart-btn" onclick="addToCart('Realme 11 Pro 5G', '₹24,999', 'https://sathya.in/media/90371/catalog/sunrise_beige.jpg')">
-                        <i class="fas fa-shopping-bag"></i> Add to Cart
-                    </button>
-                </div>
-            </div>
-            
-            <div class="product-card">
-                <img src="https://centraltech.co.ke/wp-content/uploads/2023/09/Realme-C30s.jpg" alt="Realme C30s 32GB">
-                <h3>Realme C30s 32GB</h3>
-                <p>₹30,000</p>
-                <div class="actions">
-                    <button class="wishlist-btn" onclick="addToWishlist('Realme C30s 32GB', '₹30,000', 'https://centraltech.co.ke/wp-content/uploads/2023/09/Realme-C30s.jpg')">
-                        <i class="fas fa-heart"></i> Wishlist
-                    </button>
-                    <button class="cart-btn" onclick="addToCart('Realme C30s 32GB', '₹30,000', 'https://centraltech.co.ke/wp-content/uploads/2023/09/Realme-C30s.jpg')">
-                        <i class="fas fa-shopping-bag"></i> Add to Cart
-                    </button>
-                </div>
-            </div>
-            
-            <div class="product-card">
-                <img src="https://5.imimg.com/data5/SELLER/Default/2021/3/CX/RD/SR/46278852/realme-narzo-20-a-mobile-phone-500x500.jpg" alt="Realme Narzo 20">
-                <h3>Realme Narzo 20</h3>
-                <p>₹10,999</p>
-                <div class="actions">
-                    <button class="wishlist-btn" onclick="addToWishlist('Realme Narzo 20', '₹10,999', 'https://5.imimg.com/data5/SELLER/Default/2021/3/CX/RD/SR/46278852/realme-narzo-20-a-mobile-phone-500x500.jpg')">
-                        <i class="fas fa-heart"></i> Wishlist
-                    </button>
-                    <button class="cart-btn" onclick="addToCart('Realme Narzo 20', '₹10,999', 'https://5.imimg.com/data5/SELLER/Default/2021/3/CX/RD/SR/46278852/realme-narzo-20-a-mobile-phone-500x500.jpg')">
-                        <i class="fas fa-shopping-bag"></i> Add to Cart
-                    </button>
-                </div>
-            </div>
-            
         </div>
-    </section>
+    </div>
 
     <!-- Footer -->
-    <footer>
-        <p>&copy; 2025 GrabMart. All rights reserved.</p>
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-top">
+                <div class="footer-column">
+                    <h3>Shop</h3>
+                    <ul>
+                        <li><a href="mobile.html">Mobiles</a></li>
+                        <li><a href="electronics.html">Electronics</a></li>
+                        <li><a href="clothing.html">Clothing</a></li>
+                        <li><a href="home.html">Home & Kitchen</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Customer Service</h3>
+                    <ul>
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="faq.html">FAQs</a></li>
+                        <li><a href="shipping.html">Shipping Policy</a></li>
+                        <li><a href="returns.html">Return Policy</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>About GrabMart</h3>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="careers.html">Careers</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Connect With Us</h3>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                    <div class="newsletter">
+                        <p>Subscribe to our newsletter</p>
+                        <form class="newsletter-form">
+                            <input type="email" placeholder="Your email address">
+                            <button type="submit">Subscribe</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="payment-methods">
+                    <p>We Accept:</p>
+                    <div class="payment-icons">
+                        <i class="fab fa-cc-visa"></i>
+                        <i class="fab fa-cc-mastercard"></i>
+                        <i class="fab fa-cc-amex"></i>
+                        <i class="fab fa-cc-paypal"></i>
+                    </div>
+                </div>
+                <div class="copyright">
+                    <p>&copy; 2025 GrabMart. All Rights Reserved.</p>
+                </div>
+            </div>
+        </div>
     </footer>
-    <script src="js/script.js"></script>
 
+    <script src="js/mobile.js"></script>
 </body>
 </html>

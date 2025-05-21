@@ -3,26 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GrabMart</title>
+    <title>GrabMart - Online Shopping for Electronics, Fashion, Home & More</title>
+    <meta name="description" content="Shop online for electronics, fashion, home & kitchen, books, mobiles and more at GrabMart. Best deals and discounts with fast delivery.">
     <link rel="stylesheet" href="css/styles.css">
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
 </head>
 <body>
+    <!-- Loading Spinner -->
+    <div class="loader">
+        <div class="spinner"></div>
+    </div>
+
+    <!-- Header/Navbar -->
     <header>
         <nav class="navbar">
             <div class="navbar-brand">
-                <h1>GrabMart</h1>
+                <a href="index.html">
+                    <h1>GrabMart</h1>
+                </a>
             </div>
+            
             <div class="navbar-search">
-                <input type="text" placeholder="Search what you want..." id="search-bar">
+                <div class="search-container">
+                    <input type="text" placeholder="Search for products, brands and more..." id="search-bar">
+                    <button class="search-btn"><i class="fas fa-search"></i></button>
+                </div>
             </div>
+            
             <div class="navbar-icons">
                 <div class="wishlist">
                     <a href="wishlist.html">
                         <span>Wishlist</span>
                         <i class="fas fa-heart"></i>
+                        <span class="badge" id="wishlist-count">0</span>
                     </a>
                 </div>
                 <div class="divider">|</div>
@@ -30,406 +45,976 @@
                     <a href="cart.html">
                         <span>Cart</span>
                         <i class="fas fa-shopping-cart"></i>
+                        <span class="badge" id="cart-count">0</span>
                     </a>
                 </div>
                 <div class="divider">|</div>
                 <div class="login">
-                    <span>Login</span>
+                    <span id="login-text">Login</span>
                     <i class="fas fa-user"></i>
                 </div>
             </div>
+            
+            <div class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </div>
         </nav>
+        
+        <!-- Mobile Menu -->
+        <div class="mobile-menu">
+            <div class="mobile-search">
+                <input type="text" placeholder="Search...">
+                <button><i class="fas fa-search"></i></button>
+            </div>
+            <a href="index.html"><i class="fas fa-home"></i> Home</a>
+            <a href="clothing.html"><i class="fas fa-tshirt"></i> Clothing</a>
+            <a href="electronics.html"><i class="fas fa-laptop"></i> Electronics</a>
+            <a href="home.html"><i class="fas fa-home"></i> Home & Kitchen</a>
+            <a href="books.html"><i class="fas fa-book"></i> Books</a>
+            <a href="mobile.html"><i class="fas fa-mobile-alt"></i> Mobiles</a>
+            <a href="wishlist.html"><i class="fas fa-heart"></i> Wishlist</a>
+            <a href="cart.html"><i class="fas fa-shopping-cart"></i> Cart</a>
+            <a href="#" id="mobile-login"><i class="fas fa-user"></i> <span>Login</span></a>
+        </div>
     </header>
 
     <!-- Sidebar -->
     <div id="sidebar" class="sidebar">
         <div class="sidebar-content">
-            <h2>Account Details</h2>
-            <p id="sidebar-name"></p>
-            <p id="sidebar-email"></p>
-            <button id="logout-btn">Logout</button>
+            <div class="sidebar-header">
+                <h2>My Account</h2>
+                <button class="close-sidebar">&times;</button>
+            </div>
+            <div class="user-info">
+                <div class="user-avatar">
+                    <i class="fas fa-user-circle"></i>
+                </div>
+                <p id="sidebar-name">Guest User</p>
+                <p id="sidebar-email">guest@example.com</p>
+            </div>
+            <div class="sidebar-links">
+                <a href="orders.html"><i class="fas fa-box"></i> My Orders</a>
+                <a href="wishlist.html"><i class="fas fa-heart"></i> Wishlist</a>
+                <a href="account.html"><i class="fas fa-cog"></i> Account Settings</a>
+                <a href="addresses.html"><i class="fas fa-map-marker-alt"></i> Saved Addresses</a>
+            </div>
+            <button id="logout-btn" class="btn-logout">
+                <i class="fas fa-sign-out-alt"></i> Logout
+            </button>
         </div>
     </div>
 
     <main>
-        <!-- Promo Banner Image (above the slider) -->
-        <div class="promo-image">
-            <img src="https://www.shutterstock.com/image-vector/3d-lettering-black-friday-mega-260nw-705625765.jpg" alt="Promo Sale" class="promo-img">
-        </div>
-
-        <!-- Image Slider -->
+        <!-- Promo Banner -->
         <div class="promo-banner-container">
-            <button class="nav-btn prev-btn"><</button>
             <div class="promo-banner">
-                <img src="https://www.reliancedigital.in/medias/LA-Banner-Hybris-D.jpg?context=bWFzdGVyfGltYWdlc3wxMzQ1NTd8aW1hZ2UvanBlZ3xpbWFnZXMvaGJiL2hhYy8xMDIzODI3NDg5NTkwMi5qcGd8OWMxZjJiNDIxNjUxZGQ2NzZhZGExZmVhYjFhMTZjNGU3ZjZmZmE3YmUwMGE3ZDhjYmZkMTc3OTYyYWZlZDMwYg" alt="Shopping Image" class="screen-resolution-image">
-                <img src="https://www.reliancedigital.in/medias/v1-Apple-AirPods-Banner-1365x260.jpg?context=bWFzdGVyfGltYWdlc3wxMDA2MTJ8aW1hZ2UvanBlZ3xpbWFnZXMvaDIzL2gzZi8xMDIyODMxODQzNzQwNi5qcGd8ZjRiYzgxYzc5MDQzN2VjMzRlZWY4OTdiNWZlYmMzYjgxZWIyOGZjNWMyNzM3MDA4NmY4MjYxYjFhZDM1MDJlYg" alt="Apple AirPods Banner" class="screen-resolution-image">
-                <img src="https://www.reliancedigital.in/medias/Apple-Watch-Series10-1365x260-D.jpg?context=bWFzdGVyfGltYWdlc3wxMTQ2MzB8aW1hZ2UvanBlZ3xpbWFnZXMvaGY0L2gxMi8xMDIxOTg3Nzc2MTA1NC5qcGd8MWY4MTc4NmExNTRiYWQzZDMwNWRiNGRmZDQ0ZDRiMjU1NDJhMzJhODA5ZTAyNzFmMzc5ZThmODgyMjU3NjBiZQ" alt="Tech Banner" class="screen-resolution-image">
-                <img src="https://www.reliancedigital.in/medias/K12X-Banner-Banner-Hybris-D-1-.jpg?context=bWFzdGVyfGltYWdlc3wxNDM4MjB8aW1hZ2UvanBlZ3xpbWFnZXMvaDY4L2hlNi8xMDI0MDExMjUyNTM0Mi5qcGd8OGMyOTg1MTFlOTgxOTE3NjQxYjhiNDA2Mjc5NjEzNDRiYTVmMWMyODJiNGY3ZDhjYzA5ZjVmMjYzYTM3NDQ2ZQ" alt="Tech Banner" class="screen-resolution-image">
-            </div>
-            <button class="nav-btn next-btn">></button>
-        </div>
-
-        <!-- Shop by Category Section -->
-<section class="shop-by-category">
-    <h2>Shop by Category</h2>
-    <div class="grid">
-        <div class="category-card">
-            <a href="clothing.html">
-                <img src="https://media.istockphoto.com/id/1307512096/photo/asian-chinese-female-boutique-shop-clothing-store-owner-checking-stock-with-digital-tablet.jpg?s=612x612&w=0&k=20&c=DR_6wwtfiwL14f4hfQL9Q4vTR0plXu9j38gvq6gAIY8=" alt="Ethnic Wear">
-                <h3>Clothing</h3>
-            </a>
-        </div>
-        <div class="category-card">
-            <a href="electronics.html">
-                <img src="https://media.istockphoto.com/id/506998184/photo/woman-chooses-the-laptop.jpg?s=612x612&w=0&k=20&c=EHk7baK4Io5b3-d32Y9URxTemUYrzk8CsiW-K-L4Was=" alt="Casual Wear">
-                <h3>Electronic's</h3>
-            </a>
-        </div>
-        <div class="category-card">
-            <a href="home.html">
-                <img src="https://www.nobiliaindia.com/images/line-n/laser.jpg?v=Ievv7JrCO1bcmqHKnvg8Upfc2xCcuaji4xRbr8WWuss" alt="Men's Wear">
-                <h3>Home & Kitchen</h3>
-            </a>
-        </div>
-        <div class="category-card">
-            <a href="books.html">
-                <img src="https://media.istockphoto.com/id/498844342/photo/books-and-a-shopping-cart.jpg?s=612x612&w=0&k=20&c=45EBpVg_KIEvno2VyXY4lLzJpHTbgKtv0-XEeEdWZqM=" alt="Women's Wear">
-                <h3>Book's</h3>
-            </a>
-        </div>
-        <div class="category-card">
-            <a href="mobile.html">
-                <img src="https://img.freepik.com/free-photo/female-with-happy-expression-standing-near-rack-with-clothes-keeping-hands-credit-card-modern-mobile-phone-being-glad-buy-garment-online-people-online-shopping_273609-811.jpg" alt="Kids' Wear">
-                <h3>Mobiles</h3>
-            </a>
-        </div>
-    </div>
-</section>
-
-    
-    <!-- New Arrivals Section -->
-    <section class="product-grid">
-        <h2>New Arrivals</h2>
-        <div class="grid">
-            <!-- Product 1 -->
-            <div class="product-card" >
-                <img src="https://assets.ajio.com/medias/sys_master/root/20240322/iteW/65fcf4c305ac7d77bbd132cf/-1117Wx1400H-462895038-maroon-MODEL.jpg" alt="Leather Wallet">
-                <h3>Leather Wallet</h3>
-                <p>₹1,999</p>
-                <div class="actions">
-                    <button class="wishlist-btn" onclick="addToWishlist('Leather Wallet', '₹1,999', 'https://assets.ajio.com/medias/sys_master/root/20240322/iteW/65fcf4c305ac7d77bbd132cf/-1117Wx1400H-462895038-maroon-MODEL.jpg')"><i class="fas fa-heart"></i> Wishlist</button>
-                    <button class="cart-btn" onclick="addToCart('Leather Wallet', '₹1,999', 'https://assets.ajio.com/medias/sys_master/root/20240322/iteW/65fcf4c305ac7d77bbd132cf/-1117Wx1400H-462895038-maroon-MODEL.jpg')"><i class="fas fa-shopping-bag"></i> Add to Bag</button>
+                <div class="banner-slide">
+                    <img src="https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Summer Sale">
+                    <div class="banner-content">
+                        <h2>Summer Sale</h2>
+                        <p>Up to 50% off on selected items</p>
+                        <button class="btn-shop-now" onclick="window.location.href='home.html'">Shop Now</button>
+                    </div>
+                </div>
+                <div class="banner-slide">
+                    <img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="New Arrivals">
+                    <div class="banner-content">
+                        <h2>New Arrivals</h2>
+                        <p>Discover the latest trends</p>
+                        <button class="btn-shop-now" onclick="window.location.href='clothing.html'">Explore</button>
+                    </div>
+                </div>
+                <div class="banner-slide">
+                    <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1999&q=80" alt="Electronics">
+                    <div class="banner-content">
+                        <h2>Electronics Sale</h2>
+                        <p>Premium gadgets at discounted prices</p>
+                        <button class="btn-shop-now" onclick="window.location.href='electronics.html'">Browse</button>
+                    </div>
                 </div>
             </div>
+            <button class="nav-btn prev-btn"><i class="fas fa-chevron-left"></i></button>
+            <button class="nav-btn next-btn"><i class="fas fa-chevron-right"></i></button>
+            <div class="banner-dots">
+                <span class="dot active"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+            </div>
+        </div>
 
-            <!-- Product 2 -->
-            <div class="product-card">
-                <img src="https://assets.ajio.com/medias/sys_master/root/20210216/EWwz/602accd4aeb2696981661cba/-473Wx593H-460545300-red-MODEL.jpg" alt="Formal Shirt">
-                <h3>Formal Shirt</h3>
-                <p>₹2,799</p>
-                <div class="actions">
-                    <button class="wishlist-btn" onclick="addToWishlist('Formal Shirt', '₹2,799', 'https://assets.ajio.com/medias/sys_master/root/20210216/EWwz/602accd4aeb2696981661cba/-473Wx593H-460545300-red-MODEL.jpg')"><i class="fas fa-heart"></i> Wishlist</button>
-                    <button class="cart-btn" onclick="addToCart('Formal Shirt', '₹2,799', 'https://assets.ajio.com/medias/sys_master/root/20210216/EWwz/602accd4aeb2696981661cba/-473Wx593H-460545300-red-MODEL.jpg')"><i class="fas fa-shopping-bag"></i> Add to Bag</button>
+        <!-- Categories Section -->
+        <section class="shop-by-category">
+            <div class="section-header">
+                <h2>Shop by Category</h2>
+                <a href="#" class="view-all">View All</a>
+            </div>
+            <div class="category-grid">
+                <div class="category-card">
+                    <a href="clothing.html">
+                        <div class="category-img">
+                            <img src="https://images.unsplash.com/photo-1489987707025-afc232f7ea0f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Clothing">
+                        </div>
+                        <h3>Clothing</h3>
+                    </a>
+                </div>
+                <div class="category-card">
+                    <a href="electronics.html">
+                        <div class="category-img">
+                            <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Electronics">
+                        </div>
+                        <h3>Electronics</h3>
+                    </a>
+                </div>
+                <div class="category-card">
+                    <a href="home.html">
+                        <div class="category-img">
+                            <img src="https://images.unsplash.com/photo-1556911220-bff31c812dba?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2086&q=80" alt="Home & Kitchen">
+                        </div>
+                        <h3>Home & Kitchen</h3>
+                    </a>
+                </div>
+                <div class="category-card">
+                    <a href="books.html">
+                        <div class="category-img">
+                            <img src="https://images.unsplash.com/photo-1544947950-fa07a98d237f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80" alt="Books">
+                        </div>
+                        <h3>Books</h3>
+                    </a>
+                </div>
+                <div class="category-card">
+                    <a href="mobile.html">
+                        <div class="category-img">
+                            <img src="https://images.unsplash.com/photo-1592899677977-9c10ca588bbd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80" alt="Mobiles">
+                        </div>
+                        <h3>Mobiles</h3>
+                    </a>
                 </div>
             </div>
+        </section>
 
-            <!-- Product 3 -->
-            <div class="product-card">
-                <img src="https://assets.ajio.com/medias/sys_master/root/20240713/RYgu/66922da46f60443f3106a1c1/-473Wx593H-464805313-brown-MODEL.jpg" alt="Sunglasses">
-                <h3>Sunglasses</h3>
-                <p>₹1,199</p>
-                <div class="actions">
-                    <button class="wishlist-btn" onclick="addToWishlist('Sunglasses', '₹1,199', 'https://assets.ajio.com/medias/sys_master/root/20240713/RYgu/66922da46f60443f3106a1c1/-473Wx593H-464805313-brown-MODEL.jpg')"><i class="fas fa-heart"></i> Wishlist</button>
-                    <button class="cart-btn" onclick="addToCart('Sunglasses', '₹1,199', 'https://assets.ajio.com/medias/sys_master/root/20240713/RYgu/66922da46f60443f3106a1c1/-473Wx593H-464805313-brown-MODEL.jpg')"><i class="fas fa-shopping-bag"></i> Add to Bag</button>
+        <!-- New Arrivals Section -->
+        <section class="product-section">
+            <div class="section-header">
+                <h2>New Arrivals</h2>
+                <a href="#" class="view-all">View All</a>
+            </div>
+            <div class="product-grid">
+                <!-- Product 1 -->
+                <div class="product-card">
+                    <div class="product-badge">New</div>
+                    <div class="product-img">
+                        <img src="https://assets.ajio.com/medias/sys_master/root/20240322/iteW/65fcf4c305ac7d77bbd132cf/-1117Wx1400H-462895038-maroon-MODEL.jpg" alt="Leather Wallet">
+                        <div class="quick-view">Quick View</div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Leather Wallet</h3>
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                            <span>(124)</span>
+                        </div>
+                        <div class="product-price">
+                            <span class="current-price">₹1,999</span>
+                            <span class="original-price">₹2,499</span>
+                            <span class="discount">20% off</span>
+                        </div>
+                    </div>
+                    <div class="product-actions">
+                        <button class="wishlist-btn" onclick="addToWishlist('Leather Wallet', 1999, 'https://assets.ajio.com/medias/sys_master/root/20240322/iteW/65fcf4c305ac7d77bbd132cf/-1117Wx1400H-462895038-maroon-MODEL.jpg')">
+                            <i class="far fa-heart"></i> Wishlist
+                        </button>
+                        <button class="cart-btn" onclick="addToCart('Leather Wallet', 1999, 'https://assets.ajio.com/medias/sys_master/root/20240322/iteW/65fcf4c305ac7d77bbd132cf/-1117Wx1400H-462895038-maroon-MODEL.jpg')">
+                            <i class="fas fa-shopping-cart"></i> Add to Cart
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Product 2 -->
+                <div class="product-card">
+                    <div class="product-badge">Bestseller</div>
+                    <div class="product-img">
+                        <img src="https://assets.ajio.com/medias/sys_master/root/20210216/EWwz/602accd4aeb2696981661cba/-473Wx593H-460545300-red-MODEL.jpg" alt="Formal Shirt">
+                        <div class="quick-view">Quick View</div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Formal Shirt</h3>
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="far fa-star"></i>
+                            <span>(89)</span>
+                        </div>
+                        <div class="product-price">
+                            <span class="current-price">₹2,799</span>
+                            <span class="original-price">₹3,499</span>
+                            <span class="discount">20% off</span>
+                        </div>
+                    </div>
+                    <div class="product-actions">
+                        <button class="wishlist-btn" onclick="addToWishlist('Formal Shirt', 2799, 'https://assets.ajio.com/medias/sys_master/root/20210216/EWwz/602accd4aeb2696981661cba/-473Wx593H-460545300-red-MODEL.jpg')">
+                            <i class="far fa-heart"></i> Wishlist
+                        </button>
+                        <button class="cart-btn" onclick="addToCart('Formal Shirt', 2799, 'https://assets.ajio.com/medias/sys_master/root/20210216/EWwz/602accd4aeb2696981661cba/-473Wx593H-460545300-red-MODEL.jpg')">
+                            <i class="fas fa-shopping-cart"></i> Add to Cart
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Product 3 -->
+                <div class="product-card">
+                    <div class="product-badge">Trending</div>
+                    <div class="product-img">
+                        <img src="https://assets.ajio.com/medias/sys_master/root/20240713/RYgu/66922da46f60443f3106a1c1/-473Wx593H-464805313-brown-MODEL.jpg" alt="Sunglasses">
+                        <div class="quick-view">Quick View</div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Sunglasses</h3>
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <span>(256)</span>
+                        </div>
+                        <div class="product-price">
+                            <span class="current-price">₹1,199</span>
+                            <span class="original-price">₹1,999</span>
+                            <span class="discount">40% off</span>
+                        </div>
+                    </div>
+                    <div class="product-actions">
+                        <button class="wishlist-btn" onclick="addToWishlist('Sunglasses', 1199, 'https://assets.ajio.com/medias/sys_master/root/20240713/RYgu/66922da46f60443f3106a1c1/-473Wx593H-464805313-brown-MODEL.jpg')">
+                            <i class="far fa-heart"></i> Wishlist
+                        </button>
+                        <button class="cart-btn" onclick="addToCart('Sunglasses', 1199, 'https://assets.ajio.com/medias/sys_master/root/20240713/RYgu/66922da46f60443f3106a1c1/-473Wx593H-464805313-brown-MODEL.jpg')">
+                            <i class="fas fa-shopping-cart"></i> Add to Cart
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Product 4 -->
+                <div class="product-card">
+                    <div class="product-badge">Limited</div>
+                    <div class="product-img">
+                        <img src="https://assets.ajio.com/medias/sys_master/root/20240109/iorz/659d61ed54c30e6276a01dda/-1117Wx1400H-469584839-green-MODEL.jpg" alt="Running Shoes">
+                        <div class="quick-view">Quick View</div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Running Shoes</h3>
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                            <span>(342)</span>
+                        </div>
+                        <div class="product-price">
+                            <span class="current-price">₹4,799</span>
+                            <span class="original-price">₹5,999</span>
+                            <span class="discount">20% off</span>
+                        </div>
+                    </div>
+                    <div class="product-actions">
+                        <button class="wishlist-btn" onclick="addToWishlist('Running Shoes', 4799, 'https://assets.ajio.com/medias/sys_master/root/20240109/iorz/659d61ed54c30e6276a01dda/-1117Wx1400H-469584839-green-MODEL.jpg')">
+                            <i class="far fa-heart"></i> Wishlist
+                        </button>
+                        <button class="cart-btn" onclick="addToCart('Running Shoes', 4799, 'https://assets.ajio.com/medias/sys_master/root/20240109/iorz/659d61ed54c30e6276a01dda/-1117Wx1400H-469584839-green-MODEL.jpg')">
+                            <i class="fas fa-shopping-cart"></i> Add to Cart
+                        </button>
+                    </div>
                 </div>
             </div>
+        </section>
 
-            <!-- Product 4 -->
-            <div class="product-card">
-                <img src="https://assets.ajio.com/medias/sys_master/root/20240109/iorz/659d61ed54c30e6276a01dda/-1117Wx1400H-469584839-green-MODEL.jpg" alt="Running Shoes">
-                <h3>Running Shoes</h3>
-                <p>₹4,799</p>
-                <div class="actions">
-                    <button class="wishlist-btn" onclick="addToWishlist('Running Shoes', '₹4,799', 'https://assets.ajio.com/medias/sys_master/root/20240109/iorz/659d61ed54c30e6276a01dda/-1117Wx1400H-469584839-green-MODEL.jpg')"><i class="fas fa-heart"></i> Wishlist</button>
-                    <button class="cart-btn" onclick="addToCart('Running Shoes', '₹4,799', 'https://assets.ajio.com/medias/sys_master/root/20240109/iorz/659d61ed54c30e6276a01dda/-1117Wx1400H-469584839-green-MODEL.jpg')"><i class="fas fa-shopping-bag"></i> Add to Bag</button>
+        <!-- Deals Section -->
+        <section class="deals-section">
+            <div class="section-header">
+                <h2>Great Deals on Electronics</h2>
+                <a href="electronics.html" class="view-all">View All</a>
+            </div>
+            <div class="deals-grid">
+                <div class="deal-card">
+                    <a href="electronics.html">
+                        <img src="https://images.unsplash.com/photo-1546054454-aa26e2b734c7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2080&q=80" alt="Headphones">
+                        <div class="deal-overlay">
+                            <h3>Audio Devices</h3>
+                            <p>Up to 40% off</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="deal-card">
+                    <a href="electronics.html">
+                        <img src="https://images.unsplash.com/photo-1593642632823-8f785ba67e45?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2089&q=80" alt="Laptops">
+                        <div class="deal-overlay">
+                            <h3>Laptops</h3>
+                            <p>Up to 30% off</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="deal-card">
+                    <a href="electronics.html">
+                        <img src="https://images.unsplash.com/photo-1516035069371-29a1b244cc32?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2053&q=80" alt="Cameras">
+                        <div class="deal-overlay">
+                            <h3>Cameras</h3>
+                            <p>Up to 25% off</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="deal-card">
+                    <a href="electronics.html">
+                        <img src="https://m.media-amazon.com/images/I/51l-DLN3TCL._AC_UF1000,1000_QL80_.jpg" alt="Storage">
+                        <div class="deal-overlay">
+                            <h3>Storage Devices</h3>
+                            <p>Up to 35% off</p>
+                        </div>
+                    </a>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Great Deals Section -->
-<section class="deals-section">
-    <h2>Great Deals on Electronics</h2>
-    <div class="card-containerr">
-        <a href="electronics.html" class="cardd">
-            <img src="https://www.reliancedigital.in/medias/bau-tile-1-audio-241103.jpg?context=bWFzdGVyfGltYWdlc3wxOTg4NXxpbWFnZS9qcGVnfGltYWdlcy9oNzYvaGI2LzEwMjE3OTY1Mjg5NTAyLmpwZ3wxYzMxZWI4ZmM3YTRiNzY5YzFhMWYxYjI1OTFmYzFiYzgxYmVhNzMxZjYwZDA0MWM4NzcwMGZmNzhjZGUxMDJi" alt="Product 1">
-        </a>
-        <a href="electronics.html" class="cardd">
-            <img src="https://www.reliancedigital.in/medias/bau-tile-2-bose-241103.jpg?context=bWFzdGVyfGltYWdlc3wxODgzOXxpbWFnZS9qcGVnfGltYWdlcy9oNWYvaDczLzEwMjE3OTY1MzU1MDM4LmpwZ3xhNDgzZTEyN2RlYTZlMWQ5YWE5ZmZhNGU1MTVlZWRmNmNmODFlNWVlMjMyYmIzNzljOGIxYWIwM2NmYmQ1YjUw" alt="Product 2">
-        </a>
-        <a href="electronics.html" class="cardd">
-            <img src="https://www.reliancedigital.in/medias/bau-tile-3-sda-241103.jpg?context=bWFzdGVyfGltYWdlc3wyMDYzNnxpbWFnZS9qcGVnfGltYWdlcy9oYzAvaGYxLzEwMjE3OTY1NDIwNTc0LmpwZ3xkNzQ5ZjU5OTI0NWFhYTdiMWU1NjY5ZjNlODc1NzliMjQ4M2RhNzEwMzM0OGI5MWRiMTZmMDQ3YWIyYWI1Y2Fk" alt="Product 3">
-        </a>
-        <a href="electronics.html" class="cardd">
-            <img src="https://www.reliancedigital.in/medias/bau-tile-4-storage-241103.jpg?context=bWFzdGVyfGltYWdlc3wxODQ1NXxpbWFnZS9qcGVnfGltYWdlcy9oNGIvaDhlLzEwMjE3OTY1NTg0NDE0LmpwZ3xiZTlhZjc1M2E3MzY1Zjc4OTk2NGIwZmI4YjM4ZjBlOTQyYzkzNTM1YWE4NzNhNjFlM2I2YTNmYmZiYzNjNTg1" alt="Product 4">
-        </a>
-    </div>
-    <div class="card-containerr">
-        <a href="electronics.html" class="cardd">
-            <img src="https://www.reliancedigital.in/medias/GDOE-Air-Purifiers-340x255.jpg?context=bWFzdGVyfGltYWdlc3wzMzEwM3xpbWFnZS9qcGVnfGltYWdlcy9oMjMvaGE5LzEwMjMwNzg3MjExMjk0LmpwZ3xhNWEzMWQ1NTExNWMzZjc2YmVmNjcyOGFiMDJkNzBmMzhjNGJiOGJlMmExZWEzZTkyNzlmZDQzYjkxNDM0ZTVi" alt="Product 1">
-        </a>
-        <a href="electronics.html" class="cardd">
-            <img src="https://www.reliancedigital.in/medias/bau-tile-6-charger-241103.jpg?context=bWFzdGVyfGltYWdlc3wxNjIyNXxpbWFnZS9qcGVnfGltYWdlcy9oMjkvaDRjLzEwMjE3OTY1NzgxMDIyLmpwZ3xjMmNhNmZkMjdhNTdhZTMyMDgxYWUxMmU4ZmU5MWFiMmYxNjkxZTdlNzViYmZkZDlhMDQyNzU0NmI2ZjQ5NDE5" alt="Product 2">
-        </a>
-        <a href="electronics.html" class="cardd">
-            <img src="https://www.reliancedigital.in/medias/bau-tile-7-ref-241103.jpg?context=bWFzdGVyfGltYWdlc3wyMDIyOHxpbWFnZS9qcGVnfGltYWdlcy9oYjYvaDQyLzEwMjE3OTY1ODQ2NTU4LmpwZ3xkMzUyNTk2OWNiMjg0ZWUyNDI4OGFhOWVkY2ZkMTNhOTUyZjVmZWJlNmJhNmM2ZDI0ZGJjODRkYjJmNWVkYWY4" alt="Product 3">
-        </a>
-        <a href="electronics.html" class="cardd">
-            <img src="https://www.reliancedigital.in/medias/Samsung-GDOE-BAU-Banner-340x255.jpg?context=bWFzdGVyfGltYWdlc3w0NTA0M3xpbWFnZS9qcGVnfGltYWdlcy9oNmYvaDhmLzEwMjQyNzcyNzYyNjU0LmpwZ3w1MDZjMGViMTQzNzA0NjQxMDEwM2M2OWFjNTkzNDkzNWM3NjI4OTJkNDk0ZmJkMzBhZTZiNjJhZjkwZDZiMzRk" alt="Product 4">
-        </a>
-    </div>
-</section>
+        <!-- Trending Tablets Section -->
+        <section class="product-section">
+            <div class="section-header">
+                <h2>Trending Tablets | No Cost EMI Available*</h2>
+                <a href="electronics.html" class="view-all">View All</a>
+            </div>
+            <div class="product-grid">
+                <!-- Product 1 -->
+                <div class="product-card">
+                    <div class="product-badge">New</div>
+                    <div class="product-img">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSdlqowNwEwcychNL0VjQ4ZenGD-OQNEriJqA&s" alt="iPad Air">
+                        <div class="quick-view">Quick View</div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Apple iPad Air 13 inch</h3>
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                            <span>(428)</span>
+                        </div>
+                        <div class="product-price">
+                            <span class="current-price">₹79,900</span>
+                            <span class="original-price">₹89,900</span>
+                            <span class="discount">11% off</span>
+                        </div>
+                        <div class="emi-badge">No Cost EMI</div>
+                    </div>
+                    <div class="product-actions">
+                        <button class="wishlist-btn" onclick="addToWishlist('Apple iPad Air 13 inch', 79900, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSdlqowNwEwcychNL0VjQ4ZenGD-OQNEriJqA&s')">
+                            <i class="far fa-heart"></i> Wishlist
+                        </button>
+                        <button class="cart-btn" onclick="addToCart('Apple iPad Air 13 inch', 79900, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSdlqowNwEwcychNL0VjQ4ZenGD-OQNEriJqA&s')">
+                            <i class="fas fa-shopping-cart"></i> Add to Cart
+                        </button>
+                    </div>
+                </div>
 
-<section class="product-section">
-    <h2>Trending Tablets | No Cost EMI Available*</h2>
-    <div class="card-container">
-        <!-- Card 1 -->
-        <div class="card">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSdlqowNwEwcychNL0VjQ4ZenGD-OQNEriJqA&s" alt="Product 1">
-            <div class="product-details">
-                <h3>Apple iPad Air 1st Gen 2024 32.78 cm (13 inch) Wi-Fi Tablet, 128 GB, Blue</h3>
-                <p>₹79,900</p>
-            </div>
-            <div class="product-actions">
-                <button class="wishlist-btn" onclick="addToWishlist('Apple iPad Air 1st Gen', '₹79,900', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSdlqowNwEwcychNL0VjQ4ZenGD-OQNEriJqA&s')"><i class="fas fa-heart"></i> Wishlist</button>
-                <button class="cart-btn" onclick="addToCart('Apple iPad Air 1st Gen', '₹79,900', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSdlqowNwEwcychNL0VjQ4ZenGD-OQNEriJqA&s')"><i class="fas fa-shopping-bag"></i> Add to Bag</button>
-            </div>
-        </div>
+                <!-- Product 2 -->
+                <div class="product-card">
+                    <div class="product-badge">Bestseller</div>
+                    <div class="product-img">
+                        <img src="https://m.media-amazon.com/images/I/61XZQXFQeVL._AC_UL480_FMwebp_QL65_.jpg" alt="iPad Air 5th Gen">
+                        <div class="quick-view">Quick View</div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Apple iPad Air 10.9 inch</h3>
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <span>(512)</span>
+                        </div>
+                        <div class="product-price">
+                            <span class="current-price">₹59,900</span>
+                            <span class="original-price">₹65,900</span>
+                            <span class="discount">9% off</span>
+                        </div>
+                        <div class="emi-badge">No Cost EMI</div>
+                    </div>
+                    <div class="product-actions">
+                        <button class="wishlist-btn" onclick="addToWishlist('Apple iPad Air 10.9 inch', 59900, 'https://m.media-amazon.com/images/I/61XZQXFQeVL._AC_UL480_FMwebp_QL65_.jpg')">
+                            <i class="far fa-heart"></i> Wishlist
+                        </button>
+                        <button class="cart-btn" onclick="addToCart('Apple iPad Air 10.9 inch', 59900, 'https://m.media-amazon.com/images/I/61XZQXFQeVL._AC_UL480_FMwebp_QL65_.jpg')">
+                            <i class="fas fa-shopping-cart"></i> Add to Cart
+                        </button>
+                    </div>
+                </div>
 
-        <!-- Card 2 -->
-        <div class="card">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9XWRcyDhPXDffX_LS6OMAIDDITgLispnb0A&s" alt="Product 2">
-            <div class="product-details">
-                <h3>Apple iPad Air 5th Gen 2022 27.69 cm (10.9 inch) Wi-Fi Tablet, 64 GB, MM9F3HN/A, Starlight</h3>
-                <p>₹59,900</p>
-            </div>
-            <div class="product-actions">
-                <button class="wishlist-btn" onclick="addToWishlist('Apple iPad Air 5th Gen', '₹59,900', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9XWRcyDhPXDffX_LS6OMAIDDITgLispnb0A&s')"><i class="fas fa-heart"></i> Wishlist</button>
-                <button class="cart-btn" onclick="addToCart('Apple iPad Air 5th Gen', '₹59,900', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9XWRcyDhPXDffX_LS6OMAIDDITgLispnb0A&s')"><i class="fas fa-shopping-bag"></i> Add to Bag</button>
-            </div>
-        </div>
+                <!-- Product 3 -->
+                <div class="product-card">
+                    <div class="product-badge">Popular</div>
+                    <div class="product-img">
+                        <img src="https://m.media-amazon.com/images/I/61NGnpjoRDL._AC_UL480_FMwebp_QL65_.jpg" alt="iPad 10th Gen">
+                        <div class="quick-view">Quick View</div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Apple iPad 10th Gen</h3>
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="far fa-star"></i>
+                            <span>(387)</span>
+                        </div>
+                        <div class="product-price">
+                            <span class="current-price">₹33,490</span>
+                            <span class="original-price">₹36,900</span>
+                            <span class="discount">9% off</span>
+                        </div>
+                        <div class="emi-badge">No Cost EMI</div>
+                    </div>
+                    <div class="product-actions">
+                        <button class="wishlist-btn" onclick="addToWishlist('Apple iPad 10th Gen', 33490, 'https://m.media-amazon.com/images/I/61NGnpjoRDL._AC_UL480_FMwebp_QL65_.jpg')">
+                            <i class="far fa-heart"></i> Wishlist
+                        </button>
+                        <button class="cart-btn" onclick="addToCart('Apple iPad 10th Gen', 33490, 'https://m.media-amazon.com/images/I/61NGnpjoRDL._AC_UL480_FMwebp_QL65_.jpg')">
+                            <i class="fas fa-shopping-cart"></i> Add to Cart
+                        </button>
+                    </div>
+                </div>
 
-        <!-- Card 3 -->
-        <div class="card">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR8sFmaHW_5N4TBofnusK3mCqqyqxi1m-jmFw&s" alt="Product 3">
-            <div class="product-details">
-                <h3>Apple iPad 10th Gen (2022) 27.69 cm (10.9 inch) Wi-Fi Tablet, 64 GB, Silver, MPQ03HN/A</h3>
-                <p>₹33,490</p>
+                <!-- Product 4 -->
+                <div class="product-card">
+                    <div class="product-badge">Value</div>
+                    <div class="product-img">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQcqP-jr9o1ht0wdFf_G3mPNvLO2_EVywYRsA&s" alt="Samsung Tablet">
+                        <div class="quick-view">Quick View</div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Samsung Galaxy Tab</h3>
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                            <span>(276)</span>
+                        </div>
+                        <div class="product-price">
+                            <span class="current-price">₹24,999</span>
+                            <span class="original-price">₹29,999</span>
+                            <span class="discount">17% off</span>
+                        </div>
+                        <div class="emi-badge">No Cost EMI</div>
+                    </div>
+                    <div class="product-actions">
+                        <button class="wishlist-btn" onclick="addToWishlist('Samsung Galaxy Tab', 24999, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQcqP-jr9o1ht0wdFf_G3mPNvLO2_EVywYRsA&s')">
+                            <i class="far fa-heart"></i> Wishlist
+                        </button>
+                        <button class="cart-btn" onclick="addToCart('Samsung Galaxy Tab', 24999, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQcqP-jr9o1ht0wdFf_G3mPNvLO2_EVywYRsA&s')">
+                            <i class="fas fa-shopping-cart"></i> Add to Cart
+                        </button>
+                    </div>
+                </div>
             </div>
-            <div class="product-actions">
-                <button class="wishlist-btn" onclick="addToWishlist('Apple iPad 10th Gen', '₹33,490', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR8sFmaHW_5N4TBofnusK3mCqqyqxi1m-jmFw&s')"><i class="fas fa-heart"></i> Wishlist</button>
-                <button class="cart-btn" onclick="addToCart('Apple iPad 10th Gen', '₹33,490', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR8sFmaHW_5N4TBofnusK3mCqqyqxi1m-jmFw&s')"><i class="fas fa-shopping-bag"></i> Add to Bag</button>
-            </div>
-        </div>
+        </section>
 
-        <!-- Card 4 -->
-        <div class="card">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQcqP-jr9o1ht0wdFf_G3mPNvLO2_EVywYRsA&s" alt="Product 4">
-            <div class="product-details">
-                <h3>Samsung Galaxy 27.94 cm (11.0 inch) Wi-Fi + Cellular Tablet 128 GB 8 GB Silver Tab </h3>
-                <p>₹24,999</p>
+        <!-- Smartwatches Section -->
+        <section class="product-section">
+            <div class="section-header">
+                <h2>Premium Smartwatches | No Cost EMI</h2>
+                <a href="electronics.html" class="view-all">View All</a>
             </div>
-            <div class="product-actions">
-                <button class="wishlist-btn" onclick="addToWishlist('Samsung Galaxy Tablet', '₹24,999', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQcqP-jr9o1ht0wdFf_G3mPNvLO2_EVywYRsA&s')"><i class="fas fa-heart"></i> Wishlist</button>
-                <button class="cart-btn" onclick="addToCart('Samsung Galaxy Tablet', '₹24,999', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQcqP-jr9o1ht0wdFf_G3mPNvLO2_EVywYRsA&s')"><i class="fas fa-shopping-bag"></i> Add to Bag</button>
-            </div>
-        </div>
-    </div>
-</section>
+            <div class="product-grid">
+                <!-- Product 1 -->
+                <div class="product-card">
+                    <div class="product-badge">New</div>
+                    <div class="product-img">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTxUOu2R_hqzY8Ca8TCkaFJI6GBmVBOSqxa3Q&s" alt="Galaxy Watch 7">
+                        <div class="quick-view">Quick View</div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Samsung Galaxy Watch 7</h3>
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="far fa-star"></i>
+                            <span>(198)</span>
+                        </div>
+                        <div class="product-price">
+                            <span class="current-price">₹29,999</span>
+                            <span class="original-price">₹34,999</span>
+                            <span class="discount">14% off</span>
+                        </div>
+                        <div class="emi-badge">No Cost EMI</div>
+                    </div>
+                    <div class="product-actions">
+                        <button class="wishlist-btn" onclick="addToWishlist('Samsung Galaxy Watch 7', 29999, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTxUOu2R_hqzY8Ca8TCkaFJI6GBmVBOSqxa3Q&s')">
+                            <i class="far fa-heart"></i> Wishlist
+                        </button>
+                        <button class="cart-btn" onclick="addToCart('Samsung Galaxy Watch 7', 29999, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTxUOu2R_hqzY8Ca8TCkaFJI6GBmVBOSqxa3Q&s')">
+                            <i class="fas fa-shopping-cart"></i> Add to Cart
+                        </button>
+                    </div>
+                </div>
 
-<section class="product-section">
-    <h2>Avail No-cost EMI on Premium Smartwatches</h2>
-    <div class="card-container">
-        <!-- Card 1 -->
-        <div class="card">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTxUOu2R_hqzY8Ca8TCkaFJI6GBmVBOSqxa3Q&s" alt="Samsung Galaxy Watch 7">
-            <div class="product-details">
-                <h3>Samsung Galaxy Watch 7 40 mm Bluetooth + LTE Smart Watch, 3nm Processor, Dual GPS</h3>
-                <p>₹29,999</p>
-            </div>
-            <div class="product-actions">
-                <button class="wishlist-btn" onclick="addToWishlist('Samsung Galaxy Watch 7', '₹29,999', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTxUOu2R_hqzY8Ca8TCkaFJI6GBmVBOSqxa3Q&s')"><i class="fas fa-heart"></i> Wishlist</button>
-                <button class="cart-btn" onclick="addToCart('Samsung Galaxy Watch 7', '₹29,999', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTxUOu2R_hqzY8Ca8TCkaFJI6GBmVBOSqxa3Q&s')"><i class="fas fa-shopping-bag"></i> Add to Bag</button>
-            </div>
-        </div>
+                <!-- Product 2 -->
+                <div class="product-card">
+                    <div class="product-badge">Bestseller</div>
+                    <div class="product-img">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRC9HTz1MgVUhsnXenBL-MON-ThVlwqpSw4sA&s" alt="Apple Watch Series 10">
+                        <div class="quick-view">Quick View</div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Apple Watch Series 10</h3>
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <span>(423)</span>
+                        </div>
+                        <div class="product-price">
+                            <span class="current-price">₹49,900</span>
+                            <span class="original-price">₹54,900</span>
+                            <span class="discount">9% off</span>
+                        </div>
+                        <div class="emi-badge">No Cost EMI</div>
+                    </div>
+                    <div class="product-actions">
+                        <button class="wishlist-btn" onclick="addToWishlist('Apple Watch Series 10', 49900, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRC9HTz1MgVUhsnXenBL-MON-ThVlwqpSw4sA&s')">
+                            <i class="far fa-heart"></i> Wishlist
+                        </button>
+                        <button class="cart-btn" onclick="addToCart('Apple Watch Series 10', 49900, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRC9HTz1MgVUhsnXenBL-MON-ThVlwqpSw4sA&s')">
+                            <i class="fas fa-shopping-cart"></i> Add to Cart
+                        </button>
+                    </div>
+                </div>
 
-        <!-- Card 2 -->
-        <div class="card">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRC9HTz1MgVUhsnXenBL-MON-ThVlwqpSw4sA&s" alt="Apple Watch Series 10">
-            <div class="product-details">
-                <h3>Apple Watch Series 10 GPS 46 mm Jet Black Aluminium Case with Black Sport Band</h3>
-                <p>₹49,900</p>
-            </div>
-            <div class="product-actions">
-                <button class="wishlist-btn" onclick="addToWishlist('Apple Watch Series 10', '₹49,900', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRC9HTz1MgVUhsnXenBL-MON-ThVlwqpSw4sA&s')"><i class="fas fa-heart"></i> Wishlist</button>
-                <button class="cart-btn" onclick="addToCart('Apple Watch Series 10', '₹49,900', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRC9HTz1MgVUhsnXenBL-MON-ThVlwqpSw4sA&s')"><i class="fas fa-shopping-bag"></i> Add to Bag</button>
-            </div>
-        </div>
+                <!-- Product 3 -->
+                <div class="product-card">
+                    <div class="product-badge">Premium</div>
+                    <div class="product-img">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT8UszdUWLPajmF9jcYUigd9HsWs4eN1RIEog&s" alt="Galaxy Watch Ultra">
+                        <div class="quick-view">Quick View</div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Samsung Galaxy Watch Ultra</h3>
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                            <span>(156)</span>
+                        </div>
+                        <div class="product-price">
+                            <span class="current-price">₹51,999</span>
+                            <span class="original-price">₹59,999</span>
+                            <span class="discount">13% off</span>
+                        </div>
+                        <div class="emi-badge">No Cost EMI</div>
+                    </div>
+                    <div class="product-actions">
+                        <button class="wishlist-btn" onclick="addToWishlist('Samsung Galaxy Watch Ultra', 51999, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT8UszdUWLPajmF9jcYUigd9HsWs4eN1RIEog&s')">
+                            <i class="far fa-heart"></i> Wishlist
+                        </button>
+                        <button class="cart-btn" onclick="addToCart('Samsung Galaxy Watch Ultra', 51999, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT8UszdUWLPajmF9jcYUigd9HsWs4eN1RIEog&s')">
+                            <i class="fas fa-shopping-cart"></i> Add to Cart
+                        </button>
+                    </div>
+                </div>
 
-        <!-- Card 3 -->
-        <div class="card">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT8UszdUWLPajmF9jcYUigd9HsWs4eN1RIEog&s" alt="Samsung Galaxy Watch Ultra">
-            <div class="product-details">
-                <h3>Samsung Galaxy Watch Ultra Smart Watch, Upto 100 H battery, 3nm Processor, Dual GPS</h3>
-                <p>₹51,999</p>
+                <!-- Product 4 -->
+                <div class="product-card">
+                    <div class="product-badge">New</div>
+                    <div class="product-img">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSVnPGEQMzijg1BXXhQzUeEa8JIcdVCXKzxgw&s" alt="Pixel Watch 3">
+                        <div class="quick-view">Quick View</div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Google Pixel Watch 3</h3>
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="far fa-star"></i>
+                            <span>(87)</span>
+                        </div>
+                        <div class="product-price">
+                            <span class="current-price">₹41,999</span>
+                            <span class="original-price">₹45,999</span>
+                            <span class="discount">9% off</span>
+                        </div>
+                        <div class="emi-badge">No Cost EMI</div>
+                    </div>
+                    <div class="product-actions">
+                        <button class="wishlist-btn" onclick="addToWishlist('Google Pixel Watch 3', 41999, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSVnPGEQMzijg1BXXhQzUeEa8JIcdVCXKzxgw&s')">
+                            <i class="far fa-heart"></i> Wishlist
+                        </button>
+                        <button class="cart-btn" onclick="addToCart('Google Pixel Watch 3', 41999, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSVnPGEQMzijg1BXXhQzUeEa8JIcdVCXKzxgw&s')">
+                            <i class="fas fa-shopping-cart"></i> Add to Cart
+                        </button>
+                    </div>
+                </div>
             </div>
-            <div class="product-actions">
-                <button class="wishlist-btn" onclick="addToWishlist('Samsung Galaxy Watch Ultra', '₹51,999', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT8UszdUWLPajmF9jcYUigd9HsWs4eN1RIEog&s')"><i class="fas fa-heart"></i> Wishlist</button>
-                <button class="cart-btn" onclick="addToCart('Samsung Galaxy Watch Ultra', '₹51,999', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT8UszdUWLPajmF9jcYUigd9HsWs4eN1RIEog&s')"><i class="fas fa-shopping-bag"></i> Add to Bag</button>
-            </div>
-        </div>
+        </section>
 
-        <!-- Card 4 -->
-        <div class="card">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSVnPGEQMzijg1BXXhQzUeEa8JIcdVCXKzxgw&s" alt="Google Pixel Watch 3">
-            <div class="product-details">
-                <h3>Google Pixel Watch 3 45 mm Smartwatch, Black Aluminum Case, Obsidian Active Band</h3>
-                <p>₹41,999</p>
+        <!-- Trending Books Section -->
+        <section class="product-section">
+            <div class="section-header">
+                <h2>Trending Books</h2>
+                <a href="books.html" class="view-all">View All</a>
             </div>
-            <div class="product-actions">
-                <button class="wishlist-btn" onclick="addToWishlist('Google Pixel Watch 3', '₹41,999', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSVnPGEQMzijg1BXXhQzUeEa8JIcdVCXKzxgw&s')"><i class="fas fa-heart"></i> Wishlist</button>
-                <button class="cart-btn" onclick="addToCart('Google Pixel Watch 3', '₹41,999', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSVnPGEQMzijg1BXXhQzUeEa8JIcdVCXKzxgw&s')"><i class="fas fa-shopping-bag"></i> Add to Bag</button>
-            </div>
-        </div>
-    </div>
-</section>
+            <div class="product-grid">
+                <!-- Product 1 -->
+                <div class="product-card">
+                    <div class="product-badge">Bestseller</div>
+                    <div class="product-img">
+                        <img src="https://m.media-amazon.com/images/I/51HqsTI7mcL._SY425_.jpg" alt="Living the Artist Way">
+                        <div class="quick-view">Quick View</div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Living the Artist Way</h3>
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                            <span>(342)</span>
+                        </div>
+                        <div class="product-price">
+                            <span class="current-price">₹399</span>
+                            <span class="original-price">₹599</span>
+                            <span class="discount">33% off</span>
+                        </div>
+                    </div>
+                    <div class="product-actions">
+                        <button class="wishlist-btn" onclick="addToWishlist('Living the Artist Way', 399, 'https://m.media-amazon.com/images/I/51HqsTI7mcL._SY425_.jpg')">
+                            <i class="far fa-heart"></i> Wishlist
+                        </button>
+                        <button class="cart-btn" onclick="addToCart('Living the Artist Way', 399, 'https://m.media-amazon.com/images/I/51HqsTI7mcL._SY425_.jpg')">
+                            <i class="fas fa-shopping-cart"></i> Add to Cart
+                        </button>
+                    </div>
+                </div>
 
-<section class="product-section">
-    <h2>Trending Book's</h2>
-    <div class="card-container">
-        <!-- Card 1 -->
-        <div class="card">
-            <div class="product-details">
-            <img src="https://m.media-amazon.com/images/I/51HqsTI7mcL._SR290,290_.jpg" alt="Book 5">
-            <h3>Living the Artist Way</h3>
-            <p>₹399</p>
-            </div>
-            <div class="product-actions">
-                <button class="wishlist-btn" onclick="addToWishlist('Living the Artist Way', '₹399', 'https://m.media-amazon.com/images/I/51HqsTI7mcL._SR290,290_.jpg')"><i class="fas fa-heart"></i> Wishlist</button>
-                <button class="cart-btn" onclick="addToCart('Living the Artist Way', '₹399', 'https://m.media-amazon.com/images/I/51HqsTI7mcL._SR290,290_.jpg')"><i class="fas fa-shopping-bag"></i> Add to Cart</button>
-            </div>
-        </div>
-        <div class="card">
-            <div class="product-details">
-            <img src="https://www.madrasshoppe.com/212167-home_default/twisted-hate-the-tiktok-sensation-fall-into-a-world-of-addictive-romance-a-huang.jpg" alt="Book 6">
-            <h3>Twisted Hate</h3>
-            <p>₹249</p>
-            </div>
-            <div class="product-actions">
-                <button class="wishlist-btn" onclick="addToWishlist('Twisted Hate', '₹249', 'https://www.madrasshoppe.com/212167-home_default/twisted-hate-the-tiktok-sensation-fall-into-a-world-of-addictive-romance-a-huang.jpg')">
-                    <i class="fas fa-heart"></i> Wishlist
-                </button>
-                <button class="cart-btn" onclick="addToCart('Twisted Hate', '₹249', 'https://www.madrasshoppe.com/212167-home_default/twisted-hate-the-tiktok-sensation-fall-into-a-world-of-addictive-romance-a-huang.jpg')">
-                    <i class="fas fa-shopping-bag"></i> Add to Cart
-                </button>
-            </div>
-        </div>
-        
-        <div class="card">
-            <div class="product-details">
-            <img src="https://bookbins.in/wp-content/uploads/2024/12/The-Fine-Print-Lauren-Asher-Book-Informative-Buy-Online-Bookbins-01.jpg" alt="Book 2">
-            <h3>The Fine Print</h3>
-            <p>₹299</p>
-            </div>
-            <div class="product-actions">
-                <button class="wishlist-btn" onclick="addToWishlist('The Fine Print', '₹299', 'https://bookbins.in/wp-content/uploads/2024/12/The-Fine-Print-Lauren-Asher-Book-Informative-Buy-Online-Bookbins-01.jpg')"><i class="fas fa-heart"></i> Wishlist</button>
-                <button class="cart-btn" onclick="addToCart('The Fine Print', '₹299', 'https://bookbins.in/wp-content/uploads/2024/12/The-Fine-Print-Lauren-Asher-Book-Informative-Buy-Online-Bookbins-01.jpg')"><i class="fas fa-shopping-bag"></i> Add to Cart</button>
-            </div>
-        </div>
-        <div class="card">
-            <div class="product-details">
-            <img src="https://rukminim2.flixcart.com/image/850/1000/xif0q/regionalbooks/1/k/q/verity-original-imaghwx2mfdbfzfw.jpeg?q=90&crop=false" alt="Book 3">
-            <h3>Verity</h3>
-            <p>₹599</p>
-            </div>
-            <div class="product-actions">
-                <button class="wishlist-btn" onclick="addToWishlist('Verity', '₹599', 'https://rukminim2.flixcart.com/image/850/1000/xif0q/regionalbooks/1/k/q/verity-original-imaghwx2mfdbfzfw.jpeg?q=90&crop=false')"><i class="fas fa-heart"></i> Wishlist</button>
-                <button class="cart-btn" onclick="addToCart('Verity', '₹599', 'https://rukminim2.flixcart.com/image/850/1000/xif0q/regionalbooks/1/k/q/verity-original-imaghwx2mfdbfzfw.jpeg?q=90&crop=false')"><i class="fas fa-shopping-bag"></i> Add to Cart</button>
-            </div>
-        </div>
-    </div>
-</section>
+                <!-- Product 2 -->
+                <div class="product-card">
+                    <div class="product-badge">Popular</div>
+                    <div class="product-img">
+                        <img src="https://m.media-amazon.com/images/I/71u59k0c6DL.jpg" alt="Twisted Hate">
+                        <div class="quick-view">Quick View</div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Twisted Hate</h3>
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="far fa-star"></i>
+                            <span>(287)</span>
+                        </div>
+                        <div class="product-price">
+                            <span class="current-price">₹249</span>
+                            <span class="original-price">₹399</span>
+                            <span class="discount">38% off</span>
+                        </div>
+                    </div>
+                    <div class="product-actions">
+                        <button class="wishlist-btn" onclick="addToWishlist('Twisted Hate', 249, 'https://m.media-amazon.com/images/I/71u59k0c6DL.jpg')">
+                            <i class="far fa-heart"></i> Wishlist
+                        </button>
+                        <button class="cart-btn" onclick="addToCart('Twisted Hate', 249, 'https://m.media-amazon.com/images/I/71u59k0c6DL.jpg')">
+                            <i class="fas fa-shopping-cart"></i> Add to Cart
+                        </button>
+                    </div>
+                </div>
 
+                <!-- Product 3 -->
+                <div class="product-card">
+                    <div class="product-badge">New</div>
+                    <div class="product-img">
+                        <img src="https://m.media-amazon.com/images/I/819Vqf+FQwL._UF1000,1000_QL80_.jpg" alt="The Fine Print">
+                        <div class="quick-view">Quick View</div>
+                    </div>
+                    <div class="product-info">
+                        <h3>The Fine Print</h3>
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <span>(512)</span>
+                        </div>
+                        <div class="product-price">
+                            <span class="current-price">₹299</span>
+                            <span class="original-price">₹499</span>
+                            <span class="discount">40% off</span>
+                        </div>
+                    </div>
+                    <div class="product-actions">
+                        <button class="wishlist-btn" onclick="addToWishlist('The Fine Print', 299, 'https://m.media-amazon.com/images/I/819Vqf+FQwL._UF1000,1000_QL80_.jpg')">
+                            <i class="far fa-heart"></i> Wishlist
+                        </button>
+                        <button class="cart-btn" onclick="addToCart('The Fine Print', 299, 'https://m.media-amazon.com/images/I/819Vqf+FQwL._UF1000,1000_QL80_.jpg')">
+                            <i class="fas fa-shopping-cart"></i> Add to Cart
+                        </button>
+                    </div>
+                </div>
 
+                <!-- Product 4 -->
+                <div class="product-card">
+                    <div class="product-badge">Bestseller</div>
+                    <div class="product-img">
+                        <img src="https://m.media-amazon.com/images/I/91868k2+gUL.jpg" alt="Verity">
+                        <div class="quick-view">Quick View</div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Verity</h3>
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                            <span>(876)</span>
+                        </div>
+                        <div class="product-price">
+                            <span class="current-price">₹599</span>
+                            <span class="original-price">₹899</span>
+                            <span class="discount">33% off</span>
+                        </div>
+                    </div>
+                    <div class="product-actions">
+                        <button class="wishlist-btn" onclick="addToWishlist('Verity', 599, 'https://m.media-amazon.com/images/I/91868k2+gUL.jpg')">
+                            <i class="far fa-heart"></i> Wishlist
+                        </button>
+                        <button class="cart-btn" onclick="addToCart('Verity', 599, 'https://m.media-amazon.com/images/I/91868k2+gUL.jpg')">
+                            <i class="fas fa-shopping-cart"></i> Add to Cart
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-
+        <!-- Newsletter Section -->
+        <section class="newsletter-section">
+            <div class="newsletter-container">
+                <h2>Subscribe to Our Newsletter</h2>
+                <p>Get the latest updates on new products and upcoming sales</p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Enter your email address" required>
+                    <button type="submit">Subscribe</button>
+                </form>
+            </div>
+        </section>
     </main>
+
+    <!-- Footer -->
     <footer class="footer">
         <div class="footer-container">
-            <div class="footer-column">
-                <h3>Product Categories</h3>
-                <ul>
-                    <li><a href="clothing.html">Clothing</a></li>
-                    <li><a href="mobile.html">Smartphones</a></li>
-                    <li><a href="electronics.html">Laptops</a></li>
-                    <li><a href="electronics.html">Cameras</a></li>
-                    <li><a href="electronics.html">Televisions</a></li>
-                    <li><a href="electronics.html">Air Conditioners</a></li>
-                    <li><a href="electronics.html">Refrigerators</a></li>
-                    <li><a href="home.html">Kitchen Appliances</a></li>
-                    <li><a href="home.html">Accessories</a></li>
-                    <li><a href="home.html">Personal Care</a></li>
-                    <li><a href="electronics.html">Smartwatches</a></li>
-                </ul>
+            <div class="footer-top">
+                <div class="footer-column">
+                    <h3>Shop</h3>
+                    <ul>
+                        <li><a href="clothing.html">Clothing</a></li>
+                        <li><a href="electronics.html">Electronics</a></li>
+                        <li><a href="home.html">Home & Kitchen</a></li>
+                        <li><a href="books.html">Books</a></li>
+                        <li><a href="mobile.html">Mobiles</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Customer Service</h3>
+                    <ul>
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="faq.html">FAQs</a></li>
+                        <li><a href="shipping.html">Shipping Policy</a></li>
+                        <li><a href="returns.html">Return Policy</a></li>
+                        <li><a href="cancellation.html">Cancellation Policy</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>About GrabMart</h3>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="careers.html">Careers</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="press.html">Press</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Legal</h3>
+                    <ul>
+                        <li><a href="terms.html">Terms of Use</a></li>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                        <li><a href="security.html">Security</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Connect With Us</h3>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                    
+                </div>
             </div>
-            <div class="footer-column">
-                <h3>Site Info</h3>
-                <ul>
-                    <li><a href="#">About GrabMart</a></li>
-                    <li><a href="#">Customer Service</a></li>
-                    <li><a href="#">Gift Cards</a></li>
-                    <li><a href="#">Corporate Enquiries</a></li>
-                    <li><a href="#">Contact Us</a></li>
-                </ul>
-            </div>
-            <div class="footer-column">
-                <h3>Policies</h3>
-                <ul>
-                    <li><a href="#">Terms of Use</a></li>
-                    <li><a href="#">Privacy Policy</a></li>
-                    <li><a href="#">Return Policy</a></li>
-                    <li><a href="#">Shipping Policy</a></li>
-                    <li><a href="#">E-waste Policy</a></li>
-                </ul>
-            </div>
-            <div class="footer-column">
-                <h3>Resource Centre</h3>
-                <ul>
-                    <li><a href="#">Product Reviews</a></li>
-                    <li><a href="#">Buying Guides</a></li>
-                    <li><a href="#">How Tos</a></li>
-                    <li><a href="#">Featured Stories</a></li>
-                    <li><a href="#">Events & Happenings</a></li>
-                    <li><a href="#">Nearest Store</a></li>
-                </ul>
-            </div>
-            <div class="footer-column">
-                <h3>Follow Us</h3>
-                <div class="social-icons">
-                    <a href="#"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#"><i class="fab fa-twitter"></i></a>
-                    <a href="#"><i class="fab fa-youtube"></i></a>
+            
+            <div class="footer-bottom">
+                <div class="payment-methods">
+                    <p>We Accept:</p>
+                    <div class="payment-icons">
+                        <i class="fab fa-cc-visa"></i>
+                        <i class="fab fa-cc-mastercard"></i>
+                        <i class="fab fa-cc-amex"></i>
+                        <i class="fab fa-cc-paypal"></i>
+                        <i class="fas fa-university"></i>
+                    </div>
+                </div>
+                <div class="copyright">
+                    <p>&copy; 2025 GrabMart. All Rights Reserved.</p>
                 </div>
             </div>
         </div>
-        <div class="footer-bottom">
-            <p>&copy; 2025 GrabMart. All Rights Reserved.</p>
-            <p>Product prices, offers, and availability are subject to change without notice.</p>
-        </div>
     </footer>
-    
-    
+
+    <!-- Quick View Modal -->
+    <div class="modal" id="quickViewModal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div class="modal-product-view">
+                <div class="modal-product-images">
+                    <div class="main-image">
+                        <img src="" alt="" id="modalMainImage">
+                    </div>
+                    <div class="thumbnail-images">
+                        <!-- Thumbnails will be added dynamically -->
+                    </div>
+                </div>
+                <div class="modal-product-info">
+                    <h2 id="modalProductName"></h2>
+                    <div class="modal-product-rating">
+                        <div class="stars" id="modalProductRating"></div>
+                        <span id="modalReviewCount"></span>
+                    </div>
+                    <div class="modal-product-price">
+                        <span class="current-price" id="modalCurrentPrice"></span>
+                        <span class="original-price" id="modalOriginalPrice"></span>
+                        <span class="discount" id="modalDiscount"></span>
+                    </div>
+                    <div class="modal-product-details">
+                        <p id="modalProductDescription"></p>
+                        <ul id="modalProductFeatures"></ul>
+                    </div>
+                    <div class="modal-product-actions">
+                        <button class="wishlist-btn" id="modalWishlistBtn">
+                            <i class="far fa-heart"></i> Add to Wishlist
+                        </button>
+                        <button class="cart-btn" id="modalCartBtn">
+                            <i class="fas fa-shopping-cart"></i> Add to Cart
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Login Modal -->
+    <div class="modal" id="loginModal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div class="auth-container">
+                <div class="auth-tabs">
+                    <button class="tab-btn active" data-tab="login">Login</button>
+                    <button class="tab-btn" data-tab="register">Register</button>
+                </div>
+                
+                <div class="auth-form" id="loginForm">
+                    <h2>Welcome Back</h2>
+                    <form>
+                        <div class="form-group">
+                            <label for="loginEmail">Email</label>
+                            <input type="email" id="loginEmail" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="loginPassword">Password</label>
+                            <input type="password" id="loginPassword" required>
+                        </div>
+                        <div class="form-options">
+                            <label>
+                                <input type="checkbox"> Remember me
+                            </label>
+                            <a href="forgot-password.html">Forgot Password?</a>
+                        </div>
+                        <button type="submit" class="btn-login">Login</button>
+                    </form>
+                    <div class="social-login">
+                        <p>Or login with</p>
+                        <div class="social-buttons">
+                            <button class="btn-google"><i class="fab fa-google"></i> Google</button>
+                            <button class="btn-facebook"><i class="fab fa-facebook-f"></i> Facebook</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="auth-form" id="registerForm" style="display: none;">
+                    <h2>Create Account</h2>
+                    <form>
+                        <div class="form-group">
+                            <label for="registerName">Full Name</label>
+                            <input type="text" id="registerName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="registerEmail">Email</label>
+                            <input type="email" id="registerEmail" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="registerPassword">Password</label>
+                            <input type="password" id="registerPassword" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="registerConfirmPassword">Confirm Password</label>
+                            <input type="password" id="registerConfirmPassword" required>
+                        </div>
+                        <div class="form-group">
+                            <label>
+                                <input type="checkbox" required> I agree to the <a href="terms.html">Terms & Conditions</a>
+                            </label>
+                        </div>
+                        <button type="submit" class="btn-register">Register</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Back to Top Button -->
+    <button id="backToTop" title="Go to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
 
     <script src="js/script.js"></script>
+    <script? src="js/login.js"></script>
 </body>
 </html>

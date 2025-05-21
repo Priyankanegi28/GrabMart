@@ -4,26 +4,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Electronics - GrabMart</title>
-    <link rel="stylesheet" type="text/css" href="css/wear.css">
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/electronics.css">
 </head>
 <body>
     <!-- Header Section -->
-    <header>
+    <header class="header">
         <nav class="navbar">
             <div class="navbar-brand">
-                <h1>GrabMart</h1>
+                <a href="index.html" class="logo">GrabMart</a>
             </div>
+            
             <div class="navbar-search">
-                <input type="text" placeholder="Search for electronics..." id="search-bar">
+                <div class="search-container">
+                    <input type="text" placeholder="Search for electronics..." id="search-bar">
+                    <button class="search-btn"><i class="fas fa-search"></i></button>
+                </div>
             </div>
+            
             <div class="navbar-icons">
                 <div class="wishlist">
                     <a href="wishlist.html">
                         <span>Wishlist</span>
                         <i class="fas fa-heart"></i>
+                        <span class="badge" id="wishlist-count">0</span>
                     </a>
                 </div>
                 <div class="divider">|</div>
@@ -31,375 +36,191 @@
                     <a href="cart.html">
                         <span>Cart</span>
                         <i class="fas fa-shopping-cart"></i>
+                        <span class="badge" id="cart-count">0</span>
                     </a>
                 </div>
                 <div class="divider">|</div>
                 <div class="login">
-                    <a href="login.html">
-                    <span>Login</span>
-                    <i class="fas fa-user"></i>
+                    <a href="login.html" id="login-link">
+                        <span id="login-text">Login</span>
+                        <i class="fas fa-user"></i>
                     </a>
                 </div>
             </div>
+            
+            <div class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </div>
         </nav>
+        
+        <!-- Mobile Menu -->
+        <div class="mobile-menu">
+            <div class="mobile-search">
+                <input type="text" placeholder="Search...">
+                <button><i class="fas fa-search"></i></button>
+            </div>
+            <a href="index.html"><i class="fas fa-home"></i> Home</a>
+            <a href="books.html"><i class="fas fa-book"></i> Books</a>
+            <a href="electronics.html"><i class="fas fa-laptop"></i> Electronics</a>
+            <a href="wishlist.html"><i class="fas fa-heart"></i> Wishlist</a>
+            <a href="cart.html"><i class="fas fa-shopping-cart"></i> Cart</a>
+            <a href="login.html" id="mobile-login"><i class="fas fa-user"></i> <span>Login</span></a>
+        </div>
     </header>
 
     <!-- Electronics Section -->
-    <section class="product-grid">
-        <h2>Electronic's</h2>
-        <div class="grid">
-            <!-- Product Cards (25 total) -->
-            <div class="product-card">
-                <img src="https://5.imimg.com/data5/SELLER/Default/2021/2/UK/KO/MJ/12959711/samsung-mobile-phones.jpg" alt="Smartphone">
-                <h3>Smartphone</h3>
-                <p>₹25,999</p>
-                <div class="actions">
-                    <button class="wishlist-btn" onclick="addToWishlist('Smartphone', '₹25,999', 'https://5.imimg.com/data5/SELLER/Default/2021/2/UK/KO/MJ/12959711/samsung-mobile-phones.jpg')">
-                        <i class="fas fa-heart"></i> Wishlist
-                    </button>
-                    <button class="cart-btn" onclick="addToCart('Smartphone', '₹25,999', 'https://5.imimg.com/data5/SELLER/Default/2021/2/UK/KO/MJ/12959711/samsung-mobile-phones.jpg')">
-                        <i class="fas fa-shopping-bag"></i> Add to Cart
-                    </button>
-                </div>
-            </div>
-            <div class="product-card">
-                <img src="https://images-cdn.ubuy.co.in/6511a6f4485ede30f811bc23-hp-15-6-screen-fhd-laptop-computer-amd.jpg" alt="Laptop">
-                <h3>Laptop Pro 15</h3>
-                <p>₹55,000</p>
-                <div class="actions">
-                    <button class="wishlist-btn" onclick="addToWishlist('Laptop Pro 15', '₹55,000', 'https://images-cdn.ubuy.co.in/6511a6f4485ede30f811bc23-hp-15-6-screen-fhd-laptop-computer-amd.jpg')">
-                        <i class="fas fa-heart"></i> Wishlist
-                    </button>
-                    <button class="cart-btn" onclick="addToCart('Laptop Pro 15', '₹55,000', 'https://images-cdn.ubuy.co.in/6511a6f4485ede30f811bc23-hp-15-6-screen-fhd-laptop-computer-amd.jpg')">
-                        <i class="fas fa-shopping-bag"></i> Add to Cart
-                    </button>
-                </div>
-            </div>
-            <div class="product-card">
-                <img src="https://www.oppo.com/content/dam/oppo/product-asset-library/accessory/oppo-pad-2/en/v1/assets/images-screen-mo-light-1.png.webp" alt="Tablet 1">
-                <h3>Tablet Z2</h3>
-                <p>₹22,499</p>
-                <div class="actions">
-                    <button class="wishlist-btn" onclick="addToWishlist('Tablet Z2', '₹22,499', 'https://www.oppo.com/content/dam/oppo/product-asset-library/accessory/oppo-pad-2/en/v1/assets/images-screen-mo-light-1.png.webp')">
-                        <i class="fas fa-heart"></i> Wishlist
-                    </button>
-                    <button class="cart-btn" onclick="addToCart('Tablet Z2', '₹22,499', 'https://www.oppo.com/content/dam/oppo/product-asset-library/accessory/oppo-pad-2/en/v1/assets/images-screen-mo-light-1.png.webp')">
-                        <i class="fas fa-shopping-bag"></i> Add to Cart
-                    </button>
-                </div>
-            </div>
-            <div class="product-card">
-                <img src="https://m.media-amazon.com/images/I/81NIvQvg2WL.jpg" alt="Smartwatch 1">
-                <h3>Samsung S23</h3>
-                <p>₹8,999</p>
-                <div class="actions">
-                    <button class="wishlist-btn" onclick="addToWishlist('Samsung S23', '₹8,999', 'https://m.media-amazon.com/images/I/81NIvQvg2WL.jpg')">
-                        <i class="fas fa-heart"></i> Wishlist
-                    </button>
-                    <button class="cart-btn" onclick="addToCart('Samsung S23', '₹8,999', 'https://m.media-amazon.com/images/I/81NIvQvg2WL.jpg')">
-                        <i class="fas fa-shopping-bag"></i> Add to Cart
-                    </button>
-                </div>
-            </div>
-            <div class="product-card">
-                <img src="https://m.media-amazon.com/images/I/517lSvEVVsL.jpg" alt="Headphones 1">
-                <h3>Noise Cancelling Headphones</h3>
-                <p>₹5,499</p>
-                <div class="actions">
-                    <button class="wishlist-btn" onclick="addToWishlist('Noise Cancelling Headphones', '₹5,499', 'https://m.media-amazon.com/images/I/517lSvEVVsL.jpg')">
-                        <i class="fas fa-heart"></i> Wishlist
-                    </button>
-                    <button class="cart-btn" onclick="addToCart('Noise Cancelling Headphones', '₹5,499', 'https://m.media-amazon.com/images/I/517lSvEVVsL.jpg')">
-                        <i class="fas fa-shopping-bag"></i> Add to Cart
-                    </button>
+    <main class="main-content">
+        <section class="product-section">
+            <div class="section-header">
+                <h2>Popular Electronics</h2>
+                <div class="filter-options">
+                    <select id="category-filter">
+                        <option value="all">All Categories</option>
+                        <option value="mobile">Mobile Phones</option>
+                        <option value="laptop">Laptops</option>
+                        <option value="tablet">Tablets</option>
+                        <option value="audio">Audio Devices</option>
+                        <option value="camera">Cameras</option>
+                        <option value="appliance">Home Appliances</option>
+                    </select>
+                    <select id="price-filter">
+                        <option value="all">All Prices</option>
+                        <option value="0-5000">Under ₹5,000</option>
+                        <option value="5000-20000">₹5,000 - ₹20,000</option>
+                        <option value="20000-50000">₹20,000 - ₹50,000</option>
+                        <option value="50000+">Above ₹50,000</option>
+                    </select>
                 </div>
             </div>
             
-            <div class="product-card">
-                <img src="https://m.media-amazon.com/images/I/715TP-NamOL.jpg" alt="Bluetooth Speaker 1">
-                <h3>Portable Bluetooth Speaker</h3>
-                <p>₹2,999</p>
-                <div class="actions">
-                    <button class="wishlist-btn" onclick="addToWishlist('Portable Bluetooth Speaker', '₹2,999', 'https://m.media-amazon.com/images/I/715TP-NamOL.jpg')">
-                        <i class="fas fa-heart"></i> Wishlist
-                    </button>
-                    <button class="cart-btn" onclick="addToCart('Portable Bluetooth Speaker', '₹2,999', 'https://m.media-amazon.com/images/I/715TP-NamOL.jpg')">
-                        <i class="fas fa-shopping-bag"></i> Add to Cart
-                    </button>
-                </div>
+            <div class="product-grid">
+                <!-- Product Cards will be dynamically loaded here -->
             </div>
             
-            <div class="product-card">
-                <img src="https://photographylife.com/wp-content/uploads/2018/08/Nikon-D500.jpg" alt="DSLR Camera 1">
-                <h3>DSLR Camera Pro</h3>
-                <p>₹49,999</p>
-                <div class="actions">
-                    <button class="wishlist-btn" onclick="addToWishlist('DSLR Camera Pro', '₹49,999', 'https://photographylife.com/wp-content/uploads/2018/08/Nikon-D500.jpg')">
-                        <i class="fas fa-heart"></i> Wishlist
-                    </button>
-                    <button class="cart-btn" onclick="addToCart('DSLR Camera Pro', '₹49,999', 'https://photographylife.com/wp-content/uploads/2018/08/Nikon-D500.jpg')">
-                        <i class="fas fa-shopping-bag"></i> Add to Cart
-                    </button>
+            <div class="pagination">
+                <button class="prev-btn" disabled><i class="fas fa-chevron-left"></i> Previous</button>
+                <div class="page-numbers">
+                    <span class="active">1</span>
+                    <span>2</span>
+                    <span>3</span>
                 </div>
+                <button class="next-btn">Next <i class="fas fa-chevron-right"></i></button>
             </div>
-            
-            <div class="product-card">
-                <img src="https://m.media-amazon.com/images/I/71-Fx3Vfq5L.jpg" alt="Laptop 2">
-                <h3>Gaming Laptop RTX</h3>
-                <p>₹85,000</p>
-                <div class="actions">
-                    <button class="wishlist-btn" onclick="addToWishlist('Gaming Laptop RTX', '₹85,000', 'https://m.media-amazon.com/images/I/71-Fx3Vfq5L.jpg')">
-                        <i class="fas fa-heart"></i> Wishlist
-                    </button>
-                    <button class="cart-btn" onclick="addToCart('Gaming Laptop RTX', '₹85,000', 'https://m.media-amazon.com/images/I/71-Fx3Vfq5L.jpg')">
-                        <i class="fas fa-shopping-bag"></i> Add to Cart
-                    </button>
-                </div>
-            </div>
-            
-            <div class="product-card">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSVYs9T-zTIurCTh2-8b03o84Wp6wWv9jXvqg&s" alt="Smartphone 2">
-                <h3>Washing Machine</h3>
-                <p>₹19,999</p>
-                <div class="actions">
-                    <button class="wishlist-btn" onclick="addToWishlist('Washing Machine', '₹19,999', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSVYs9T-zTIurCTh2-8b03o84Wp6wWv9jXvqg&s')">
-                        <i class="fas fa-heart"></i> Wishlist
-                    </button>
-                    <button class="cart-btn" onclick="addToCart('Washing Machine', '₹19,999', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSVYs9T-zTIurCTh2-8b03o84Wp6wWv9jXvqg&s')">
-                        <i class="fas fa-shopping-bag"></i> Add to Cart
-                    </button>
-                </div>
-            </div>
-            
-            <div class="product-card">
-                <img src="https://m.media-amazon.com/images/I/71hV+-WWk6L.jpg" alt="Monitor 1">
-                <h3>Curved Gaming Monitor</h3>
-                <p>₹13,500</p>
-                <div class="actions">
-                    <button class="wishlist-btn" onclick="addToWishlist('Curved Gaming Monitor', '₹13,500', 'https://m.media-amazon.com/images/I/71hV+-WWk6L.jpg')">
-                        <i class="fas fa-heart"></i> Wishlist
-                    </button>
-                    <button class="cart-btn" onclick="addToCart('Curved Gaming Monitor', '₹13,500', 'https://m.media-amazon.com/images/I/71hV+-WWk6L.jpg')">
-                        <i class="fas fa-shopping-bag"></i> Add to Cart
-                    </button>
-                </div>
-            </div>
-            
-            <div class="product-card">
-                <img src="https://m.media-amazon.com/images/I/71PJF9iogsL.jpg" alt="Bluetooth Speaker 1">
-                <h3>HP Pavillion</h3>
-                <p>₹59,999</p>
-                <div class="actions">
-                    <button class="wishlist-btn" onclick="addToWishlist('HP Pavillion', '₹59,999', 'https://m.media-amazon.com/images/I/71PJF9iogsL.jpg')">
-                        <i class="fas fa-heart"></i> Wishlist
-                    </button>
-                    <button class="cart-btn" onclick="addToCart('HP Pavillion', '₹59,999', 'https://m.media-amazon.com/images/I/71PJF9iogsL.jpg')">
-                        <i class="fas fa-shopping-bag"></i> Add to Cart
-                    </button>
-                </div>
-            </div>
-            
-            <div class="product-card">
-                <img src="https://5.imimg.com/data5/SELLER/Default/2023/12/365302520/CN/NA/QX/109185640/daikin-split-ac-ftl.jpg" alt="DSLR Camera 1">
-                <h3>Air Conditioner</h3>
-                <p>₹49,999</p>
-                <div class="actions">
-                    <button class="wishlist-btn" onclick="addToWishlist('Air Conditioner', '₹49,999', 'https://5.imimg.com/data5/SELLER/Default/2023/12/365302520/CN/NA/QX/109185640/daikin-split-ac-ftl.jpg')">
-                        <i class="fas fa-heart"></i> Wishlist
-                    </button>
-                    <button class="cart-btn" onclick="addToCart('Air Conditioner', '₹49,999', 'https://5.imimg.com/data5/SELLER/Default/2023/12/365302520/CN/NA/QX/109185640/daikin-split-ac-ftl.jpg')">
-                        <i class="fas fa-shopping-bag"></i> Add to Cart
-                    </button>
-                </div>
-            </div>
-            
-            <div class="product-card">
-                <img src="https://www.jbhifi.com.au/cdn/shop/files/784329-Product-0-I-638628197418155482.jpg?v=1727223014" alt="Laptop 2">
-                <h3>Dyson</h3>
-                <p>₹85,000</p>
-                <div class="actions">
-                    <button class="wishlist-btn" onclick="addToWishlist('Dyson', '₹85,000', 'https://www.jbhifi.com.au/cdn/shop/files/784329-Product-0-I-638628197418155482.jpg?v=1727223014')">
-                        <i class="fas fa-heart"></i> Wishlist
-                    </button>
-                    <button class="cart-btn" onclick="addToCart('Dyson', '₹85,000', 'https://www.jbhifi.com.au/cdn/shop/files/784329-Product-0-I-638628197418155482.jpg?v=1727223014')">
-                        <i class="fas fa-shopping-bag"></i> Add to Cart
-                    </button>
-                </div>
-            </div>
-            
-            <div class="product-card">
-                <img src="https://5.imimg.com/data5/SELLER/Default/2023/6/317760727/RX/NQ/RW/47848477/mini-hair-straightener.jpg" alt="Smartphone 2">
-                <h3>Straightner</h3>
-                <p>₹19,999</p>
-                <div class="actions">
-                    <button class="wishlist-btn" onclick="addToWishlist('Straightner', '₹19,999', 'https://5.imimg.com/data5/SELLER/Default/2023/6/317760727/RX/NQ/RW/47848477/mini-hair-straightener.jpg')">
-                        <i class="fas fa-heart"></i> Wishlist
-                    </button>
-                    <button class="cart-btn" onclick="addToCart('Straightner', '₹19,999', 'https://5.imimg.com/data5/SELLER/Default/2023/6/317760727/RX/NQ/RW/47848477/mini-hair-straightener.jpg')">
-                        <i class="fas fa-shopping-bag"></i> Add to Cart
-                    </button>
-                </div>
-            </div>
-            <div class="product-card">
-                <img src="https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/refurb-mbp13-space-m1-2020_GEO_GB?wid=2000&hei=2000&fmt=jpeg&qlt=90&.v=1628621766000" alt="Monitor 1">
-                <h3>MacBook Pro</h3>
-                <p>₹1,00500</p>
-                <div class="actions">
-                    <button class="wishlist-btn" onclick="addToWishlist('MacBook Pro', '₹1,00500', 'https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/refurb-mbp13-space-m1-2020_GEO_GB?wid=2000&hei=2000&fmt=jpeg&qlt=90&.v=1628621766000')">
-                        <i class="fas fa-heart"></i> Wishlist
-                    </button>
-                    <button class="cart-btn" onclick="addToCart('MacBook Pro', '₹1,00500', 'https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/refurb-mbp13-space-m1-2020_GEO_GB?wid=2000&hei=2000&fmt=jpeg&qlt=90&.v=1628621766000')">
-                        <i class="fas fa-shopping-bag"></i> Add to Cart
-                    </button>
-                </div>
-            </div>
-            
-            <div class="product-card">
-                <img src="https://bossindia.com/wp-content/uploads/2019/09/B117-Black-New.jpg" alt="BOSS Quickmix Hand Blender 450 watts">
-                <h3>BOSS Quickmix Hand Blender 450 watts</h3>
-                <p>₹3,975</p>
-                <div class="actions">
-                    <button class="wishlist-btn" onclick="addToWishlist('BOSS Quickmix Hand Blender 450 watts', '₹3,975', 'https://bossindia.com/wp-content/uploads/2019/09/B117-Black-New.jpg')">
-                        <i class="fas fa-heart"></i> Wishlist
-                    </button>
-                    <button class="cart-btn" onclick="addToCart('BOSS Quickmix Hand Blender 450 watts', '₹3,975', 'https://bossindia.com/wp-content/uploads/2019/09/B117-Black-New.jpg')">
-                        <i class="fas fa-shopping-bag"></i> Add to Cart
-                    </button>
-                </div>
-            </div>
-            
-            <div class="product-card">
-                <img src="https://goodscity.in/wp-content/uploads/2023/05/Main-Image-USB-rechargable-blender.jpg" alt="Usb Rechargeable Blender">
-                <h3>Usb Rechargeable Blender</h3>
-                <p>₹2,399</p>
-                <div class="actions">
-                    <button class="wishlist-btn" onclick="addToWishlist('Usb Rechargeable Blender', '₹2,399', 'https://goodscity.in/wp-content/uploads/2023/05/Main-Image-USB-rechargable-blender.jpg')">
-                        <i class="fas fa-heart"></i> Wishlist
-                    </button>
-                    <button class="cart-btn" onclick="addToCart('Usb Rechargeable Blender', '₹2,399', 'https://goodscity.in/wp-content/uploads/2023/05/Main-Image-USB-rechargable-blender.jpg')">
-                        <i class="fas fa-shopping-bag"></i> Add to Cart
-                    </button>
-                </div>
-            </div>
-            
-            <div class="product-card">
-                <img src="https://cdn.moglix.com/p/spg0Jm0GXXJmr-xxlarge.jpeg" alt="Stainless Steel Black Multi Cooker Electric Kettle">
-                <h3>Stainless Steel Black Multi Cooker Electric Kettle</h3>
-                <p>₹899</p>
-                <div class="actions">
-                    <button class="wishlist-btn" onclick="addToWishlist('Stainless Steel Black Multi Cooker Electric Kettle', '₹899', 'https://cdn.moglix.com/p/spg0Jm0GXXJmr-xxlarge.jpeg')">
-                        <i class="fas fa-heart"></i> Wishlist
-                    </button>
-                    <button class="cart-btn" onclick="addToCart('Stainless Steel Black Multi Cooker Electric Kettle', '₹899', 'https://cdn.moglix.com/p/spg0Jm0GXXJmr-xxlarge.jpeg')">
-                        <i class="fas fa-shopping-bag"></i> Add to Cart
-                    </button>
-                </div>
-            </div>
-            
-            <div class="product-card">
-                <img src="https://www.leafstudios.in/cdn/shop/files/1_6b54ff34-acdd-40e6-a08a-f2bfa33a1c7a_800x.png?v=1718706988" alt="LEAF BUDS X121 TRUE WIRELESS EARBUDS">
-                <h3>LEAF BUDS X121 TRUE WIRELESS EARBUDS</h3>
-                <p>₹799</p>
-                <div class="actions">
-                    <button class="wishlist-btn" onclick="addToWishlist('LEAF BUDS X121 TRUE WIRELESS EARBUDS', '₹799', 'https://www.leafstudios.in/cdn/shop/files/1_6b54ff34-acdd-40e6-a08a-f2bfa33a1c7a_800x.png?v=1718706988')">
-                        <i class="fas fa-heart"></i> Wishlist
-                    </button>
-                    <button class="cart-btn" onclick="addToCart('LEAF BUDS X121 TRUE WIRELESS EARBUDS', '₹799', 'https://www.leafstudios.in/cdn/shop/files/1_6b54ff34-acdd-40e6-a08a-f2bfa33a1c7a_800x.png?v=1718706988')">
-                        <i class="fas fa-shopping-bag"></i> Add to Cart
-                    </button>
-                </div>
-            </div>
-            
-            <div class="product-card">
-                <img src="https://images.philips.com/is/image/philipsconsumer/2dd0559013014093bbbfae7c0088d0f4?wid=700&hei=700&$pnglarge$" alt="Dry electric shaver">
-                <h3>Dry electric shaver</h3>
-                <p>₹899</p>
-                <div class="actions">
-                    <button class="wishlist-btn" onclick="addToWishlist('Dry electric shaver', '₹899', 'https://images.philips.com/is/image/philipsconsumer/2dd0559013014093bbbfae7c0088d0f4?wid=700&hei=700&$pnglarge$')">
-                        <i class="fas fa-heart"></i> Wishlist
-                    </button>
-                    <button class="cart-btn" onclick="addToCart('Dry electric shaver', '₹899', 'https://images.philips.com/is/image/philipsconsumer/2dd0559013014093bbbfae7c0088d0f4?wid=700&hei=700&$pnglarge$')">
-                        <i class="fas fa-shopping-bag"></i> Add to Cart
-                    </button>
-                </div>
-            </div>
-            
-            <div class="product-card">
-                <img src="https://photographylife.com/wp-content/uploads/2018/08/Nikon-D500.jpg" alt="DSLR Camera 1">
-                <h3>DSLR Camera Pro</h3>
-                <p>₹49,999</p>
-                <div class="actions">
-                    <button class="wishlist-btn" onclick="addToWishlist('DSLR Camera Pro', '₹49,999', 'https://photographylife.com/wp-content/uploads/2018/08/Nikon-D500.jpg')">
-                        <i class="fas fa-heart"></i> Wishlist
-                    </button>
-                    <button class="cart-btn" onclick="addToCart('DSLR Camera Pro', '₹49,999', 'https://photographylife.com/wp-content/uploads/2018/08/Nikon-D500.jpg')">
-                        <i class="fas fa-shopping-bag"></i> Add to Cart
-                    </button>
-                </div>
-            </div>
-            <div class="product-card">
-                <img src="https://m.media-amazon.com/images/I/71hV+-WWk6L.jpg" alt="Monitor 1">
-                <h3>Curved Gaming Monitor</h3>
-                <p>₹13,500</p>
-                <div class="actions">
-                    <button class="wishlist-btn" onclick="addToWishlist('Curved Gaming Monitor', '₹13,500', 'https://m.media-amazon.com/images/I/71hV+-WWk6L.jpg')">
-                        <i class="fas fa-heart"></i> Wishlist
-                    </button>
-                    <button class="cart-btn" onclick="addToCart('Curved Gaming Monitor', '₹13,500', 'https://m.media-amazon.com/images/I/71hV+-WWk6L.jpg')">
-                        <i class="fas fa-shopping-bag"></i> Add to Cart
-                    </button>
-                </div>
-            </div>
-            <div class="product-card">
-                <img src="https://m.media-amazon.com/images/I/71-Fx3Vfq5L.jpg" alt="Laptop 2">
-                <h3>Gaming Laptop RTX</h3>
-                <p>₹85,000</p>
-                <div class="actions">
-                    <button class="wishlist-btn" onclick="addToWishlist('Gaming Laptop RTX', '₹85,000', 'https://m.media-amazon.com/images/I/71-Fx3Vfq5L.jpg')">
-                        <i class="fas fa-heart"></i> Wishlist
-                    </button>
-                    <button class="cart-btn" onclick="addToCart('Gaming Laptop RTX', '₹85,000', 'https://m.media-amazon.com/images/I/71-Fx3Vfq5L.jpg')">
-                        <i class="fas fa-shopping-bag"></i> Add to Cart
-                    </button>
-                </div>
-            </div>
-            <div class="product-card">
-                <img src="https://m.media-amazon.com/images/I/715TP-NamOL.jpg" alt="Bluetooth Speaker 1">
-                <h3>Portable Bluetooth Speaker</h3>
-                <p>₹2,999</p>
-                <div class="actions">
-                    <button class="wishlist-btn" onclick="addToWishlist('Portable Bluetooth Speaker', '₹2,999', 'https://m.media-amazon.com/images/I/715TP-NamOL.jpg')">
-                        <i class="fas fa-heart"></i> Wishlist
-                    </button>
-                    <button class="cart-btn" onclick="addToCart('Portable Bluetooth Speaker', '₹2,999', 'https://m.media-amazon.com/images/I/715TP-NamOL.jpg')">
-                        <i class="fas fa-shopping-bag"></i> Add to Cart
-                    </button>
-                </div>
-            </div>
-            <div class="product-card">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSVYs9T-zTIurCTh2-8b03o84Wp6wWv9jXvqg&s" alt="Smartphone 2">
-                <h3>Washing Machine</h3>
-                <p>₹19,999</p>
-                <div class="actions">
-                    <button class="wishlist-btn" onclick="addToWishlist('Washing Machine', '₹19,999', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSVYs9T-zTIurCTh2-8b03o84Wp6wWv9jXvqg&s')">
-                        <i class="fas fa-heart"></i> Wishlist
-                    </button>
-                    <button class="cart-btn" onclick="addToCart('Washing Machine', '₹19,999', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSVYs9T-zTIurCTh2-8b03o84Wp6wWv9jXvqg&s')">
-                        <i class="fas fa-shopping-bag"></i> Add to Cart
-                    </button>
-                </div>
-            </div>
-            
-            
-            <!-- Repeat similar blocks for other electronics items -->
-        </div>
-    </section>
-    
-    <!-- Footer -->
-    <footer>
-        <p>&copy; 2025 GrabMart. All rights reserved.</p>
-    </footer>
-    <script src="js/script.js"></script>
+        </section>
+    </main>
 
+    <!-- Quick View Modal -->
+    <div class="modal" id="quickViewModal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div class="modal-product-view">
+                <div class="modal-product-images">
+                    <div class="main-image">
+                        <img src="" alt="" id="modalMainImage">
+                    </div>
+                </div>
+                <div class="modal-product-info">
+                    <h2 id="modalProductName"></h2>
+                    <div class="modal-product-rating">
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                        <span class="review-count">(124 reviews)</span>
+                    </div>
+                    <div class="modal-product-price">
+                        <span class="current-price" id="modalCurrentPrice"></span>
+                        <span class="original-price" id="modalOriginalPrice"></span>
+                        <span class="discount" id="modalDiscount"></span>
+                    </div>
+                    <div class="modal-product-specs">
+                        <h3>Product Details</h3>
+                        <ul id="modalProductSpecs"></ul>
+                    </div>
+                    <div class="modal-product-actions">
+                        <button class="wishlist-btn" id="modalWishlistBtn">
+                            <i class="far fa-heart"></i> Add to Wishlist
+                        </button>
+                        <button class="cart-btn" id="modalCartBtn">
+                            <i class="fas fa-shopping-cart"></i> Add to Cart
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-top">
+                <div class="footer-column">
+                    <h3>Shop</h3>
+                    <ul>
+                        <li><a href="books.html">Books</a></li>
+                        <li><a href="electronics.html">Electronics</a></li>
+                        <li><a href="clothing.html">Clothing</a></li>
+                        <li><a href="home.html">Home & Kitchen</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Customer Service</h3>
+                    <ul>
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="faq.html">FAQs</a></li>
+                        <li><a href="shipping.html">Shipping Policy</a></li>
+                        <li><a href="returns.html">Return Policy</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>About GrabMart</h3>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="careers.html">Careers</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Connect With Us</h3>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                    <div class="newsletter">
+                        <p>Subscribe to our newsletter</p>
+                        <form class="newsletter-form">
+                            <input type="email" placeholder="Your email address">
+                            <button type="submit">Subscribe</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="payment-methods">
+                    <p>We Accept:</p>
+                    <div class="payment-icons">
+                        <i class="fab fa-cc-visa"></i>
+                        <i class="fab fa-cc-mastercard"></i>
+                        <i class="fab fa-cc-amex"></i>
+                        <i class="fab fa-cc-paypal"></i>
+                    </div>
+                </div>
+                <div class="copyright">
+                    <p>&copy; 2025 GrabMart. All Rights Reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/electronics.js"></script>
 </body>
 </html>

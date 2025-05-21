@@ -1,4 +1,22 @@
-/* General Reset */
+:root {
+    --primary-color: #4a6bff;
+    --primary-dark: #3a56cc;
+    --primary-light: #d6ddff;
+    --secondary-color: #607d8b;
+    --text-primary: #2d3748;
+    --text-secondary: #718096;
+    --divider-color: #e2e8f0;
+    --background: #f8fafc;
+    --white: #ffffff;
+    --success: #48bb78;
+    --error: #f56565;
+    --warning: #ed8936;
+    --google-red: #db4437;
+    --facebook-blue: #3b5998;
+    --shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -6,112 +24,411 @@
 }
 
 body {
-    font-family: Arial, sans-serif;
-    background: url('https://media.istockphoto.com/id/1249219777/photo/shopping-online-concept-parcel-or-paper-cartons-with-a-shopping-cart-logo-in-a-trolley-on-a.jpg?s=612x612&w=0&k=20&c=EWKEahyVLY8iAHyirCCDESHRGW37lqUJ7In0SssNSLE=') no-repeat center center fixed;
-    background-size: cover;
-    height: 100vh;
-}
-
-/* Login Page Container */
-.login-container {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, rgba(74, 107, 255, 0.1) 0%, rgba(255, 255, 255, 0.9) 100%);
+    color: var(--text-primary);
     display: flex;
-    justify-content: flex-start; /* Aligns content to the left */
+    justify-content: center;
     align-items: center;
-    height: 100vh;
-    padding-left: 15%; /* Space from the left side */
+    min-height: 100vh;
+    padding: 20px;
+    line-height: 1.6;
 }
 
-/* Form Layout */
-.login-form, .signup-form, .signup-success {
-    background-color: white;
-    padding: 40px;
-    border-radius: 8px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-    text-align: center;
+/* Auth Container */
+.auth-container {
+    background-color: var(--white);
+    border-radius: 16px;
+    box-shadow: var(--shadow);
     width: 100%;
-    max-width: 400px;
+    max-width: 480px;
+    padding: 40px;
+    animation: fadeIn 0.5s ease;
+    position: relative;
+    overflow: hidden;
 }
 
-/* Heading Styles */
-h2 {
-    color: #ff5722;
+.auth-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 6px;
+    background: linear-gradient(90deg, var(--primary-color) 0%, #6b46c1 100%);
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Brand Header */
+.brand-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.brand-header .logo {
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--primary-color);
+    text-decoration: none;
+    display: inline-block;
+    margin-bottom: 5px;
+    letter-spacing: -0.5px;
+}
+
+.brand-header p {
+    color: var(--text-secondary);
+    font-size: 14px;
+    font-weight: 400;
+}
+
+/* Auth Tabs */
+.auth-tabs {
+    display: flex;
+    border-bottom: 1px solid var(--divider-color);
+    margin-bottom: 25px;
+}
+
+.tab-btn {
+    flex: 1;
+    padding: 12px;
+    background: none;
+    border: none;
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--text-secondary);
+    cursor: pointer;
+    position: relative;
+    transition: var(--transition);
+    outline: none;
+}
+
+.tab-btn:hover {
+    color: var(--primary-color);
+}
+
+.tab-btn.active {
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+.tab-btn.active::after {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: var(--primary-color);
+    border-radius: 3px 3px 0 0;
+}
+
+/* Auth Forms */
+.auth-form {
+    display: none;
+    animation: fadeIn 0.3s ease;
+}
+
+.auth-form.active {
+    display: block;
+}
+
+.form-group {
     margin-bottom: 20px;
 }
 
-h3 {
-    margin-bottom: 10px;
-    color: #333;
-}
-
-/* Form Styles */
-.form-container {
-    text-align: left;
-}
-
-form label {
+.form-group label {
     display: block;
-    margin-bottom: 5px;
+    margin-bottom: 8px;
     font-size: 14px;
-    color: #555;
+    font-weight: 500;
+    color: var(--text-primary);
 }
 
-form input {
-    width: 100%;
-    padding: 8px;
-    margin-bottom: 15px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
+.input-with-icon {
+    position: relative;
 }
 
-form button {
-    width: 100%;
-    background-color: #ff5722;
-    color: white;
-    padding: 10px;
-    border: none;
-    border-radius: 4px;
+.input-with-icon i {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--text-secondary);
+    font-size: 16px;
+}
+
+.input-with-icon .toggle-password {
+    left: auto;
+    right: 15px;
     cursor: pointer;
+    color: var(--text-secondary);
+    transition: var(--transition);
 }
 
-form button:hover {
-    background-color: #e64a19;
+.input-with-icon .toggle-password:hover {
+    color: var(--primary-color);
 }
 
-/* Signup Link */
-p {
-    margin-top: 15px;
-    font-size: 14px;
+.input-with-icon input {
+    width: 100%;
+    padding: 12px 15px 12px 45px;
+    border: 1px solid var(--divider-color);
+    border-radius: 8px;
+    font-size: 15px;
+    transition: var(--transition);
+    background-color: var(--background);
+    color: var(--text-primary);
 }
 
-p a {
-    color: #ff5722;
+.input-with-icon input:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px var(--primary-light);
+    outline: none;
+}
+
+.forgot-password {
+    display: inline-block;
+    margin-top: 8px;
+    font-size: 13px;
+    color: var(--primary-color);
     text-decoration: none;
+    transition: var(--transition);
+    font-weight: 500;
 }
 
-/* Success Message */
-.signup-success, .login-success {
-    text-align: center;
+.forgot-password:hover {
+    text-decoration: underline;
+}
+
+/* Password Strength */
+.password-strength {
+    margin-top: 8px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.strength-meter {
+    display: flex;
+    gap: 4px;
+    flex: 1;
+}
+
+.strength-bar {
+    height: 4px;
+    background-color: var(--divider-color);
+    border-radius: 2px;
+    flex: 1;
+    transition: var(--transition);
+}
+
+.strength-text {
+    font-size: 12px;
+    color: var(--text-secondary);
+    font-weight: 500;
+}
+
+/* Checkbox Group */
+.checkbox-group {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 15px;
+}
+
+.checkbox-group input {
+    width: auto;
+    accent-color: var(--primary-color);
+}
+
+.checkbox-group label {
+    margin-bottom: 0;
+    font-size: 13px;
+    color: var(--text-secondary);
+    font-weight: 400;
+}
+
+.checkbox-group a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.checkbox-group a:hover {
+    text-decoration: underline;
+}
+
+/* Buttons */
+.btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    padding: 14px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: var(--transition);
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    color: var(--white);
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(74, 107, 255, 0.3);
+}
+
+.btn-google {
+    background-color: var(--white);
+    color: var(--text-primary);
+    border: 1px solid var(--divider-color);
+}
+
+.btn-google:hover {
+    background-color: var(--background);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.btn-facebook {
+    background-color: var(--facebook-blue);
+    color: var(--white);
+}
+
+.btn-facebook:hover {
+    background-color: #2d4373;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(59, 89, 152, 0.3);
+}
+
+.loading-icon {
     display: none;
+    position: absolute;
+    right: 20px;
+}
+
+.btn.loading .btn-text {
+    visibility: hidden;
+}
+
+.btn.loading .loading-icon {
+    display: block;
+}
+
+/* Divider */
+.divider {
+    display: flex;
+    align-items: center;
+    margin: 25px 0;
+    color: var(--text-secondary);
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.divider::before, .divider::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background-color: var(--divider-color);
+}
+
+.divider::before {
+    margin-right: 15px;
+}
+
+.divider::after {
+    margin-left: 15px;
+}
+
+/* Social Login */
+.social-login {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.social-login .btn {
+    flex: 1;
+}
+
+/* Guest Option */
+.guest-option {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 14px;
+    color: var(--text-secondary);
+}
+
+.guest-option a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.guest-option a:hover {
+    text-decoration: underline;
+}
+
+/* Toast Notification */
+.toast {
     position: fixed;
     top: 20px;
     left: 50%;
     transform: translateX(-50%);
-    background-color: #4CAF50;
-    color: white;
-    padding: 10px 20px;
-    border-radius: 5px;
-    z-index: 999;
+    background-color: var(--text-primary);
+    color: var(--white);
+    padding: 12px 24px;
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+    z-index: 1000;
+    opacity: 0;
+    transition: var(--transition);
+    max-width: 90%;
+    text-align: center;
+    pointer-events: none;
 }
 
-.signup-success button, .login-success button {
-    background-color: #4CAF50;
-    color: white;
-    padding: 5px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
+.toast.show {
+    opacity: 1;
+    top: 30px;
 }
 
-.signup-success button:hover, .login-success button:hover {
-    background-color: #45a049;
+.toast.success {
+    background-color: var(--success);
+}
+
+.toast.error {
+    background-color: var(--error);
+}
+
+.toast.warning {
+    background-color: var(--warning);
+}
+
+/* Responsive Design */
+@media (max-width: 576px) {
+    .auth-container {
+        padding: 30px 20px;
+    }
+    
+    .social-login {
+        flex-direction: column;
+    }
+    
+    .btn {
+        padding: 12px;
+    }
 }

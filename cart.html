@@ -3,77 +3,70 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Cart</title>
+    <title>Your Cart | GrabMart</title>
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Cart Section -->
-    <section id="cart">
-        <h2>Your Cart :</h2>
-        <div id="cart-items">
-            <!-- Cart items will be displayed here -->
+    <!-- Header -->
+    <header class="page-header">
+        <div class="container">
+            <h1><a href="index.html">GrabMart</a></h1>
+            <nav>
+                <a href="index.html"><i class="fas fa-home"></i> Home</a>
+                <a href="wishlist.html"><i class="fas fa-heart"></i> Wishlist</a>
+            </nav>
         </div>
-    </section>
+    </header>
 
-    <script>
-        // Function to display the Cart items
-        function displayCart() {
-            let cart = JSON.parse(localStorage.getItem('cart')) || [];
-            const cartContainer = document.getElementById('cart-items');
-            cartContainer.innerHTML = '';
+    <!-- Main Content -->
+    <main class="container">
+        <section class="cart-section">
+            <div class="section-header">
+                <h2><i class="fas fa-shopping-cart"></i> Your Cart</h2>
+                <div class="item-count" id="cart-count">0 items</div>
+            </div>
+            
+            <div id="cart-items" class="items-grid">
+                <!-- Cart items will be displayed here -->
+            </div>
+            
+            <div class="cart-summary">
+                <div class="summary-card">
+                    <h3>Order Summary</h3>
+                    <div class="summary-row">
+                        <span>Subtotal</span>
+                        <span id="subtotal">₹0</span>
+                    </div>
+                    <div class="summary-row">
+                        <span>Shipping</span>
+                        <span id="shipping">FREE</span>
+                    </div>
+                    <div class="summary-row total">
+                        <span>Total</span>
+                        <span id="total">₹0</span>
+                    </div>
+                    <button class="btn btn-checkout" id="checkout-btn">Proceed to Checkout</button>
+                </div>
+            </div>
+            
+            <div class="empty-state" id="cart-empty">
+                <i class="fas fa-shopping-cart"></i>
+                <h3>Your cart is empty</h3>
+                <p>Looks like you haven't added anything to your cart yet</p>
+                <a href="index.html" class="btn btn-primary">Continue Shopping</a>
+            </div>
+        </section>
+    </main>
 
-            if (cart.length === 0) {
-                cartContainer.innerHTML = "<p>Your cart is empty.</p>";
-            } else {
-                cart.forEach((item, index) => {
-                    const itemElement = document.createElement('div');
-                    itemElement.classList.add('cart-item');
-                    itemElement.innerHTML = `
-                        <img src="${item.image}" alt="${item.name}" />
-                        <h3>${item.name}</h3>
-                        <p>${item.price}</p>
-                        <div class="actions">
-                            <button class="remove-btn" onclick="removeFromCart(${index})"><i class="fas fa-trash"></i> Remove</button>
-                            <button class="checkout-btn" onclick="addToCheckout(${index})"><i class="fas fa-check"></i> Add to Checkout</button>
-                        </div>
-                    `;
-                    cartContainer.appendChild(itemElement);
-                });
-            }
-        }
+    <!-- Footer -->
+    <footer class="page-footer">
+        <div class="container">
+            <p>&copy; 2023 GrabMart. All rights reserved.</p>
+        </div>
+    </footer>
 
-        // Function to remove an item from Cart
-        function removeFromCart(index) {
-            let cart = JSON.parse(localStorage.getItem('cart')) || [];
-            cart.splice(index, 1);
-            localStorage.setItem('cart', JSON.stringify(cart));
-            displayCart(); // Re-render the cart after removal
-        }
-
-        // Function to move an item to Checkout (mock)
-        function addToCheckout(index) {
-            let cart = JSON.parse(localStorage.getItem('cart')) || [];
-            let checkout = JSON.parse(localStorage.getItem('checkout')) || [];
-
-            // Move the item to checkout
-            const item = cart[index];
-            checkout.push(item);
-
-            // Remove the item from cart
-            cart.splice(index, 1);
-
-            // Save updated lists to localStorage
-            localStorage.setItem('cart', JSON.stringify(cart));
-            localStorage.setItem('checkout', JSON.stringify(checkout));
-
-            displayCart(); // Re-render the cart after moving to checkout
-            alert("Item moved to checkout!");
-        }
-
-        // Call displayCart on page load
-        window.onload = displayCart;
-    </script>
+    <script src="js/cart.js"></script>
 </body>
 </html>
